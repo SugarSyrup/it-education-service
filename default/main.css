@@ -1,0 +1,29 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  width: 100%;
+  height: 100vh;
+  background-color: aqua;
+}
+.main-box{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(95, 95, 90);
+}
+.main-box div{
+  width: 80%;
+  height: 23vh;
+  border-radius: 20px;
+  font-size: 30px;
+  font-weight: 900;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(212, 183, 238);
+}
