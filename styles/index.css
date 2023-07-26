@@ -10,7 +10,9 @@ body{
   justify-content: space-between;
   align-items: center;
 }
-header{
+
+/* header */
+.header{
   width: 100%;
   height: 10%;
   display: flex;
@@ -18,11 +20,13 @@ header{
   align-items: center;
   background-color: rgb(210, 210, 210);
 }
-header div{
+.header .title{
   font-size: 25px;
   font-weight: 900;
 }
-main{
+
+/* main */
+main {
   width: 100%;
   height: 90%;
   display: flex;
@@ -31,7 +35,8 @@ main{
   align-items: center;
   background-color: whitesmoke;
 }
-main div{
+
+main .content{
   width: 80%;
   height: 16vh;
   border-radius: 20px;
