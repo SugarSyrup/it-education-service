@@ -1,0 +1,64 @@
+.question-box{
+  width: 100%;
+  /* height: 10%; */
+  font-size: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 13%;
+  background-color: yellow;
+  z-index: 2;
+}
+.close{
+  height: 6%;
+  overflow: hidden;
+}
+.fa-chevron-down{
+  position: relative;
+  left: 38vw;
+}
+.practice-section{
+  width: 100%;
+  height: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: yellowgreen; */
+}
+.category{
+  width: 15%;
+  height: 100%;
+}
+.category ul{
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  /* background-color: rgba(255, 0, 0, 0.223); */
+}
+.menu{
+  width: 87%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  /* background-color: teal; */
+}
+.menu-top, .menu-mid, .menu-btm{
+  width: 100%;
+  height: 30%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: blue;
+}
+.remove{
+  display: none;
+}
