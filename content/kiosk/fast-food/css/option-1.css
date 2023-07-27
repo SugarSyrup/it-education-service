@@ -46,8 +46,9 @@ main{
 .set, .single{
   width: 47%;
   height: 100%;
-  border: 1px solid rgba(207, 207, 207, 0.329);
+  border: 1px solid rgb(61, 61, 61);
   box-shadow: 0px 5px 5px rgba(52, 52, 52, 0.311);
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -57,7 +58,7 @@ main{
   width: 90%;
   height: 8%;
   font-size: 15px;
-  border: 1px solid rgb(207, 207, 207);
+  border: 1px solid rgb(61, 61, 61);
   box-shadow: 0px 5px 5px rgba(52, 52, 52, 0.441);
   background-color: rgb(255, 255, 255);
 }
