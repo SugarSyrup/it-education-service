@@ -1,0 +1,53 @@
+.practice-section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.product{
+  width: 100%;
+  height: 85%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: aqua;
+}
+.product img{
+  margin-top: 2vh;
+}
+.name{
+  margin-top: 1vh;
+}
+.amount{
+  width: 100%;
+  height: 13%;
+  display: flex;
+  background-color: rgba(153, 205, 50, 0.4);
+}
+.minus, .plus{
+  width: 25%;
+  height: 100%;
+  font-size: 15px;
+  background-color: crimson;
+}
+.amount-num{
+  width: 50%;
+  height: 100%;
+}
+.amount div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.add-cart{
+  width: 100%;
+  height: 15%;
+  border: 1px solid rgb(100, 100, 100);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  font-size: 15px;
+  background-color: whitesmoke;
+}
