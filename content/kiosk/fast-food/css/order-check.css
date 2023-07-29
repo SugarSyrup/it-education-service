@@ -1,0 +1,112 @@
+.practice-section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.selected-menu{
+  width: 100%;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  position: relative;
+}
+.select-text{
+  font-size: 25px;
+  font-weight: 900;
+  position: absolute;
+  top: 5vh;
+  left: 5vw;
+  z-index: 2;
+}
+.selected-menu img{
+  /* width: 85%;
+  height: 90%; */
+  position: relative;
+  top: 2.5vh;
+}
+.order-list{
+  width: 100%;
+  height: 40%;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: yellow;
+  overflow-y: auto;
+}
+.menu{
+  margin: 1vh 2vw 1vh 2.5vw;
+  width: 45%;
+  height: 80%;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: aqua;
+}
+.menu div{
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.menu button{
+  width: 90%;
+  height: 15%;
+  font-size: 12px;
+  border: 1px solid rgb(100, 100, 100);
+  background-color: white;
+}
+.amount{
+  width: 100%;
+  height: 8%;
+  display: flex;
+  align-items: center;
+  background-color: whitesmoke;
+}
+.minus, .plus{
+  width: 15%;
+  height: 100%;
+  border: 1px solid rgb(100, 100, 100);
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: aqua; */
+}
+.amount-num{
+  width: 70%;
+  height: 100%;
+  border-bottom: 1px solid rgb(100, 100, 100);
+  border-top: 1px solid rgb(100, 100, 100);
+  font-size: 15px;  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn-box{
+  width: 100%;
+  height: 10%;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  position: relative;
+  top: 1.4vh;
+  background-color: rgba(245, 245, 220, 0.147);
+}
+.cancel{
+  width: 35%;
+  height: 100%;
+  border: none;
+  border: 1px solid rgb(100, 100, 100);
+  border-bottom-left-radius: 20px;
+  background-color: rgb(121, 23, 121);
+}
+.add-cart{
+  width: 65%;
+  height: 100%;
+  border: 1px solid rgb(100, 100, 100);
+  border-left: none;
+  border-bottom-right-radius: 20px;
+  background-color: rgba(0, 255, 255, 0.781);
+}
