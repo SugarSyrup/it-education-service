@@ -1,0 +1,83 @@
+.practice-section{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.text-box{
+  width: 90%;
+  height: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: yellowgreen;
+}
+strong{
+  color: red;
+}
+.select-section{
+  width: 95%;
+  height: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: aqua;
+}
+.whole-num-txt{
+  margin-top: 2.3vh;
+  font-size: 20px;
+}
+.whole-number{
+  font-size: 30px;
+  font-weight: 900;
+}
+.select-number{
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  background-color: yellow;
+}
+.basics, .teenager, .disabled, .old-man{
+  width: 100%;
+  height: 25%;
+  border-bottom: 1px solid rgb(100, 100, 100);
+  display: flex;
+  background-color: violet;
+}
+.select-number p{
+  width: 25%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.num{
+  width: 75%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  background-color: white;
+}
+.num button{
+  width: 15%;
+  height: 50%;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: rgba(139, 69, 19, 0);
+}
+.num button:hover{
+  border: 1px solid rgb(100, 100, 100);
+  background-color: rgb(219, 219, 219);
+}
+.complete{
+  width: 100%;
+  height: 10%;
+  border: 1px solid rgb(100, 100, 100);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  font-size: 16px;
+  background-color: white;
+}
