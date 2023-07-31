@@ -1,0 +1,28 @@
+body{
+  margin : 0;
+  width : 100%;
+  height : 100%;
+}
+
+form{
+  height : 100vh;
+  display : flex;
+  flex-direction : column;
+  align-items : center;
+  justify-content : center;
+}
+
+btn{
+  display : flex;
+  flex-direction : row;
+}
+
+.before_btn{
+  margin-right : 20px;
+}
+
+.name, .email, .date{
+  width : 200px;
+  height : 40px;
+  margin-bottom : 20px;
+} 
