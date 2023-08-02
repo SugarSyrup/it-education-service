@@ -103,7 +103,7 @@ minus.addEventListener("click", () => {
   amount.innerText = amountNum;
   localStorage.setItem(AMOUNT, amountNum);
 })
-//----------------------------------------amount
+//------------------------------------------------------------amount
 const cancel = document.querySelector(".cancel");
 const addCart = document.querySelector(".add-cart");
 
