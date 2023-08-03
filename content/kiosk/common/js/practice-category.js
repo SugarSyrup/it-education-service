@@ -6,9 +6,7 @@ const menuPrice = document.querySelectorAll(".menu-price");
 
 const CATEGORYNUM = "categoryNum";
 const REMOVE = "remove";
-const OPTIONIMG = "optionImg";
-const OPTIONNAME = "optionName";
-const OPTIONPRICE = "optionPrice";
+const OPTION = "option";
 
 const cafeCategoryTitle = ["커피", "차", "음료", "디저트"];
 const coffeeHotArr = ["/content/kiosk/img/cafe/coffee/americano-hot.jpg", "/content/kiosk/img/cafe/coffee/cappuccino-hot.jpg", "/content/kiosk/img/cafe/coffee/caramel-macchiato-hot.jpg", "/content/kiosk/img/cafe/coffee/cafe-mocha-hot.jpg", "/content/kiosk/img/cafe/coffee/latte-hot.jpg", "/content/kiosk/img/cafe/coffee/vanilla-latte-hot.jpg"];
@@ -25,6 +23,7 @@ const cafeDisserNametArr = ["당근 케이크", "초콜릿 케이크","녹차 �
 const cafeMenuArr = [coffeeHotArr, teaHotArr, beverageArr, cafeDissertArr];
 const cafeMenuNameArr = [coffeeNameArr, teaNameArr, beverageNameArr, cafeDisserNametArr];
 
+let cafeOption = [];
 
 
 let categoryNum = Number(localStorage.getItem(CATEGORYNUM)) - 1;
@@ -49,8 +48,11 @@ if(className == "cafe"){
       menuName[i].classList.remove(REMOVE);
     }
     imgs[i].addEventListener("click", () => {
-    localStorage.setItem(OPTIONIMG, cafeMenuArr[categoryNum][i]);
-    localStorage.setItem(OPTIONNAME, cafeMenuNameArr[categoryNum][i]);
+      cafeOption.push(cafeMenuArr[categoryNum][i]);
+      cafeOption.push(cafeMenuNameArr[categoryNum][i]);
+      // cafeOption.push()
+    localStorage.setItem(OPTION, cafeOption);
+    localStorage.setItem(OPTIONNAME, );
     location.href ="/content/kiosk/cafe/html/option.html";
     })
   }
@@ -79,6 +81,8 @@ const fastFoodPriceArr = [bugerPriceArr, snackPriceArr, drinkPriceArr, fastFoodD
 
 const fastFoodCategoryTitle = ["햄버거", "사이드", "음료", "디저트"]
 
+let fastFoodOption = [];
+
 let bugerChange = localStorage.getItem("bugerChange");
 
 if(className == "fast-food"){
@@ -94,26 +98,33 @@ if(className == "fast-food"){
     imgs[i].setAttribute("src", fastFoodMenuArr[categoryNum][i]);
     menuName[i].innerText = fastFoodNameArr[categoryNum][i];
     menuPrice[i].innerText = fastFoodPriceArr[categoryNum][i];
+    
+    
     if(fastFoodMenuArr[categoryNum][i] == undefined || fastFoodNameArr[categoryNum][i] == undefined || fastFoodNameArr[categoryNum][i] == undefined){
       imgs[i].classList.add(REMOVE);
       menuName[i].classList.add(REMOVE);
       menuPrice[i].classList.add(REMOVE);
     }
-    // else{
-    //   imgs[i].classList.remove(REMOVE)
-    //   menuName[i].classList.remove(REMOVE);
-    // }
     imgs[i].addEventListener("click", () => {
-      localStorage.setItem(OPTIONNAME, fastFoodNameArr[categoryNum][i]);
-      localStorage.setItem(OPTIONPRICE, fastFoodPriceArr[categoryNum][i]);
-      if(bugerChange){
-        localStorage.setItem(OPTIONIMG, setImgArr[i])
-        localStorage.removeItem("bugerChange");
-        location.href = "/content/kiosk/fast-food/html/order-check.html";
+      fastFoodOption.push(fastFoodMenuArr[categoryNum][i]);
+      fastFoodOption.push(fastFoodNameArr[categoryNum][i]);
+      fastFoodOption.push(fastFoodPriceArr[categoryNum][i]);
+      if(categoryNum == 0){
+        if(bugerChange){
+          fastFoodOption.shift();
+          fastFoodOption.unshift(0, setImgArr[i]);
+          localStorage.setItem(OPTION, JSON.stringify(fastFoodOption));
+          localStorage.removeItem("bugerChange");
+          location.href = "/content/kiosk/fast-food/html/order-check.html";
+        }
+        else{
+          localStorage.setItem(OPTION, JSON.stringify(fastFoodOption));
+          location.href ="/content/kiosk/fast-food/html/option-1.html";
+        }
       }
       else{
-        localStorage.setItem(OPTIONIMG, fastFoodMenuArr[categoryNum][i]);
-        location.href ="/content/kiosk/fast-food/html/option-1.html";
+        localStorage.setItem(OPTION, JSON.stringify(fastFoodOption));
+        location.href = "/content/kiosk/fast-food/html/individual-option.html";
       }
     })
   }
@@ -124,3 +135,37 @@ const backBtn = document.querySelector(".fa-left-long");
 backBtn.addEventListener("click", () => {
   location.href = "/content/kiosk/common/html/main-category.html";
 })
+
+///------------------------------------------------------------
+const wholePrice = document.querySelector(".price");
+
+const parseCart = JSON.parse(localStorage.getItem("setCart"));
+const amount = JSON.parse(localStorage.getItem("amount"));
+const singleCart = JSON.parse(localStorage.getItem("singleCart"));
+
+let price = 0;
+let individualPrice= 0;
+let setPrice = [];
+
+for(let i = 0; i < parseCart.length; i++){
+  for(let j = 0; j < parseCart[i].length; j++){
+    individualPrice = individualPrice + Number(parseCart[i][j][2].replaceAll(/원|,/g, ""));
+    if(j == 2){
+      setPrice.push(individualPrice);
+      individualPrice = 0;
+    }
+  } 
+}
+
+for(let i = 0; i < singleCart.length; i++){
+  price = price + Number(singleCart[i][2].replaceAll(/원|,/g, ""));
+}
+
+while(individualPrice < setPrice.length){
+  price = price + setPrice[individualPrice] * amount[individualPrice];
+  individualPrice++
+}
+wholePrice.innerText = "￦" + price.toLocaleString("ko-KR");
+
+
+// priceArr.innerText = 

@@ -11,47 +11,43 @@ category[categoryNum].style.width = "18.3vw";
 category[categoryNum].style.position = "relative";
 category[categoryNum].style.left = "1.05vw";
 
-for(let i = 0; i < category.length; i++){
-  category[i].addEventListener("click", () => {
-    if(i != 2){
-      localStorage.setItem(SETCATEGORYNUM, category[i].classList[0]);
-      location.href = "/content/kiosk/fast-food/html/set-option.html"
-    }
-  })
-}
+// for(let i = 0; i < category.length; i++){
+//   category[i].addEventListener("click", () => {
+//     if(i != 2){
+//       localStorage.setItem(SETCATEGORYNUM, category[i].classList[0]);
+//       location.href = "/content/kiosk/fast-food/html/set-option.html"
+//     }
+//   })
+// }
 
 //---------------------------------------------------
 const buger = document.querySelector(".selected-buger");
 const selectedBugerName = document.querySelector(".selected-menu-name");
 const selectedBugerprice = document.querySelector(".selected-menu-price");
+const OPTION = "option";
+const SNACKOPTION = "snackOption";
+const DRINKOPTION = "drinkOption";
 
 const bugerArr = ["/content/kiosk/img/fast-food/buger/1955.png", "/content/kiosk/img/fast-food/buger/bacon-tomato-buger.png", "/content/kiosk/img/fast-food/buger/big-mac.png", "/content/kiosk/img/fast-food/buger/cheese-buger.png", "/content/kiosk/img/fast-food/buger/bulgogi-buger.png", "/content/kiosk/img/fast-food/buger/crispy-buger.png", "/content/kiosk/img/fast-food/buger/quarter-pound.png", "/content/kiosk/img/fast-food/buger/shrimp-buger.png"];
 const bugerNameArr = ["1955 버거", "베이컨 버거", "빅맥", "치즈 버거", "불고기 버거", "크리스피 버거", "쿼터파운드 버거", "새우버거"];
 
-let bugerImg = localStorage.getItem("optionImg");
-let bugerName = localStorage.getItem("optionName");
-let bugerPrice = localStorage.getItem("optionPrice");
-let singleBugerImg = bugerArr[bugerNameArr.indexOf(bugerName)];
+const bugerOption = JSON.parse(localStorage.getItem(OPTION));
+const snackOption = JSON.parse(localStorage.getItem(SNACKOPTION));
+const drinkOption = JSON.parse(localStorage.getItem(DRINKOPTION));
 
-let snackImg = localStorage.getItem("snackImg");
-let snackName = localStorage.getItem("snackName");
-let snackPrice = localStorage.getItem("snackPrice");
-
-let drinkimg = localStorage.getItem("drinkImg");
-let drinkName = localStorage.getItem("drinkName");
-let drinkPrice = localStorage.getItem("drinkPrice");
+let singleBugerImg = bugerArr[bugerNameArr.indexOf(bugerOption[1])];
 
 const menuImg = document.querySelectorAll(".selected-product-img");
 const menuName = document.querySelectorAll(".name");
 const menuPrice = document.querySelectorAll(".price");
 
-let menuImgArr = [singleBugerImg, snackImg, drinkimg];
-let menuNameArr = [bugerName, snackName, drinkName];
-let menuPriceArr = [bugerPrice, snackPrice, drinkPrice];
+let menuImgArr = [singleBugerImg, snackOption[0], drinkOption[0]];
+let menuNameArr = [bugerOption[1], snackOption[1], drinkOption[1]];
+let menuPriceArr = [bugerOption[2], snackOption[2], drinkOption[2]];
 
-buger.setAttribute("src", bugerImg);
-selectedBugerName.innerText = bugerName + "세트";
-selectedBugerprice.innerText = bugerPrice;
+buger.setAttribute("src", bugerOption[0]);
+selectedBugerName.innerText = bugerOption[1] + "세트";
+selectedBugerprice.innerText = bugerOption[2];
 
 for(let i = 0; i < menuImg.length; i++){
   menuImg[i].setAttribute("src", menuImgArr[i]);
@@ -86,40 +82,76 @@ const amount = document.querySelector(".amount-num");
 
 const AMOUNT = "amount";
 
+let amountArr = [1];
+let amountNum = 1;
+
 if(!localStorage.getItem(AMOUNT)){
-  localStorage.setItem(AMOUNT, amount.innerText);
+  localStorage.setItem(AMOUNT, JSON.stringify(amountArr));
 }
-let amountNum = Number(localStorage.getItem(AMOUNT));
 
-amount.innerText = amountNum;
+let parseAmount = JSON.parse(localStorage.getItem(AMOUNT));
 
-plus.addEventListener("click", () => {
-  amountNum++;
-  amount.innerText = amountNum;
-  localStorage.setItem(AMOUNT, amountNum);
-})
-minus.addEventListener("click", () => {
-  amountNum--;
-  amount.innerText = amountNum;
-  localStorage.setItem(AMOUNT, amountNum);
-})
+
+let amountLength = parseAmount.length - 1;
+
+if(amountLength == 0){
+  plus.addEventListener("click", plusFunc);
+  minus.addEventListener("click", minusFunc);
+  
+  parseAmount.push(1);
+}
+else{
+  plus.addEventListener("click", plusFunc);
+  minus.addEventListener("click", minusFunc);
+  parseAmount.push(1);
+}
+
+function plusFunc(){
+    amountNum++;
+    amount.innerText = amountNum;
+    parseAmount[amountLength] = amountNum;
+    localStorage.setItem(AMOUNT, JSON.stringify(parseAmount));
+  }
+
+function minusFunc() {
+    amountNum--;
+    amount.innerText = amountNum;
+    parseAmount[amountLength] = amountNum;
+    localStorage.setItem(AMOUNT, JSON.stringify(parseAmount));
+  }
 //------------------------------------------------------------amount
 const cancel = document.querySelector(".cancel");
 const addCart = document.querySelector(".add-cart");
+const CART = "setCart";
+let cart = [];
+
+let optionArr = [bugerOption, snackOption, drinkOption];
+let parseCart = JSON.parse(localStorage.getItem(CART));
 
 cancel.addEventListener("click", () => {
-  localStorage.removeItem("drinkName");
-  localStorage.removeItem("drinkImg");
-  localStorage.removeItem("drinkPrice");
-  localStorage.removeItem("snackName");
-  localStorage.removeItem("snackIMG");
-  localStorage.removeItem("snackPrice");
-  localStorage.removeItem("optionName");
-  localStorage.removeItem("optionImg");
-  localStorage.removeItem("optionPrice");
+  localStorage.removeItem(DRINKOPTION);
+  localStorage.removeItem(SNACKOPTION);
+  localStorage.removeItem(OPTION);
   localStorage.removeItem("amount");
   location.href = "/content/kiosk/common/html/practice-category.html";
 })
+
+
 addCart.addEventListener("click", () => {
-  location.href = "/content/kiosk/fast-food/html/order-list.html";
+  if(parseCart){
+    parseCart.push(Array)
+    parseCart[parseCart.length-1] = optionArr;
+    localStorage.setItem(CART, JSON.stringify(parseCart));
+  }
+  else{
+    cart.push(Array);
+    cart[cart.length-1] = optionArr;
+    localStorage.setItem(CART, JSON.stringify(cart));
+  }
+  localStorage.removeItem("setOption");
+  localStorage.removeItem(OPTION);
+  localStorage.removeItem(SNACKOPTION);
+  localStorage.removeItem(DRINKOPTION);
+  localStorage.removeItem(SETCATEGORYNUM);
+  location.href = "/content/kiosk/common/html/practice-category.html";
 })

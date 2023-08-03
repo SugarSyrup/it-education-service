@@ -1,10 +1,10 @@
-// const movie = document.querySelector(".movie");
-// const cafe = document.querySelector(".cafe");
-// const fastFood= document.querySelector(".fast-food");
 const CLASSNAME = "className";
+// localStorage.removeItem(CLASSNAME);
+localStorage.clear();
+// localStorage.removeItem("categoryNum");
+// localStorage.removeItem("place");
 
 const category = document.querySelectorAll(".category");
-
 
 let checkLocal = localStorage.getItem(CLASSNAME);
 
@@ -19,12 +19,8 @@ if(!checkLocal){
       else{
           localStorage.setItem(CLASSNAME, className);
           localStorage.setItem("categoryNum", 1);
-          location.href ="/content/kiosk/common/html/practice-category.html";
+          location.href ="/content/kiosk/common/html/select-place.html";
         }
     })
     }
   }
-  else{
-  localStorage.removeItem(CLASSNAME);
-  localStorage.removeItem("categoryNum");
-}
