@@ -5,24 +5,30 @@ body{
 }
 
 form{
-  height : 100vh;
   display : flex;
+  height : 100vh;
   flex-direction : column;
   align-items : center;
-  justify-content : center;
+  justify-content : space-around;
 }
 
-btn{
-  display : flex;
-  flex-direction : row;
+.box{
+  width : 300px;
+  height : 70px;
 }
 
-.before_btn{
-  margin-right : 20px;
+.box_mini{
+  width : 100px;
+  height : 70px;
 }
 
-.name, .email, .date{
-  width : 200px;
-  height : 40px;
-  margin-bottom : 20px;
-} 
+.box_mini_{
+  width : 100px;
+  height : 70px;
+}
+
+.mini_box_wrapper {
+  display:flex;
+  align-items:center;
+  gap : 20px;
+}
