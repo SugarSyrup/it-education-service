@@ -26,7 +26,8 @@ let parseAmount = JSON.parse(localStorage.getItem(SINGLEAMOUNT));
 
 let amountLength = parseAmount.length - 1;
 parseAmount.push(1);
-// console.log(parseAmount);
+localStorage.setItem(SINGLEAMOUNT, JSON.stringify(parseAmount));
+
 if(amountLength == 0){
   plus.addEventListener("click", plusFunc);
   minus.addEventListener("click", minusFunc);
@@ -57,12 +58,12 @@ function minusFunc() {
   const SINGLECART = "singleCart";
 
   let singleCart = [];
-  
-  let parseCart = JSON.parse(localStorage.getItem(SINGLECART));
 
-  if(!parseCart){
+  if(!localStorage.getItem(SINGLECART)){
     localStorage.setItem(SINGLECART, JSON.stringify(singleCart));
   }
+
+  let parseCart = JSON.parse(localStorage.getItem(SINGLECART));
 // console.log(parseCart);
   cart.addEventListener("click", () => {
     parseCart.push(parseOption);
@@ -75,3 +76,4 @@ function minusFunc() {
     localStorage.removeItem(SINGLEAMOUNT);
     location.href = "/content/kiosk/common/practice-category.html";
   })
+  console.log(parseCart);

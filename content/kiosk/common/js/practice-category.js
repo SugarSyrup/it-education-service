@@ -142,30 +142,46 @@ const wholePrice = document.querySelector(".price");
 const parseCart = JSON.parse(localStorage.getItem("setCart"));
 const amount = JSON.parse(localStorage.getItem("amount"));
 const singleCart = JSON.parse(localStorage.getItem("singleCart"));
+const singleAmount = JSON.parse(localStorage.getItem("singleAmount"));
 
 let price = 0;
 let individualPrice= 0;
 let setPrice = [];
+let singlePrice = [];
+let counter = 0;
 
-for(let i = 0; i < parseCart.length; i++){
-  for(let j = 0; j < parseCart[i].length; j++){
-    individualPrice = individualPrice + Number(parseCart[i][j][2].replaceAll(/원|,/g, ""));
-    if(j == 2){
-      setPrice.push(individualPrice);
-      individualPrice = 0;
-    }
-  } 
+if(parseCart){
+  for(let i = 0; i < parseCart.length; i++){
+    for(let j = 0; j < parseCart[i].length; j++){
+      individualPrice = individualPrice + Number(parseCart[i][j][2].replaceAll(/원|,/g, ""));
+      if(j == 2){
+        setPrice.push(individualPrice);
+        individualPrice = 0;
+      }
+    } 
+  }
 }
 
 for(let i = 0; i < singleCart.length; i++){
-  price = price + Number(singleCart[i][2].replaceAll(/원|,/g, ""));
+  individualPrice = Number(singleAmount[i]) * Number(singleCart[i][2].replaceAll(/원|,/g, ""));
+  singlePrice.push(individualPrice);
 }
 
-while(individualPrice < setPrice.length){
-  price = price + setPrice[individualPrice] * amount[individualPrice];
-  individualPrice++
+while(counter < setPrice.length){
+  price = price + setPrice[counter] * amount[counter];
+  counter++
+}
+
+counter = 0;
+
+while(counter < singlePrice.length){
+  price = price + singlePrice[counter];
+  counter++;
 }
 wholePrice.innerText = "￦" + price.toLocaleString("ko-KR");
+//--------------------------------------------------------------
+const orderList = document.querySelector(".order-list");
 
-
-// priceArr.innerText = 
+orderList.addEventListener("click", () =>{
+  location.href = "/content/kiosk/fast-food/html/order-list.html";
+})
