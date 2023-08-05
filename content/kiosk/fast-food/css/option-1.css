@@ -15,6 +15,10 @@
   justify-content: space-between;
   align-items: center;
 }
+.choice img {
+  width: 150px;
+  height: 140px;
+}
 .set, .single{
   width: 47%;
   height: 100%;
@@ -25,6 +29,7 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  background-color: yellowgreen;
 }
 .cancel{
   width: 90%;

@@ -23,54 +23,64 @@
       </div>
     </div>
     <div class="practice-section">
-      <div class="selected-menu">
-        <div class="select-text">
-          <p class="selected-menu-name">짱 맛있는 버거</p>
-          <p class="selected-menu-price">￦550,000</p>
-        </div>
-        <img src="https://via.placeholder.com/240x170" alt="">
+      <div class="order-step">
+        <ul>
+          <li class="1">사이드</li>
+          <li class="2">음료</li>
+          <li class="3">주문 확인</li>
+        </ul>
       </div>
-      <div class="order-list">
+      <div class="check-section">
+        <div class="selected-menu">
+          <div class="select-text">
+            <p class="selected-menu-name"></p>
+            <p class="selected-menu-price"></p>
+          </div>
+          <img class="selected-buger" src="https://via.placeholder.com/240x170" alt="">
+        </div>
+        <div class="order-list">
+          <div class="menu">
+            <div>
+              <p class="name"></p>
+              <p class="price"></p>
+              <img class="selected-product-img" src="" alt="">
+            </div>
+            <button class="change-buger">변경</button>
+          </div>
+          <div class="menu">
+            <div>
+              <p class="name"></p>
+              <p class="price"></p>
+              <img class="selected-product-img" src="" alt="">
+            </div>
+            <button class="change-snack">수정</button>
+        </div>
         <div class="menu">
           <div>
-            <p class="name">짱 맛있는 버거</p>
-            <p class="price">￦233,000,000</p>
-            <img src="https://via.placeholder.com/80x90" alt="">
+            <p class="name"></p>
+            <p class="price"></p>
+            <img class="selected-product-img" src="" alt="">
           </div>
-          <button class="change-ingredient">재료 추가/변경</button>
-        </div>
-        <div class="menu">
-          <div>
-            <p class="name">짱 맛있는 감자튀김</p>
-            <p class="price">￦233,000,000</p>
-            <img src="https://via.placeholder.com/80x90" alt="">
-          </div>
-          <button class="change-menu">수정</button>
+          <button class="change-drink">수정</button>
       </div>
-      <div class="menu">
-        <div>
-          <p class="name">짱 맛있는 콜라</p>
-          <p class="price">￦233,000,000</p>
-          <img src="https://via.placeholder.com/80x90" alt="">
-        </div>
-        <button class="change-menu">수정</button>
     </div>
-  </div>
-  <div class="amount">
-    <div class="minus">
-      <i class="fa-solid fa-minus"></i>
+    <div class="amount">
+      <div class="minus">
+        <i class="fa-solid fa-minus"></i>
+      </div>
+      <div class="amount-num">1</div>
+      <div class="plus">
+        <i class="fa-solid fa-plus"></i>
+      </div>
     </div>
-    <div class="amount-num">0</div>
-    <div class="plus">
-      <i class="fa-solid fa-plus"></i>
+    <div class="btn-box">
+      <button class="cancel">취소</button>
+      <button class="add-cart">장바구니 추가</button>
     </div>
-  </div>
-  <div class="btn-box">
-    <button class="cancel">취소</button>
-    <button class="add-cart">장바구니 추가</button>
   </div>
     </div>
   </main>
+  <script src="/content/kiosk/fast-food/js/order-check.js"></script>
   <script src="https://kit.fontawesome.com/a563f706d0.js" crossorigin="anonymous"></script>
 </body>
 </html>

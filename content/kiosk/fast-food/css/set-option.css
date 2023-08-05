@@ -36,9 +36,6 @@
   justify-content: center;
   align-items: center;
 }
-.order-step li:first-child, .order-step li:nth-child(2){
-  border-bottom: 1px solid rgb(54, 54, 54);
-}
 .order-step li:first-child{
   /* width: 18.3vw; */
   border-top-left-radius: 20px;
@@ -50,7 +47,7 @@
 .order-step li:last-child{
   border-bottom-left-radius: 20px;
 }
-.choice p{
+.choice p:first-child{
   width: 100%;
   height: 10%;
   display: flex;
@@ -76,8 +73,8 @@
   align-items: center;
   background-color: aqua;
 }
-.menu-top div, .menu-mid div, .menu-btm div{
-  width: 30%;
+.menu-box{
+  width: 32%;
   height: 100%;
   border: 1px solid rgb(100, 100, 100);
   display: flex;
@@ -87,6 +84,8 @@
   background-color: rgb(179, 255, 0);
 }
 .menu img{
+  width: 78px;
+  height: 90px;
   border-radius: 5px;
 }
 .cancel{
@@ -98,4 +97,8 @@
 }
 .option{
   margin-left: 1.5vw;
+} 
+.none {
+  border: none;
+  background-color: rgba(240, 248, 255, 0);
 }
