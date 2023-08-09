@@ -6,17 +6,23 @@
   <title>page2</title>
   <link rel="stylesheet" href="/layout/styles/page2.css">
   <link rel="stylesheet" href="/content/kiosk/common/css/header.css">
-  <link rel="stylesheet" href="/content/kiosk/common/css/payment-method.css">
+  <link rel="stylesheet" href="/content/kiosk/common/css/paymentMethod.css">
 </head>
 <body>
   <div class="header">
     <i class="fa-solid fa-left-long"></i>
-    <span>3. 옵션 설정</span>
+    <span class="subject"></span>
     <i class="fa-solid fa-house"></i>
   </div>
   <main>
     <div class="question-box">
-      <p class="question remove">먹고가기<br>ajrrh <br>dhdhhhd<br>ajrrh <br>dhdhhhd<br>ajrrh <br>dhdhhhd<br>ajrrh <br>dhdhhhd</p>
+      <div>
+        <span class="question"></span>
+        <span class="question"></span>
+        <span class="question"></span>
+        <span class="question"></span>
+        <span class="questionAmount"></span>
+      </div>
       <div>
         <i class="fa-solid fa-chevron-down"></i>
         <!-- <i class="fa-solid fa-chevron-up remove"></i> -->
@@ -26,25 +32,36 @@
       <p>결제 방법을 선택해 주세요</p>
       <div class="choice">
         <div class="payment-method">
-          <img src="https://via.placeholder.com/100x100" alt="">
-          <span>카드</span>
+          <!-- <img src="https://www.visakorea.com/dam/VCOM/regional/ap/southkorea/global-elements/images/kr-visa-platinum-card-498x280.png" alt=""> -->
+          <i class="fa-regular fa-credit-card"></i>
+          <span class="method">카드</span>
         </div>
         <div class="payment-method">
-          <img src="https://via.placeholder.com/100x100" alt="">
-          <span>현금</span>
+          <!-- <img src="https://via.placeholder.com/100x100" alt=""> -->
+          <i class="fa-solid fa-money-bill-wave"></i>
+          <span class="method">현금</span>
         </div>
         <div class="payment-method">
-          <img src="https://via.placeholder.com/100x100" alt="">
-          <span>모바일 상품권</span>
+          <!-- <img src="https://via.placeholder.com/100x100" alt=""> -->
+          <i class="fa-solid fa-mobile-screen-button"></i>
+          <span class="method">모바일 상품권</span>
         </div>
         <div class="payment-method">
-          <img src="https://via.placeholder.com/100x100" alt="">
-          <span>포인트 사용</span>
+          <!-- <img src="https://via.placeholder.com/100x100" alt=""> -->
+          <div class="pointIcon">
+            <div class="icon">
+              <span class="iconText">P</span>
+            </div>
+          </div>
+          <span class="method">포인트 사용</span>
         </div>
       </div>
       <button class="back">뒤로</button>
     </div>
   </main>
-  <script src="https://kit.fontawesome.com/a563f706d0.js" crossorigin="anonymous"></script>
+  <script type="module" src="/content/kiosk/common/js/question.js"></script>
+  <script type="module" src="/content/kiosk/common/js/example/mainExample.js"></script>
+  <script type="module" src="/content/kiosk/common/js/paymentMethod.js"></script>
+  <script type="module" src="https://kit.fontawesome.com/a563f706d0.js" crossorigin="anonymous"></script>
 </body>
 </html>
