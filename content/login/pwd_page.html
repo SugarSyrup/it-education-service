@@ -3,13 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>pwd_Make</title>
+  <link rel="stylesheet" href="css/pwd_page.css">
 </head>
 <body>
   <form>
-    <input class = "pwd"  required maxlength= "15" type = "password" placeholder = "비밀번호 생성">
-    <input class = "pwd_check"  required maxlength= "15" type = "password" placeholder = "비밀번호 확인">
-    <span></span>
+    <input class = "pwd" id = pwd_Text  required maxlength= "15" type = "password" placeholder = "비밀번호 생성">
+    <input class = "pwd_check" id = "pwd_Text_Check" required maxlength= "15" type = "password" placeholder = "비밀번호 확인">
+    <span id = "pwd_Msg"></span>
+    <span id = "pwd_Msg_Check"></span>
+    <button id = "pwd_Btn">생성</button>
   </form>
+  <script src = "js/pwd_page.js"></script>
 </body>
 </html>

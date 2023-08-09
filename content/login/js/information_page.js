@@ -8,22 +8,26 @@ const submit = document.querySelector("#submit");
 const year = document.querySelector("#year");
 const month = document.querySelector('#month');
 const day = document.querySelector('#day');
+let check = 0;
 
 //이름
 function IsEmpty(input, errorLabel, errorMessage){
   if(input.value == ""){
     errorLabel.innerText =errorMessage +"입력해주세요.";
+    check = 0;
   }
   else if(input.value.includes(" ")){
     errorLabel.innerText = "공백이 포함되어 있습니다!";
     errorLabel.style.color = "red";
     input.style.border = "2px solid red";
+    check = 0;
   }
   else
   {
     errorLabel.innerText ="";
     errorLabel.style.color = "black";
     input.style.border = "1px solid #ccc";
+    check = 1;
   }
 }
 //이메일
@@ -38,15 +42,21 @@ email_list.addEventListener('change', (event) => {
   }
 })
 
-function submit_btn(){
-  localStorage.setItem('name', nameInput.value);
-  if(email_txt.disabled = false){
-  localStorage.setItem('email',emailInput.value+'@'+email_list.value)
+function submit_btn(event){
+  event.preventDefault();
+  if(check == 0){
+    alert("정보가 잘못 되었습니다. 다시 입력해주세요");
   }
   else{
-    localStorage.setItem('email',emailInput.value+'@'+email_txt.value)
-  }
+  localStorage.setItem('name', nameInput.value);
   localStorage.setItem('ymd', year.value + month.value + day.value);
+    if(email_txt.disabled = false){
+    localStorage.setItem('email',emailInput.value+'@'+email_list.value)
+    }
+    else{
+    localStorage.setItem('email',emailInput.value+'@'+email_txt.value)
+    }
+  }
 }
 
 nameInput.addEventListener('input',() => IsEmpty(nameInput, name_check, "성함"));
@@ -54,9 +64,3 @@ emailInput.addEventListener('input',() => IsEmpty(emailInput, email_check, "이�
 email_txt.addEventListener('input',() => IsEmpty(email_txt, email_check, "이메일 주소") )
 
 submit.addEventListener('click', submit_btn);
-
-/* 수정해야 할 것 
-1. 제출버튼 누를 시 새로고침 되는 것
-2. 제출버튼 누를 시 올바르게 정보를 입력했는지 검사 ? (알림창)*/
-
-
