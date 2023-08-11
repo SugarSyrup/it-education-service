@@ -1,10 +1,9 @@
-import {CATEGORYNUM, SUBJECTNUM, QUESTION, QUESTION2, QUESTION3, QUESTIONAMOUNT, REMOVE, QUESTIONOPTION, CLASSNAME} from '/content/kiosk/common/js/utils/key.js';
+import {SETOPTION, SINGLEOPTION, CATEGORYNUM, SUBJECTNUM, OPTION, QUESTION, QUESTION2, QUESTION3, QUESTIONAMOUNT, REMOVE, QUESTIONOPTION, CLASSNAME} from '/content/kiosk/common/js/utils/key.js';
 const imgs = document.querySelectorAll("img");
 const menuName = document.querySelectorAll(".menu-name");
 const category = document.querySelectorAll(".category-li");
 const menuPrice = document.querySelectorAll(".menu-price");
 const orderList = document.querySelector(".order-list");
-const backBtn = document.querySelector(".fa-left-long");
 const questionText = document.querySelectorAll(".question");
 
 const className = localStorage.getItem(CLASSNAME);
@@ -21,11 +20,12 @@ if(className == "fast-food"){
   if(localStorage.getItem(QUESTIONOPTION)){
   const questionOption = JSON.parse(localStorage.getItem(QUESTIONOPTION))[1];
   }
-// console.log(questionOption);
 }
-backBtn.addEventListener("click", () => {
-location.href = "/content/kiosk/common/html/main-category.html";
-})
+
 orderList.addEventListener("click", () =>{
   location.href = "/content/kiosk/common/html/order-list.html";
 })
+
+localStorage.removeItem(SETOPTION);
+localStorage.removeItem(SINGLEOPTION);
+localStorage.removeItem(OPTION);

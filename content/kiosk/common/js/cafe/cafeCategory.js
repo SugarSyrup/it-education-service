@@ -22,7 +22,7 @@ const beverageNameArr = ["자몽 에이드", "레몬 에이드", "복숭아 아�
 const teaNameArr = ["캐모마일", "유자차", "홍차", "레몬차", "페퍼민트", "루이보스"];
 const cafeDissertNametArr = ["당근 케이크", "초콜릿 케이크","녹차 케이크", "크로플", "마들렌"];
 
-const coffeePriceArr = ["4,000원", "5,000원", "5,0000원", "5,0000원", "5,0000원", "5,0000원"];
+const coffeePriceArr = ["4,000원", "5,000원", "5,000원", "5,000원", "5,000원", "5,000원"];
 const beveragePriceArr = ["5,000원", "5,000원", "4,000원", "5,000원", "5,000원"];
 const teaPriceArr = ["4,000원", "4,000원", "4,000원", "4,000원", "4,000원", "4,000원"];
 const dissertPriceArr = ["5,500원", "5,500원", "5,500원", "5,500원", "5,500원"]; 
@@ -34,11 +34,12 @@ const cafePriceArr = [coffeePriceArr, teaPriceArr, beveragePriceArr, dissertPric
 let cafeOption = [];
 
 if(className == "cafe"){
+
   for(let i = 0; i < category.length; i++){
     category[i].innerText = cafeCategoryTitle[i];
+    category[categoryNum].classList.add("focus");
     category[i].addEventListener("click", () => {
       localStorage.setItem(CATEGORYNUM, category[i].classList[1]);
-      category[categoryNum].classList.add("focus");
       location.reload();
     })
   }
@@ -59,12 +60,11 @@ if(className == "cafe"){
   }
   if(!localStorage.getItem(NOQUESTION)){
   if(subjectNum >= 1){
-    // console.log("q")
     for(let i = 0; i < imgs.length; i++){
       imgs[i].addEventListener("click", () => {
         if(imgs[i].parentNode.childNodes[3].innerText == questionText[0].innerText.replace(",", "")){
           if(subjectNum == 1){
-            location.href = "/content/kiosk/common/html/example/success.html";
+            alertFunc();
           }
           else if(cafeDissertNametArr.indexOf(localStorage.getItem(QUESTION)) != -1){
             cafeOption.push(cafeMenuArr[categoryNum][i]);
@@ -82,7 +82,7 @@ if(className == "cafe"){
           }
         }
         else{
-          console.log("w")
+          wrong();
         }
       })
     }
@@ -108,4 +108,34 @@ else{
       })
     }
   }
+}
+
+function alertFunc(){
+  Swal.fire({
+    title: '성공!',
+    text: "다음 문제로 넘어 갈까요?",
+    icon: 'success',
+    showCancelButton: true,
+    confirmButtonColor: 'rgb(245, 134, 31)',
+    cancelButtonColor: 'rgb(245, 134, 31)',
+    confirmButtonText: '아니요',
+    cancelButtonText: '네'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      location.href = "/content/kiosk/common/html/main-category.html";
+    }
+    else if(result.isDismissed){
+      localStorage.setItem(SUBJECTNUM, Number(localStorage.getItem(SUBJECTNUM)) + 1);
+      location.href = "/content/kiosk/common/html/example/example.html";
+    }
+})
+}
+
+function wrong(){
+  Swal.fire({
+    icon: 'error',
+    title: '틀린 답입니다',
+    text: '제시문을 다시 확인해 보세요',
+    confirmButtonColor: 'rgb(245, 134, 31)',
+  })
 }

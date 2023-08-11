@@ -5,39 +5,41 @@
 .main{
   width: 100%;
   height: 90%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
   display: flex;
   justify-content: space-between;
+  background-color: rgb(255, 255, 255);
 }
 .left-side{
-  margin-top: 2vh;
+  margin-top: 10vh;
   width: 45%;
   height: 70%;
-  /* border-top-left-radius: 20px; */
   font-size: 18px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  background-color: yellowgreen;
 }
 .menu-img{
   width: 140px;
-  height: 180px;
+  height: 150px;
 }
 .amount{
-  width: 80%;
-  height: 8%;
+  width: 90%;
+  height: 13%;
   display: flex;
 }
 .minus, .plus{
   width: 20%;
   height: 100%;
-  background-color: royalblue;
+  border: 1px solid rgb(100, 100, 100);
 }
 .amount-num{
   width: 60%;
   height: 100%;
-  background-color: blue;
+  border-top: 1px solid rgb(100, 100, 100);
+  border-bottom: 1px solid rgb(100, 100, 100);
 }
 .minus, .plus, .amount-num{
   display: flex;
@@ -58,7 +60,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: aqua;
+  /* background-color: aqua; */
 }
 .title{
   width: 100%;
@@ -90,12 +92,31 @@
 .back, .add{
   width: 50%;
   height: 100%;
-  border: 1px solid rgb(100, 100, 100);
+  border: none;
+  font-size: 18px;
+  background-color: rgb(245, 134, 31);
+}
+.box img{
+  width: 50px;
+  height: 50px;
+}
+.hot img{
+  margin-left: 2vw;
+}
+.regular img{
+  margin-bottom: 1.5vh;
+  width: 50px;
+  height: 40px;
+  position: relative;
+  top: 1.5vh;
 }
 .back{
-  border-right: none;
   border-bottom-left-radius: 20px;
+  border-right: 2px solid rgb(203, 110, 24);
 }
 .add{
   border-bottom-right-radius: 20px;
+}
+.focus{
+  background-color: rgb(175, 175, 175);
 }

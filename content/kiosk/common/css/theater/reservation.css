@@ -1,0 +1,78 @@
+.practice-section{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.text{
+  margin-left: 4vw;
+  width: 100%;
+  height: 10%;
+  font-size: 25px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+}
+.reservationCheck{
+  width: 100%;
+  height: 70%;
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: space-between;
+  /* background-color: yellowgreen; */
+}
+.movieImg{
+  margin-top: 1.6vh;
+  width: 150px;
+  height: 220px;
+  border: none;
+}
+.inpo{
+  margin-right: 3vw;
+  width: 47%;
+  height: 70%;
+  font-size: 17px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.title, .numOfTicket{
+  /* margin: 1vh 0 1vh 0; */
+  font-size: 17px;
+  font-weight: 900;
+  word-spacing: -3px;
+}
+.dateBox{
+  margin: 0.5vh 0 0.5vh 0;
+}
+.btn-box{
+  width: 100%;
+  height: 13%;
+  /* display: flex; */
+}
+/* .seats{
+  margin-top: 1vh;
+} */
+.complete{
+  width: 50%;
+  height: 100%;
+  border: none;
+  border-bottom-right-radius: 20px;
+  font-size: 17px;
+  background-color: rgb(245, 134, 31);
+}
+.cancel{
+  width: 50%;
+  height: 100%;
+  border: none;
+  border-right: 2px solid rgb(203, 110, 24);
+  border-bottom-left-radius: 20px;
+  font-size: 17px;
+  background-color: rgb(245, 134, 31);
+}
+.next{
+  width: 90%;
+  height: 7vh;
+  border: 1px solid rgb(100, 100, 100);
+  border-radius: 20px;
+  font-size: 20px;
+}

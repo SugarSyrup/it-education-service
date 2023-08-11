@@ -1,10 +1,11 @@
-import {SETCATEGORYNUM, SNACKCHANGE, DRINKCHANGE ,SNACKOPTION, DRINKOPTION, REMOVE, SUBJECTNUM, QUESTION, QUESTION2, QUESTION3, QUESTIONAMOUNT, NOQUESTION} from '/content/kiosk/common/js/utils/key.js';
+import {SETCATEGORYNUM, SNACKCHANGE, DRINKCHANGE ,SETOPTION, SNACKOPTION, DRINKOPTION, REMOVE, SUBJECTNUM, QUESTION, QUESTION2, QUESTION3, QUESTIONAMOUNT, NOQUESTION} from '/content/kiosk/common/js/utils/key.js';
 const imgs = document.querySelectorAll("img");
 const menuName = document.querySelectorAll(".menu-name");
 const menuPrice = document.querySelectorAll(".menu-price");
 const category = document.querySelectorAll("li");
 const questionText = document.querySelectorAll(".question");
 const questionAmount = document.querySelector(".questionAmount");
+const cancel = document.querySelector(".cancel");
 // let option = JSON.parse(localStorage.getItem("option"));
 
 const snackArr = ["/content/kiosk/img/fast-food/snack/cheese-stick.png", "/content/kiosk/img/fast-food/snack/chicken-nugget.png", "/content/kiosk/img/fast-food/snack/chicken-wing.png", "/content/kiosk/img/fast-food/snack/french-fries.png", "/content/kiosk/img/fast-food/snack/kohlslow.png"];
@@ -22,10 +23,11 @@ const priceArr = [snackPriceArr, drinkPriceArr];
 let categoryNum = Number(localStorage.getItem(SETCATEGORYNUM)) -1;
 const subjectNum = localStorage.getItem(SUBJECTNUM);
 
-category[categoryNum].style.backgroundColor = "rgb(109, 255, 98)";
+category[categoryNum].style.backgroundColor = "rgb(245, 134, 31)";
 category[categoryNum].style.width = "18.3vw";
 category[categoryNum].style.position = "relative";
 category[categoryNum].style.left = "1.05vw";
+category[categoryNum].style.fontSize = "15px";
 
 for(let i = 0; i < imgs.length; i++){
   if(categoryNum != 2){
@@ -64,7 +66,7 @@ if(!localStorage.getItem(NOQUESTION)){
           addOption(i);
         }
         else{
-          console.log("w");
+          wrong();
         }
       }
       else if(subjectNum == 3){
@@ -72,7 +74,7 @@ if(!localStorage.getItem(NOQUESTION)){
           addOption(i);
         }
         else{
-          console.log("w");
+          wrong();
         }
         addOption(i);
       }
@@ -124,3 +126,19 @@ let parseDrinkOption = JSON.parse(localStorage.getItem(DRINKOPTION));
       localStorage.setItem(SETCATEGORYNUM, categoryNum + 2);
       location.reload();
   }
+
+  cancel.addEventListener("click", () => {
+    localStorage.removeItem(SETOPTION);
+    localStorage.removeItem(SNACKOPTION);
+    localStorage.removeItem(DRINKOPTION);
+    location.href = "javascript:history.back()";
+  })
+  
+function wrong(){
+  Swal.fire({
+    icon: 'error',
+    title: '틀린 답입니다',
+    text: '제시문을 다시 확인해 보세요',
+    confirmButtonColor: 'rgb(245, 134, 31)',
+  })
+}

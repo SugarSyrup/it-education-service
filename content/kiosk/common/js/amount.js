@@ -1,4 +1,4 @@
-import {SETCART, SINGLECART, SETAMOUNT, SINGLEAMOUNT, SETOPTIN, SINGLEOPTION } from '/content/kiosk/common/js/utils/key.js';
+import {SETCART, SINGLECART, SETAMOUNT, SINGLEAMOUNT, SETOPTION, SINGLEOPTION } from '/content/kiosk/common/js/utils/key.js';
 
 
 const plus = document.querySelectorAll(".plus");
@@ -22,7 +22,7 @@ let individualPrice= 0;
 
 const parseSet = JSON.parse(localStorage.getItem(SETCART));
 const parseSingle = JSON.parse(localStorage.getItem(SINGLECART));
-const setOption = localStorage.getItem(SETOPTIN);
+const setOption = localStorage.getItem(SETOPTION);
 const singleOption = localStorage.getItem(SINGLEOPTION);
 
 if(parseSet){
@@ -50,7 +50,6 @@ for(let i = 0; i < plus.length; i++){
       plusFunc(i);
       if(i > parseSet.length - 1){
         singleAmountArr[i - parseSet.length] = amountNum;
-        // console.log(singlePrice[i-1]);
         price = Number(price) + Number(singlePrice[i - parseSet.length]);
         localStorage.setItem(SINGLEAMOUNT, JSON.stringify(singleAmountArr));
       }

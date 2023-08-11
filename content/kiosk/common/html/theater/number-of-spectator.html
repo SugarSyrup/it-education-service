@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>page2</title>
+  <link rel="stylesheet" href="/layout/styles/page2.css">
+  <link rel="stylesheet" href="/content/kiosk/common/css/header.css">
+  <link rel="stylesheet" href="/content/kiosk/common/css/theater/number-of-spectator.css">
+</head>
+<body>
+  <div class="header">
+    <i class="fa-solid fa-left-long"></i>
+    <span class="subject">1.WIFI-와이파이</span>
+    <i class="fa-solid fa-house"></i>
+  </div>
+  <main>
+    <div class="question-box">
+      <div class="questionText">
+        <span class="question"></span>
+        <span class="question"></span><br>
+        <span class="question"></span>
+        <span class="question"></span>
+        <span class="questionAmount"></span>
+      </div>
+      <div class="iconBox">
+        <i class="fa-solid fa-chevron-down"></i>
+      </div>
+    </div>
+    <div class="practice-section">
+      <div class="text-box">
+        <p>관람 인원수를 선택해주세요</ㄴ>
+        <!-- <p>인원수 선택은 <strong>최대 8매</strong>까지 가능합니다</p> -->
+      </div>
+      <div class="select-section">
+        <span class="whole-num-txt">총 <span class="whole-number">0</span>명</span>
+        <div class="select-number">
+          <div class="basics">
+            <p class="type">일반</p>
+            <div class="nums">
+              <button class="num">0</button>
+              <button class="num">1</button>
+              <button class="num">2</button>
+              <button class="num">3</button>
+              <button class="num">4</button>
+              <button class="num">5</button>
+              <button class="num">6</button>
+              <button class="num">7</button>
+              <button class="num">8</button>
+            </div>
+          </div>
+          <div class="teenager">
+            <p class="type">청소년</p>
+            <div class="nums">
+              <button class="num">0</button>
+              <button class="num">1</button>
+              <button class="num">2</button>
+              <button class="num">3</button>
+              <button class="num">4</button>
+              <button class="num">5</button>
+              <button class="num">6</button>
+              <button class="num">7</button>
+              <button class="num">8</button>
+            </div>
+          </div>
+          <div class="disabled">
+            <p class="type">장애인</p>
+            <div class="nums">
+              <button class="num">0</button>
+              <button class="num">1</button>
+              <button class="num">2</button>
+              <button class="num">3</button>
+              <button class="num">4</button>
+              <button class="num">5</button>
+              <button class="num">6</button>
+              <button class="num">7</button>
+              <button class="num">8</button>
+            </div>
+          </div>
+          <div class="oldMan">
+            <p class="type">경로우대</p>
+            <div class="nums">
+              <button class="num">0</button>
+              <button class="num">1</button>
+              <button class="num">2</button>
+              <button class="num">3</button>
+              <button class="num">4</button>
+              <button class="num">5</button>
+              <button class="num">6</button>
+              <button class="num">7</button>
+              <button class="num">8</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="complete">완료</button>
+    </div>
+  </main>
+  <script type="module" src="/content/kiosk/common/js/question.js"></script>
+  <script type="module" src="/content/kiosk/common/js/back.js"></script>
+  <script type="module" src="/content/kiosk/common/js/header.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+  <script type="module" src="/content/kiosk/common/js/example/mainExample.js"></script>
+  <script type="module" src="/content/kiosk/common/js/theater/numberOfSpectator.js"></script>
+  <script src="https://kit.fontawesome.com/a563f706d0.js" crossorigin="anonymous"></script>
+</body>
+</html>

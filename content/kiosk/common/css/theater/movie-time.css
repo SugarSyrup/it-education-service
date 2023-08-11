@@ -11,25 +11,25 @@
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
-  background-color: yellowgreen;
+  /* background-color: yellowgreen; */
 }
 .movie span{
   width: 100%;
   height: 25%;
   font-size: 20px;
-  background-color: yellow;
+  /* background-color: yellow; */
 }
 .time-box{
   width: 100%;
-  height: 72%;
+  height: 85%;
   display: flex;
   flex-wrap: wrap;
-  /* background-color: aqua; */
+  background-color: whitesmoke;
 }
-.timetable{
+.timeTable{
   margin: 0 0.5vw 0.5vh 0;
   width: 32%;
-  height: 49%;
+  height: 45%;
   border: 1px solid rgb(100, 100, 100);
   font-size: 15px;
   display: flex;
@@ -43,25 +43,25 @@
   border-bottom: 1px solid rgb(100, 100, 100);
   display: flex;
   align-items: center;
-  background-color: violet;
+  background-color: rgb(255, 255, 255);
 }
-.timetable div{
+.timeTable div{
   width: 100%;
   height: 40%;
   display: flex;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
 }
-.timetable p{
+.timeTable p{
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.timetable div p:first-child{
+.timeTable div p:first-child{
   width: 55%;
   height: 100%;
   border-right: 1px solid rgb(100, 100, 100);
 }
-.timetable p:last-child{
+.timeTable p:last-child{
   width: 45%;
   height: 100%;
 }

@@ -10,7 +10,7 @@ export const SINGLEAMOUNT = "singleAmount";
 export const SETAMOUNT = "amount";
 
 export const SINGLEOPTION = "singleOption";
-export const SETOPTIN = "setOption";
+export const SETOPTION = "setOption";
 
 export const SINGLECART = "singleCart";
 export const SETCART = "setCart";
@@ -35,3 +35,10 @@ export const PAY = "pay";
 export const CAFEOPTION = "cafeOtion";
 
 export const NOQUESTION = "noQuestion";
+
+export const BASIC = "basic";
+export const TEENAGER = "teenager";
+export const DISABLED = "disabled";
+export const OLDMAN = "oldMan";
+export const AMOUNT = "amount";
+export const SEAT = "seat";

@@ -1,0 +1,8 @@
+.practice-section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+h1{
+  margin: 10vh 0 5vh 0;
+}

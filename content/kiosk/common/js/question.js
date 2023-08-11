@@ -1,6 +1,7 @@
 import {QUESTION, QUESTION2, QUESTION3, QUESTIONAMOUNT, QUESTIONOPTION, SUBJECTNUM, REMOVE, PLACE, PAY, CLASSNAME, NOQUESTION} from '/content/kiosk/common/js/utils/key.js';
 const questionText = document.querySelectorAll(".question");
 const questionAmount = document.querySelector(".questionAmount");
+const questionTextBox = document.querySelector(".questionText");
 
 const bugerNameArr = ["1955 버거", "베이컨 버거", "빅맥", "치즈 버거", "불고기 버거", "크리스피 버거", "쿼터파운드 버거", "새우버거"];
 const snackNameArr = ["치즈스틱", "치킨 너겟", "치킨 윙", "감자튀김", "코울슬로"];
@@ -11,6 +12,13 @@ const coffeeNameArr = ["아메리카노", "카푸치노", "캬라멜 마키아�
 const beverageNameArr = ["자몽 에이드", "레몬 에이드", "복숭아 아이스티", "딸기 주스", "딸기 스무디"];
 const teaNameArr = ["캐모마일", "유자차", "홍차", "레몬차", "페퍼민트", "루이보스"];
 const cafeDisserNametArr = ["당근 케이크", "초콜릿 케이크","녹차 케이크", "크로플", "마들렌"];
+
+const movieNameArr = ["미션 임파서블", "밀수", "엘리멘탈", "바비", "더 문", "코난"];
+const movieTimeArr = ["15:25 ~ 17:44", "16:50 ~ 19:05", "17:20 ~ 19:39", "18:00 ~ 20:19", "19:25 ~ 21:44"];
+const customerFeatures = ["일반", "청소년", "장애인", "경로우대"];
+const numberOfTicket = ["1매", "2매", "3매", "4매", "5매", "6매", "7매", "8매"];
+const numArr = ["01", "02", "03", "04", "05", "06", "07"];
+const seatArr = ["A", "B", "C", "D", "E", "F", "H", "I", "J", "K"];
 
 const placeArr = [["매장에서 먹기", "매장"], ["포장 하기", "포장"]];
 const setOption = [["세트", "set"], ["단품", "single"]];
@@ -35,6 +43,12 @@ const randomNum8 = Math.round((Math.random() * (cafeChoiceArr[randomNum7].length
 const randomNum9 = Math.round((Math.random() * (cafeOptionArr.length - 1) - 0) + 0);
 const randomNum10 = Math.round((Math.random() * (cafeOptionArr[randomNum9].length - 1) - 0) + 0);
 
+const randomNum11 = Math.round((Math.random() * (movieNameArr.length -1)-0)+0);
+const randomNum12 = Math.round((Math.random() * (movieTimeArr.length -1)-0)+0);
+const randomNum13 = Math.round((Math.random() * (customerFeatures.length -1)-0)+0);
+const randomNum14 = Math.round((Math.random() * (numArr.length -1)-0)+0);
+const randomNum15 = Math.round((Math.random() * (seatArr.length -1)-0)+0);
+
 let randomSnack = snackNameArr[Math.round((Math.random() * (snackNameArr.length - 1)) + 0)];
 let randomBuger = bugerNameArr[Math.round((Math.random() * (snackNameArr.length - 1)) + 0)];
 let randomDrink = drinkNameArr[Math.round((Math.random() * (snackNameArr.length - 1)) + 0)];
@@ -43,15 +57,24 @@ const subjectNum = localStorage.getItem(SUBJECTNUM);
 const className = localStorage.getItem(CLASSNAME);
 
 if(!localStorage.getItem(NOQUESTION)){ 
-if(subjectNum == 9 && !localStorage.getItem(PLACE) || subjectNum == 0){
-  // console.log("a");
-  localStorage.setItem(QUESTION, JSON.stringify(placeArr[randomNum6]));
-  questionText[0].innerText = JSON.parse(localStorage.getItem(QUESTION))[0];
-}
+  if(className == "fast-food" || className == "cafe"){
+    if(className == "fast-food"){
+      if(subjectNum == 9 && !localStorage.getItem(PLACE) || subjectNum == 0 ){
+        localStorage.setItem(QUESTION, JSON.stringify(placeArr[randomNum6]));
+        questionText[0].innerText = JSON.parse(localStorage.getItem(QUESTION))[0];
+      }
+    }
+    else{
+      if(subjectNum == 8 && !localStorage.getItem(PLACE) || subjectNum == 0){
+        localStorage.setItem(QUESTION, JSON.stringify(placeArr[randomNum6]));
+        questionText[0].innerText = JSON.parse(localStorage.getItem(QUESTION))[0];
+      }
+    }
+  }
+
 //----------------------------------------------------포장 매장
 if(className == "fast-food"){
-  if(subjectNum != 5 && subjectNum < 7 && subjectNum != 0 || subjectNum == 9 && !localStorage.getItem(PAY) && subjectNum != 0){
-    // console.log("A");
+  if(subjectNum != 5 && subjectNum < 8 && subjectNum != 0 || subjectNum == 9 && !localStorage.getItem(PAY)){
     if(!localStorage.getItem(QUESTION)){
       localStorage.setItem(QUESTION, choiceArr[randomNum][randomNum2]);
       localStorage.setItem(QUESTIONAMOUNT, randomNum3);
@@ -101,8 +124,7 @@ if(className == "fast-food"){
   }
 }
 else if(className == "cafe"){
-  if(subjectNum != 5 && subjectNum < 7 && subjectNum != 0 || subjectNum == 9 && !localStorage.getItem(PAY) && subjectNum != 0){
-    // console.log("a");
+  if(subjectNum != 4 && subjectNum != 6 && subjectNum < 7 && subjectNum != 0 || subjectNum == 8 && !localStorage.getItem(PAY)){
     if(!localStorage.getItem(QUESTION)){
       localStorage.setItem(QUESTION, cafeChoiceArr[randomNum7][randomNum8]);
       localStorage.setItem(QUESTIONAMOUNT, randomNum3);
@@ -115,7 +137,7 @@ else if(className == "cafe"){
         localStorage.setItem(QUESTION2, cafeOptionArr[0][1]);
         localStorage.setItem(QUESTION3, cafeOptionArr[1][1]);
         localStorage.setItem(QUESTIONOPTION, cafeOptionArr[2][randomNum10]);
-        // questionText[2].classList.add(REMOVE);
+        questionText[2].classList.add(REMOVE);
       }
       else if(randomNum7 == 3){
         questionText[2].classList.add(REMOVE);
@@ -141,27 +163,97 @@ else if(className == "cafe"){
     }
   }
 }
-
-///------------------------------------------------------- 랜덤 주문 목록
-
-
-if(subjectNum == 8 && !localStorage.getItem(QUESTION) || subjectNum == 9 && !localStorage.getItem(QUESTION)){
-  localStorage.removeItem(QUESTIONOPTION);
-  localStorage.removeItem(QUESTIONAMOUNT);
-  localStorage.setItem(QUESTION, paymentArr[randomNum5]);
-  localStorage.setItem(PAY, "pay");
-}
-
-if(subjectNum == 8 || subjectNum == 9 && localStorage.getItem(PAY)){
-  console.log("a");
-  if(!localStorage.getItem(QUESTIONOPTION)){
-      for(let i = 1; i < questionText.length; i++){
-    questionText[i].classList.add(REMOVE);
-    questionAmount.classList.add(REMOVE);
-  }
-  }
-  if(localStorage.getItem(PAY)){
+else if(className == "movie"){
+  if(subjectNum < 5 && subjectNum || subjectNum == 6 && !localStorage.getItem(PAY)){
+    if(!localStorage.getItem(QUESTION)){
+      localStorage.setItem(QUESTION, movieNameArr[randomNum11]);
+      localStorage.setItem(QUESTION2, movieTimeArr[randomNum12]);
+      localStorage.setItem(QUESTION3, customerFeatures[randomNum13]);
+      localStorage.setItem(QUESTIONOPTION, numberOfTicket[1]);
+      localStorage.setItem(QUESTIONAMOUNT, seatArr[randomNum15] + numArr[randomNum14]);
+    }
     questionText[0].innerText = localStorage.getItem(QUESTION);
+    questionText[1].innerText = localStorage.getItem(QUESTION2);
+    questionText[2].innerText = localStorage.getItem(QUESTION3);
+    questionText[3].innerText = localStorage.getItem(QUESTIONOPTION);
+    questionAmount.innerText = localStorage.getItem(QUESTIONAMOUNT);
+  
+        if(subjectNum == 6 && !localStorage.getItem(QUESTION)){
+          localStorage.removeItem(QUESTIONOPTION);
+          localStorage.removeItem(QUESTIONAMOUNT);
+          localStorage.removeItem(QUESTION2);
+          localStorage.removeItem(QUESTION3);
+          localStorage.setItem(QUESTION, paymentArr[randomNum5]);
+          localStorage.setItem(PAY, "pay");  
+        }
+        if(subjectNum == 6 || subjectNum == 7 && localStorage.getItem(PAY)){
+          if(!localStorage.getItem(QUESTIONOPTION)){
+            for(let i = 1; i < questionText.length; i++){
+              questionText[i].classList.add(REMOVE);
+              questionAmount.classList.add(REMOVE);
+              questionTextBox.style.justifyContent = "center";
+            }
+          }
+          if(localStorage.getItem(PAY)){
+            questionText[0].innerText = localStorage.getItem(QUESTION);
+          }
+        }
   }
-}}
+    }
+  }
+///------------------------------------------------------- 랜덤 주문 목록
+if(!localStorage.getItem(NOQUESTION)){
+  if(className == "fast-food"){
+    if(subjectNum >= 8 && !localStorage.getItem(QUESTION)){
+      localStorage.removeItem(QUESTIONOPTION);
+      localStorage.removeItem(QUESTIONAMOUNT);
+      localStorage.setItem(QUESTION, paymentArr[randomNum5]);
+      localStorage.setItem(PAY, "pay");
+    }
+    if(!localStorage.getItem(QUESTIONOPTION)){
+      for(let i = 1; i < questionText.length; i++){
+        questionText[i].classList.add(REMOVE);
+        questionAmount.classList.add(REMOVE);
+      }
+    }
+    if(localStorage.getItem(PAY)){
+      questionText[0].innerText = localStorage.getItem(QUESTION);
+    }
+  }
+  else if(className == "cafe"){
+    if(subjectNum >= 7 && !localStorage.getItem(QUESTION)){
+      localStorage.removeItem(QUESTIONOPTION);
+      localStorage.removeItem(QUESTIONAMOUNT);
+      localStorage.setItem(QUESTION, paymentArr[randomNum5]);
+      localStorage.setItem(PAY, "pay");
+    }
+    if(!localStorage.getItem(QUESTIONOPTION)){
+      for(let i = 1; i < questionText.length; i++){
+        questionText[i].classList.add(REMOVE);
+        questionAmount.classList.add(REMOVE);
+      }
+    }
+    if(localStorage.getItem(PAY)){
+      questionText[0].innerText = localStorage.getItem(QUESTION);
+    }
+  }
+  else{
+    if(subjectNum >= 5  && !localStorage.getItem(QUESTION)){
+      localStorage.removeItem(QUESTIONOPTION);
+      localStorage.removeItem(QUESTIONAMOUNT);
+      localStorage.setItem(QUESTION, paymentArr[randomNum5]);
+      localStorage.setItem(PAY, "pay");
+    }
+      if(!localStorage.getItem(QUESTIONOPTION)){
+        for(let i = 1; i < questionText.length; i++){
+          questionText[i].classList.add(REMOVE);
+          questionAmount.classList.add(REMOVE);
+        }
+      }
+      if(localStorage.getItem(PAY)){
+        questionText[0].innerText = localStorage.getItem(QUESTION);
+      }
+    }
+  
+}
 //////----------------------------------결제 수단
