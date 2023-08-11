@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>page2</title>
+  <link rel="stylesheet" href="/layout/styles/page2.css">
+  <link rel="stylesheet" href="/content/kiosk/common/css/header.css">
+  <link rel="stylesheet" href="/content/kiosk/common/css/fastFood/orderCheck.css">
+</head>
+<body>
+  <div class="header">
+    <i class="fa-solid fa-left-long"></i>
+    <span class="subject"></span>
+    <i class="fa-solid fa-house"></i>
+  </div>
+  <main>
+    <div class="question-box">
+      <div>
+        <span class="question"></span>
+        <span class="question"></span>
+        <span class="question"></span>
+        <span class="question"></span>
+        <span class="questionAmount"></span>
+      </div>
+      <div>
+        <i class="fa-solid fa-chevron-down"></i>
+        <!-- <i class="fa-solid fa-chevron-up remove"></i> -->
+      </div>
+    </div>
+    <div class="practice-section">
+      <div class="order-step">
+        <ul>
+          <li class="1">사이드</li>
+          <li class="2">음료</li>
+          <li class="3">주문 확인</li>
+        </ul>
+      </div>
+      <div class="check-section">
+        <div class="selected-menu">
+          <div class="select-text">
+            <p class="selected-menu-name"></p>
+            <p class="selected-menu-price"></p>
+          </div>
+          <!-- <img class="selected-buger" src="https://via.placeholder.com/240x170" alt=""> -->
+          <img class="selected-buger" alt="">
+        </div>
+        <div class="order-list">
+          <div class="menu">
+            <div>
+              <p class="name"></p>
+              <p class="price"></p>
+              <img class="selected-product-img" alt="">
+            </div>
+            <button class="change-buger">변경</button>
+          </div>
+          <div class="menu">
+            <div>
+              <p class="name"></p>
+              <p class="price"></p>
+              <img class="selected-product-img" alt="">
+            </div>
+            <button class="change-snack">수정</button>
+        </div>
+        <div class="menu">
+          <div>
+            <p class="name"></p>
+            <p class="price"></p>
+            <img class="selected-product-img" alt="">
+          </div>
+          <button class="change-drink">수정</button>
+      </div>
+    </div>
+    <div class="amount">
+      <div class="minus">
+        <i class="fa-solid fa-minus"></i>
+      </div>
+      <div class="amount-num">1</div>
+      <div class="plus">
+        <i class="fa-solid fa-plus"></i>
+      </div>
+    </div>
+    <div class="btn-box">
+      <button class="cancel">취소</button>
+      <button class="add-cart">장바구니 추가</button>
+    </div>
+  </div>
+    </div>
+  </main>
+  <script type="module" src="/content/kiosk/common/js/question.js"></script>
+  <script type="module" src="/content/kiosk/common/js/example/mainExample.js"></script>
+  <script type="module" src="/content/kiosk/common/js/individualAmount.js"></script>
+  <script type="module" src="/content/kiosk/common/js/fastfood/orderCheck.js"></script>
+  <script src="https://kit.fontawesome.com/a563f706d0.js" crossorigin="anonymous"></script>
+</body>
+</html>

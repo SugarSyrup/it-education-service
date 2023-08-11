@@ -8,25 +8,38 @@ main{
 .question-box{
   width: 100%;
   height: auto;
-  font-size: 30px;
+  font-size: 16px;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   position: absolute;
   top: 10%;
   background-color: yellow;
   z-index: 3;
 }
+.question-box div:first-child{
+  width: 80%;
+  height: 100%;
+  letter-spacing: -1px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: yellowgreen;
+}
+.question-box div:first-child p{
+  margin-right: 1vw;
+}
 .fa-chevron-down{
+  font-size: 25px;
   position: relative;
-  left: 38vw;
+  left: 0vw;
 }
 .remove{
   display: none;
 }
 .practice-section{
-  margin-top: 8vh;
+  /* margin-top: 6vh; */
   display: flex;
   flex-direction: column;
 }

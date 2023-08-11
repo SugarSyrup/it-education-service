@@ -6,17 +6,17 @@
   <title>kiosk 1-1</title>
   <link rel="stylesheet" href="/layout/styles/page2.css">
   <link rel="stylesheet" href="/content/kiosk/common/css/header.css">
-  <link rel="stylesheet" href="/content/kiosk/common/css/select-place.css">
+  <link rel="stylesheet" href="/content/kiosk/common/css/selectPlace.css">
 </head>
 <body>
   <div class="header">
     <i class="fa-solid fa-left-long"></i>
-    <span>1. 매장 / 포장</span> 
+    <span class="subject"></span> 
     <i class="fa-solid fa-house"></i>
   </div>
   <main>
     <div class="question-box">
-      <p class="question remove">먹고가기<br>ajrrh <br>dhdhhhd<br>ajrrh <br>dhdhhhd<br>ajrrh <br>dhdhhhd<br>ajrrh <br>dhdhhhd</p>
+      <p class="question"></p>
       <div>
         <i class="fa-solid fa-chevron-down"></i>
         <!-- <i class="fa-solid fa-chevron-up remove"></i> -->
@@ -24,19 +24,21 @@
     </div>
     <div class="practice-section">
       <p>식사하실 장소를 선택해주세요</p>
-      <div class="choice">
-        <div class="here">
+      <div class="choiceBox">
+        <div class="here choice">
           <img src="https://via.placeholder.com/150x200" alt="" class="here-img">
           <p>매장</p>
         </div>
-        <div class="to-go">
+        <div class="to-go choice">
           <img src="https://via.placeholder.com/150x200" alt="" class="to-go-img">
-          <p>테이크 아웃</p>
+          <p>포장</p>
         </div>
       </div>
     </div>
   </main>
-  <script src="/content/kiosk/common/js/select-place.js"></script>
-  <script src="https://kit.fontawesome.com/a563f706d0.js" crossorigin="anonymous"></script>
+  <script type="module" src="/content/kiosk/common/js/question.js"></script>
+  <script type="module" src="/content/kiosk/common/js/example/mainExample.js"></script>
+  <script type="module" src="/content/kiosk/common/js/selectPlace.js"></script>
+  <script type="module" src="https://kit.fontawesome.com/a563f706d0.js" crossorigin="anonymous"></script>
 </body>
 </html>

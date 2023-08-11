@@ -1,0 +1,30 @@
+.btn-box{
+  width: 90%;
+  height: 10%;
+  display: flex;
+  justify-content: space-between;
+  background-color: yellowgreen;
+}
+.noQuestion{
+  width: 49%;
+  height: 100%;
+  border-radius: 20px;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(202, 202, 202);
+}
+.questionBtn{
+  width: 49%;
+  height: 100%;
+  border-radius: 20px;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(202, 202, 202);
+}
+.remove{
+  display: none;
+}

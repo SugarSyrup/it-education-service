@@ -6,17 +6,23 @@
   <title>kiosk 1-2</title>
   <link rel="stylesheet" href="/layout/styles/page2.css">
   <link rel="stylesheet" href="/content/kiosk/common/css/header.css">
-  <link rel="stylesheet" href="/content/kiosk/common/css/practice-category.css">
+  <link rel="stylesheet" href="/content/kiosk/common/css/practiceCategory.css">
 </head>
 <body>
   <div class="header">
     <i class="fa-solid fa-left-long"></i>
-    <span>2. 상품 선택</span>
+    <span class="subject"></span>
     <i class="fa-solid fa-house"></i>
   </div>
   <main>
     <div class="question-box">
-      <p class="question remove">먹고가기<br>ajrrh <br>dhdhhhd<br>ajrrh <br>dhdhhhd<br>ajrrh <br>dhdhhhd<br>ajrrh <br>dhdhhhd</p>
+      <div>
+        <span class="question"></span>
+        <span class="question"></span>
+        <span class="question"></span>
+        <span class="question"></span>
+        <span class="questionAmount"></span>
+      </div>
       <div>
         <i class="fa-solid fa-chevron-down"></i>
         <!-- <i class="fa-solid fa-chevron-up remove"></i> -->
@@ -93,7 +99,13 @@
         </div>
     </div>
   </main>
-  <script src="/content/kiosk/common/js/practice-category.js"></script>
+  <script type="module" src="/content/kiosk/common/js/example/mainExample.js"></script>
+  <script type="module" src="/content/kiosk/common/js/question.js"></script>
+  <script type="module" src="/content/kiosk/common/js/example/mainExample.js"></script>
+  <script type="module" src="/content/kiosk/common/js/sumPrice.js"></script>
+  <script type="module" src="/content/kiosk/common/js/practiceCategory.js"></script>
+  <script type="module" src="/content/kiosk/common/js/cafe/cafeCategory.js"></script>
+  <script type="module" src="/content/kiosk/common/js/fastfood/fastFoodCategory.js"></script>
   <script src="https://kit.fontawesome.com/a563f706d0.js" crossorigin="anonymous"></script>
 </body>
 </html>
