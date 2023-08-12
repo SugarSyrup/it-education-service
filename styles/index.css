@@ -1,12 +1,5 @@
-*{
-  margin: 0;
-  padding: 0;
-}
-
-@font-face {
-  font-family: 'DOHYEON';
-  src: url('./BMDOHYEON_ttf.ttf') format('truetype');
-}
+@import url('./utils/default.css');
+@import url('./utils/font.css');
 
 body{
   width: 100%;
@@ -14,8 +7,6 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'DOHYEON';
-  background-color: #201C1B;
 }
 
 span {
