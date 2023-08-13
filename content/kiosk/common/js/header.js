@@ -1,11 +1,13 @@
-import {NOQUESTION, REMOVE, QUESTION} from '/content/kiosk/common/js/utils/key.js';
+import {NOQUESTION, REMOVE, QUESTION, PLACE, SUBJECTNUM} from '/content/kiosk/common/js/utils/key.js';
 const close = document.querySelector(".fa-chevron-down");
 const open = document.querySelector(".fa-chevron-up");
 const iconBox = document.querySelector(".icon");
 const question = document.querySelector(".questionText");
 const questionText = document.querySelector(".question");
-const questionBox = document.querySelector(".question-box");
+const questionBox = document.querySelector(".text-box");
 const practiceSection = document.querySelector(".practice-section");
+
+const subjectNum = localStorage.getItem(SUBJECTNUM);
 
 close.addEventListener("click", () => {
   if(localStorage.getItem(QUESTION)){
@@ -16,10 +18,14 @@ close.addEventListener("click", () => {
     if(question){
       question.classList.toggle(REMOVE);
     }
+    questionBox.classList.toggle("backgroundNone");
   }
 })
 
-if(!localStorage.getItem(QUESTION)){
+if(localStorage.getItem(QUESTION) || !localStorage.getItem(PLACE)){
+  questionBox.classList.remove(REMOVE);
+}
+else{
   questionBox.classList.add(REMOVE);
   practiceSection.style.margin = "0 0 0 0";
 }

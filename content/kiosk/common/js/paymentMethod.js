@@ -105,7 +105,12 @@ function wrong(){
 }
 
 function finish(){
-  Swal.fire('모든 단계를 끝내셨습니다').then((result) => {
+  Swal.fire({
+    title : '모든 단계를 끝내셨습니다',
+    icon : "success", 
+    confirmButtonColor : "rgb(245, 134, 31)",
+    confirmButtonText : "확인"
+  }).then((result) => {
     if(result){
     location.href = "/content/kiosk/index.html";
     }

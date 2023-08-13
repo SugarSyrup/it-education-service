@@ -24,8 +24,15 @@ const addtionalOrder = document.querySelector(".additional-order");
 const ordering = document.querySelector(".ordering");
 
 addtionalOrder.addEventListener("click", () => {
-  if(subjectNum == 5){
-    localStorage.setItem(ADDITIONALORDER, "check");
+  if(className == "cafe"){
+    if(subjectNum == 5){
+      localStorage.setItem(ADDITIONALORDER, "check");
+    }
+  }
+  else if(className == "fast-food"){
+    if(subjectNum == 6){
+      localStorage.setItem(ADDITIONALORDER, "check");
+    }
   }
   location.href = "/content/kiosk/common/html/practice-category.html";
 })
@@ -41,19 +48,21 @@ ordering.addEventListener("click", () => {
       alertFunc();
     }
   }
-  if(localStorage.getItem(NOQUESTION)){
-    localStorage.setItem(PAY, "pay");
-    if(!localStorage.getItem(NOQUESTION)){
-    localStorage.removeItem(QUESTION);
+  if(className == "fast-food" && subjectNum > 8 || className == "cafe" && subjectNum > 7 || className == "movie" && subjectNum == 6){
+    if(localStorage.getItem(NOQUESTION)){
+      localStorage.setItem(PAY, "pay");
+      if(!localStorage.getItem(NOQUESTION)){
+      localStorage.removeItem(QUESTION);
+      }
+      location.href = "/content/kiosk/common/html/payment-method.html";
     }
-    location.href = "/content/kiosk/common/html/payment-method.html";
-  }
-  else{
-    localStorage.setItem(PAY, "pay");
-    if(!localStorage.getItem(NOQUESTION)){
-    localStorage.removeItem(QUESTION);
+    else{
+      localStorage.setItem(PAY, "pay");
+      if(!localStorage.getItem(NOQUESTION)){
+      localStorage.removeItem(QUESTION);
+      }
+      location.href = "/content/kiosk/common/html/payment-method.html";
     }
-    location.href = "/content/kiosk/common/html/payment-method.html";
   }
 })
 

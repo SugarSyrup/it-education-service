@@ -23,7 +23,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(217, 217, 217);
+  /* background-color: rgb(217, 217, 217); */
 }
 .focus{
   background-color: rgb(245, 134, 31);
@@ -48,7 +48,7 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background-color: rgb(217, 217, 217);
+  /* background-color: rgb(217, 217, 217); */
 }
 .menu-mid, .menu-btm{
   margin-top: 1vh;

@@ -3,11 +3,16 @@ import {PAY, SUBJECTNUM, SINGLECART, SINGLEAMOUNT, CLASSNAME, REMOVE, NOQUESTION
 const subject = document.querySelector(".subject");
 const questionBtn = document.querySelector(".questionBtn");
 const noQuestionBtn = document.querySelector(".noQuestion");
+const gif = document.querySelector(".gif");
 
 const subjectArr = ["1. 매장 / 포장", "2. 메뉴 선택", "3. 단품 주문하기", "4. 세트 상품 주문하기", "5. 주문내역 확인", "6. 상품 취소하기", "7. 추가 주문하기", "8. 주문 하기", "9. 결제 방법 선택하기", "10. 연습하기"];
 const cafeSubjectArr = ["1. 매장 / 포장", "2. 메뉴 선택", "3. 메뉴 주문하기", "4. 주문내역 확인", "5. 상품 취소하기", "6. 추가 주문하기", "7. 주문 하기", "8. 결제 방법 선택하기", "9. 연습하기"];
 const theaterSubjectArr = ["1. 영화 선택", "2. 시간 선택", "3. 예매 매수 선택", "4. 좌석 선택","5. 예매하기", "6. 결제 수단 선택", "7. 연습하기"];
 
+const fastFoodGif = ["/content/kiosk/img/example/selectPlace.gif", "/content/kiosk/img/example/fastFood/fastFood2.gif", "/content/kiosk/img/example/fastFood/fastFood3.gif", "/content/kiosk/img/example/fastFood/fastFood4.gif", "/content/kiosk/img/example/fastFood/fastFood5.gif", "/content/kiosk/img/example/fastFood/fastFood6.gif", "/content/kiosk/img/example/fastFood/fastFood7.gif", "/content/kiosk/img/example/fastFood/fastFood8.gif", "/content/kiosk/img/example/payment.gif", "/content/kiosk/img/example/fastFood/fastFood9.gif"];
+// "/content/kiosk/img/example/selectPlace.gif"
+const cafeGif = ["/content/kiosk/img/example/selectPlace.gif", "/content/kiosk/img/example/cafe/cafe2.gif", "/content/kiosk/img/example/cafe/cafe3.gif", "/content/kiosk/img/example/cafe/cafe4.gif", "/content/kiosk/img/example/cafe/cafe5.gif", "/content/kiosk/img/example/cafe/cafe6.gif", "/content/kiosk/img/example/cafe/cafe7.gif", "/content/kiosk/img/example/payment.gif", "/content/kiosk/img/example/cafe/cafe9.gif"];
+const movieGif = ["/content/kiosk/img/example/movie/movie1.gif", "/content/kiosk/img/example/movie/movie2.gif", "/content/kiosk/img/example/movie/movie3.gif", "/content/kiosk/img/example/movie/movie4.gif", "/content/kiosk/img/example/movie/movie5.gif", "/content/kiosk/img/example/payment.gif", "/content/kiosk/img/example/movie/movie7.gif"];
 
 const subjectNum = localStorage.getItem(SUBJECTNUM);
 const className = localStorage.getItem(CLASSNAME);
@@ -41,6 +46,7 @@ if(className == "fast-food"){
   else if(questionBtn){
     questionBtn.style.width = "100%";
   }
+  gif.setAttribute("src", fastFoodGif[subjectNum]);
 }
 else if(className == "cafe"){
   if(subjectNum > 7 && noQuestionBtn != null){
@@ -53,6 +59,7 @@ else if(className == "cafe"){
   else if(questionBtn){
     questionBtn.style.width = "100%";
   }
+  gif.setAttribute("src", cafeGif[subjectNum]);
 }
 else{
   if(subjectNum  == 6){
@@ -67,6 +74,7 @@ else{
   else if(questionBtn){
     questionBtn.style.width = "100%";
   }
+  gif.setAttribute("src", movieGif[subjectNum]);
 }
 
 

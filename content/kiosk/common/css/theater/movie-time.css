@@ -11,20 +11,17 @@
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
-  /* background-color: yellowgreen; */
 }
 .movie span{
   width: 100%;
   height: 25%;
   font-size: 20px;
-  /* background-color: yellow; */
 }
 .time-box{
   width: 100%;
   height: 85%;
   display: flex;
   flex-wrap: wrap;
-  background-color: whitesmoke;
 }
 .timeTable{
   margin: 0 0.5vw 0.5vh 0;

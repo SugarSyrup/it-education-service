@@ -66,14 +66,14 @@ if(className == "fast-food"){
     const questionOption = JSON.parse(localStorage.getItem(QUESTIONOPTION))[1];
     questionBuger = localStorage.getItem(QUESTION).replace(",", "");
   
-      if(subjectNum != 0 && subjectNum !=1){
+      // if(subjectNum != 0 && subjectNum !=1){
         for(let i = 0; i < imgs.length; i++){
           imgs[i].addEventListener("click", () => {
             if(subjectNum == 3){
               if(imgs[i].parentNode.childNodes[3].innerText == questionBuger){
                 addFastFood(i);
                 localStorage.setItem(OPTION, JSON.stringify(fastFoodOption));
-                location.href ="/content/kiosk/common/html/fastFood/chooseSet.html";
+                // location.href ="/content/kiosk/common/html/fastFood/chooseSet.html";
               }
               else{
                 wrong();
@@ -91,7 +91,6 @@ if(className == "fast-food"){
                 }
                 else{
                   localStorage.setItem(OPTION, JSON.stringify(fastFoodOption));
-                  location.href ="/content/kiosk/common/html/fastFood/chooseSet.html";
                 }
               }
               else{
@@ -100,7 +99,7 @@ if(className == "fast-food"){
             }
           })
         }
-      }
+      // }
       if(subjectNum >= 1){
         for(let i = 0; i < imgs.length; i++){
           imgs[i].addEventListener("click", () => {

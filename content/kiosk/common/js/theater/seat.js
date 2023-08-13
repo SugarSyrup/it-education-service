@@ -18,10 +18,7 @@ if(!localStorage.getItem(NOQUESTION)){
     seatNum[i].addEventListener("click", () => {
       seat.push(seatNum[i].innerText);
       if(seat.length > amount){
-        alert("좌석 선택은 예매 매수를 초과할 수 없습니다")
-        setTimeout(function(){
-          location.reload();
-        }, 500);
+        seatFunc();
       }
       else{
         seatNum[i].classList.toggle("focus");
@@ -58,7 +55,7 @@ else{
     seatNum[i].addEventListener("click", () => {
       seat.push(seatNum[i].innerText);
       if(seat.length == amount){
-        alert("좌석 선택은 예매 매수를 초과할 수 없습니다");
+        seatFunc();
       }
       else{
         seatNum[i].classList.toggle("focus");
@@ -104,6 +101,18 @@ function wrong(){
     icon: 'error',
     title: '틀린 답입니다',
     text: '제시문을 다시 확인해 보세요',
+    confirmButtonColor: 'rgb(245, 134, 31)',
+  }).then((result) => {
+    if(result){
+    location.reload();
+    }
+  })
+}
+
+function seatFunc(){
+  Swal.fire({
+    icon: 'error',
+    text: '좌석 선택은 예매 매수를 초과할 수 없습니다',
     confirmButtonColor: 'rgb(245, 134, 31)',
   }).then((result) => {
     if(result){

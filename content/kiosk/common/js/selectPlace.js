@@ -8,7 +8,6 @@ const className = localStorage.getItem(CLASSNAME);
 // if(localStorage.getItem(QUESTION)){
 // }
 
-
 if(!localStorage.getItem(NOQUESTION)){
   const question = JSON.parse(localStorage.getItem(QUESTION))[1];
   if(subjectNum == 9 && className == "fast-food" || subjectNum == 8 && className == "cafe"){

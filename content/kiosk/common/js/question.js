@@ -2,6 +2,8 @@ import {QUESTION, QUESTION2, QUESTION3, QUESTIONAMOUNT, QUESTIONOPTION, SUBJECTN
 const questionText = document.querySelectorAll(".question");
 const questionAmount = document.querySelector(".questionAmount");
 const questionTextBox = document.querySelector(".questionText");
+const questionDiv = document.querySelectorAll(".div");
+
 
 const bugerNameArr = ["1955 버거", "베이컨 버거", "빅맥", "치즈 버거", "불고기 버거", "크리스피 버거", "쿼터파운드 버거", "새우버거"];
 const snackNameArr = ["치즈스틱", "치킨 너겟", "치킨 윙", "감자튀김", "코울슬로"];
@@ -61,6 +63,7 @@ if(!localStorage.getItem(NOQUESTION)){
     if(className == "fast-food"){
       if(subjectNum == 9 && !localStorage.getItem(PLACE) || subjectNum == 0 ){
         localStorage.setItem(QUESTION, JSON.stringify(placeArr[randomNum6]));
+        questionText[0].innerText = placeArr[randomNum6];
         questionText[0].innerText = JSON.parse(localStorage.getItem(QUESTION))[0];
       }
     }
@@ -74,11 +77,19 @@ if(!localStorage.getItem(NOQUESTION)){
 
 //----------------------------------------------------포장 매장
 if(className == "fast-food"){
-  if(subjectNum != 5 && subjectNum < 8 && subjectNum != 0 || subjectNum == 9 && !localStorage.getItem(PAY)){
+  if(subjectNum == 5){
+    localStorage.setItem(QUESTION, "상품을 취소해 주세요");
+    questionText[0].innerText = localStorage.getItem(QUESTION);
+    questionDiv[1].classList.add(REMOVE);
+  }
+  else if(subjectNum != 5 && subjectNum < 8 && subjectNum != 0 || subjectNum == 9 && !localStorage.getItem(PAY)){
     if(!localStorage.getItem(QUESTION)){
       localStorage.setItem(QUESTION, choiceArr[randomNum][randomNum2]);
       localStorage.setItem(QUESTIONAMOUNT, randomNum3);
       if(subjectNum == 2){
+        console.log("a");
+        questionDiv[1].insertBefore(questionText[0], questionText[2]);
+        questionDiv[0].remove();
         localStorage.setItem(QUESTIONOPTION, JSON.stringify(setOption[1]));
       }
       else if(subjectNum == 3){
@@ -94,7 +105,6 @@ if(className == "fast-food"){
         localStorage.setItem(QUESTIONOPTION, JSON.stringify(setOption[randomNum4]));
       }
     }
-  
     if(localStorage.getItem(QUESTION2)){
       questionText[1].innerText = localStorage.getItem(QUESTION2);
       questionText[2].innerText = localStorage.getItem(QUESTION3);
@@ -106,10 +116,9 @@ if(className == "fast-food"){
   
     if(localStorage.getItem(QUESTIONOPTION)){
       if(JSON.parse(localStorage.getItem(QUESTIONOPTION))[0] == "세트" && !localStorage.getItem(QUESTION)){
-        questionText[0].innerText = randomBuger + ",";
-        questionText[1].innerText = randomSnack + ",";
+        questionText[0].innerText = randomBuger;
+        questionText[1].innerText = randomSnack;
         questionText[2].innerText = randomDrink;
-  
         localStorage.setItem(QUESTION, questionText[0].innerText);
         localStorage.setItem(QUESTION2, questionText[1].innerText);
         localStorage.setItem(QUESTION3, questionText[2].innerText);
@@ -122,9 +131,20 @@ if(className == "fast-food"){
       questionAmount.classList.add(REMOVE);
     }
   }
+  if(localStorage.getItem(QUESTIONOPTION)){
+    if(localStorage.getItem(QUESTION) && JSON.parse(localStorage.getItem(QUESTIONOPTION))[1] == "single"){
+      questionDiv[1].insertBefore(questionText[0], questionText[2]);
+      questionDiv[0].remove();
+    }
+  }
 }
 else if(className == "cafe"){
-  if(subjectNum != 4 && subjectNum != 6 && subjectNum < 7 && subjectNum != 0 || subjectNum == 8 && !localStorage.getItem(PAY)){
+  if(subjectNum == 4){
+    localStorage.setItem(QUESTION, "상품을 취소해 주세요");
+    questionText[0].innerText = localStorage.getItem(QUESTION);
+    questionDiv[1].classList.add(REMOVE);
+  }
+    else if(subjectNum != 4 && subjectNum < 7 && subjectNum != 0 || subjectNum == 8 && !localStorage.getItem(PAY)){
     if(!localStorage.getItem(QUESTION)){
       localStorage.setItem(QUESTION, cafeChoiceArr[randomNum7][randomNum8]);
       localStorage.setItem(QUESTIONAMOUNT, randomNum3);
@@ -150,7 +170,7 @@ else if(className == "cafe"){
       }
     }
     if(subjectNum != 0){ 
-      if(localStorage.getItem(QUESTION2) || subjectNum == 9){
+      if(localStorage.getItem(QUESTION) && localStorage.getItem(PLACE) || subjectNum < 8 ){
         questionText[0].innerText = localStorage.getItem(QUESTION);
         questionText[1].innerText = localStorage.getItem(QUESTION2);
         questionText[2].innerText = localStorage.getItem(QUESTION3);
@@ -169,7 +189,7 @@ else if(className == "movie"){
       localStorage.setItem(QUESTION, movieNameArr[randomNum11]);
       localStorage.setItem(QUESTION2, movieTimeArr[randomNum12]);
       localStorage.setItem(QUESTION3, customerFeatures[randomNum13]);
-      localStorage.setItem(QUESTIONOPTION, numberOfTicket[1]);
+      localStorage.setItem(QUESTIONOPTION, numberOfTicket[0]);
       localStorage.setItem(QUESTIONAMOUNT, seatArr[randomNum15] + numArr[randomNum14]);
     }
     questionText[0].innerText = localStorage.getItem(QUESTION);
@@ -198,23 +218,16 @@ else if(className == "movie"){
             questionText[0].innerText = localStorage.getItem(QUESTION);
           }
         }
-  }
     }
   }
-///------------------------------------------------------- 랜덤 주문 목록
-if(!localStorage.getItem(NOQUESTION)){
+  ///------------------------------------------------------- 랜덤 주문 목록
+  // if(!localStorage.getItem(NOQUESTION)){
   if(className == "fast-food"){
     if(subjectNum >= 8 && !localStorage.getItem(QUESTION)){
       localStorage.removeItem(QUESTIONOPTION);
       localStorage.removeItem(QUESTIONAMOUNT);
       localStorage.setItem(QUESTION, paymentArr[randomNum5]);
       localStorage.setItem(PAY, "pay");
-    }
-    if(!localStorage.getItem(QUESTIONOPTION)){
-      for(let i = 1; i < questionText.length; i++){
-        questionText[i].classList.add(REMOVE);
-        questionAmount.classList.add(REMOVE);
-      }
     }
     if(localStorage.getItem(PAY)){
       questionText[0].innerText = localStorage.getItem(QUESTION);
@@ -227,12 +240,6 @@ if(!localStorage.getItem(NOQUESTION)){
       localStorage.setItem(QUESTION, paymentArr[randomNum5]);
       localStorage.setItem(PAY, "pay");
     }
-    if(!localStorage.getItem(QUESTIONOPTION)){
-      for(let i = 1; i < questionText.length; i++){
-        questionText[i].classList.add(REMOVE);
-        questionAmount.classList.add(REMOVE);
-      }
-    }
     if(localStorage.getItem(PAY)){
       questionText[0].innerText = localStorage.getItem(QUESTION);
     }
@@ -244,7 +251,7 @@ if(!localStorage.getItem(NOQUESTION)){
       localStorage.setItem(QUESTION, paymentArr[randomNum5]);
       localStorage.setItem(PAY, "pay");
     }
-      if(!localStorage.getItem(QUESTIONOPTION)){
+    if(!localStorage.getItem(QUESTIONOPTION)){
         for(let i = 1; i < questionText.length; i++){
           questionText[i].classList.add(REMOVE);
           questionAmount.classList.add(REMOVE);
@@ -254,6 +261,11 @@ if(!localStorage.getItem(NOQUESTION)){
         questionText[0].innerText = localStorage.getItem(QUESTION);
       }
     }
-  
-}
+  // }
+  for(let i = 0; i < questionText.length; i++){
+    if(questionText[i].innerText == "" && !localStorage.getItem(PAY)){
+      questionText[i].classList.add(REMOVE);
+    }
+  }
 //////----------------------------------결제 수단
+}
