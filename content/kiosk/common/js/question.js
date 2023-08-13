@@ -87,7 +87,6 @@ if(className == "fast-food"){
       localStorage.setItem(QUESTION, choiceArr[randomNum][randomNum2]);
       localStorage.setItem(QUESTIONAMOUNT, randomNum3);
       if(subjectNum == 2){
-        console.log("a");
         questionDiv[1].insertBefore(questionText[0], questionText[2]);
         questionDiv[0].remove();
         localStorage.setItem(QUESTIONOPTION, JSON.stringify(setOption[1]));
