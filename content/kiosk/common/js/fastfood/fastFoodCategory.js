@@ -24,8 +24,6 @@ const fastFoodDessertPriceArr = ["1,100원"];
 
 const setImgArr = ["/content/kiosk/img/fast-food/set/1955-set.png", "/content/kiosk/img/fast-food/set/bacon-tomato-set.png", "/content/kiosk/img/fast-food/set/bigmac-set.png", "/content/kiosk/img/fast-food/set/cheese-set.png", "/content/kiosk/img/fast-food/set/bulgogi-set.png", "/content/kiosk/img/fast-food/set/crispy-set.png", "/content/kiosk/img/fast-food/set/quaterpound-set.png", "/content/kiosk/img/fast-food/set/shrimp-set.png"];
 
-// const className = localStorage.getItem(CLASSNAME);
-
 const fastFoodMenuArr = [bugerArr, snackArr, drinkArr, fastFoodDessertArr];
 const fastFoodNameArr = [bugerNameArr, snackNameArr, drinkNameArr, fastFoodDessertNameArr];
 const fastFoodPriceArr = [bugerPriceArr, snackPriceArr, drinkPriceArr, fastFoodDessertPriceArr];
@@ -63,23 +61,22 @@ if(className == "fast-food"){
       menuPrice[i].classList.add(REMOVE);
     }
   }
-
+  
   if(!localStorage.getItem(NOQUESTION)){
-    // console.log("a");
     const questionOption = JSON.parse(localStorage.getItem(QUESTIONOPTION))[1];
     questionBuger = localStorage.getItem(QUESTION).replace(",", "");
   
-      if(subjectNum != 0 && subjectNum !=1){
+      // if(subjectNum != 0 && subjectNum !=1){
         for(let i = 0; i < imgs.length; i++){
           imgs[i].addEventListener("click", () => {
             if(subjectNum == 3){
               if(imgs[i].parentNode.childNodes[3].innerText == questionBuger){
                 addFastFood(i);
                 localStorage.setItem(OPTION, JSON.stringify(fastFoodOption));
-                location.href ="/content/kiosk/common/html/fastFood/chooseSet.html";
+                // location.href ="/content/kiosk/common/html/fastFood/chooseSet.html";
               }
               else{
-                console.log("w");
+                wrong();
               }
             }
             else{
@@ -94,7 +91,6 @@ if(className == "fast-food"){
                 }
                 else{
                   localStorage.setItem(OPTION, JSON.stringify(fastFoodOption));
-                  location.href ="/content/kiosk/common/html/fastFood/chooseSet.html";
                 }
               }
               else{
@@ -103,41 +99,41 @@ if(className == "fast-food"){
             }
           })
         }
-      }
+      // }
       if(subjectNum >= 1){
         for(let i = 0; i < imgs.length; i++){
           imgs[i].addEventListener("click", () => {
             if(imgs[i].parentNode.childNodes[3].innerText == questionText[0].innerText.replace(",", "")){
               if(subjectNum == 1){
-                location.href = "/content/kiosk/common/html/example/success.html";
+                alertFunc();
               }
               else if(questionOption == "set"){
                 location.href = "/content/kiosk/common/html/fastFood/chooseSet.html";
               }
               else if(questionOption == "single"){
-                console.log("a");
                 location.href = "/content/kiosk/common/html/fastFood/individual-option.html";
               }
             }
             else{
-              console.log("w")
+              fastFoodOption = [];
+              localStorage.setItem(OPTION, JSON.stringify(fastFoodOption))
+              wrong();
             }
         })
       }
     }
   }
   else{
-    console.log("a");
     for(let i = 0; i < imgs.length; i++){
       imgs[i].addEventListener("click", () => {
         addFastFood(i);
         if(categoryNum == 0){
           if(bugerChange){
             fastFoodOption.shift();
-            fastFoodOption.unshift(0, setImgArr[i]);
+            fastFoodOption.unshift(setImgArr[i]);
             localStorage.setItem(OPTION, JSON.stringify(fastFoodOption));
             localStorage.removeItem("bugerChange");
-            location.href = "/content/kiosk/common/html/fastFood/older-check.html";
+            location.href = "/content/kiosk/common/html/fastFood/order-check.html";
           }
           else{
             localStorage.setItem(OPTION, JSON.stringify(fastFoodOption));
@@ -158,3 +154,33 @@ if(className == "fast-food"){
       fastFoodOption.push(fastFoodNameArr[categoryNum][i]);
       fastFoodOption.push(fastFoodPriceArr[categoryNum][i]);
     }
+
+function alertFunc (){
+  Swal.fire({
+    title: '성공!',
+    text: "다음 문제로 넘어 갈까요?",
+    icon: 'success',
+    showCancelButton: true,
+    confirmButtonColor: 'rgb(245, 134, 31)',
+    cancelButtonColor: 'rgb(245, 134, 31)',
+    confirmButtonText: '아니요',
+    cancelButtonText: '네'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      location.href = "/content/kiosk/common/html/main-category.html";
+    }
+    else if(result.isDismissed){
+      localStorage.setItem(SUBJECTNUM, Number(localStorage.getItem(SUBJECTNUM)) + 1);
+      location.href = "/content/kiosk/common/html/example/example.html";
+    }
+  })
+}
+
+function wrong(){
+  Swal.fire({
+    icon: 'error',
+    title: '틀린 답입니다',
+    text: '제시문을 다시 확인해 보세요',
+    confirmButtonColor: 'rgb(245, 134, 31)',
+  })
+}

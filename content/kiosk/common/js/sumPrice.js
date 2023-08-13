@@ -45,5 +45,4 @@ let counter = 0;
     price = price + singlePrice[counter];
     counter++;
   }
-  // console.log(price);
   wholePrice.innerText = "￦" + price.toLocaleString("ko-KR");

@@ -1,18 +1,16 @@
-import {PLACE, SUBJECTNUM, QUESTION, NOQUESTION} from '/content/kiosk/common/js/utils/key.js';
+import {PLACE, SUBJECTNUM, QUESTION, NOQUESTION, CLASSNAME} from '/content/kiosk/common/js/utils/key.js';
 const here = document.querySelector(".here");
 const toGo = document.querySelector(".to-go");
-const back = document.querySelector(".fa-left-long");
 const choice = document.querySelectorAll(".choice");
 
 const subjectNum = localStorage.getItem(SUBJECTNUM);
-
-if(localStorage.getItem(QUESTION)){
-  const question = JSON.parse(localStorage.getItem(QUESTION))[1];
-}
-
+const className = localStorage.getItem(CLASSNAME);
+// if(localStorage.getItem(QUESTION)){
+// }
 
 if(!localStorage.getItem(NOQUESTION)){
-  if(subjectNum == 9){
+  const question = JSON.parse(localStorage.getItem(QUESTION))[1];
+  if(subjectNum == 9 && className == "fast-food" || subjectNum == 8 && className == "cafe"){
     here.addEventListener("click", () => {
       if(question == here.childNodes[3].innerText){
         localStorage.setItem(PLACE, "here");
@@ -20,7 +18,7 @@ if(!localStorage.getItem(NOQUESTION)){
         location.href = "/content/kiosk/common/html/practice-category.html";
       }
       else{
-        console.log("w");
+        wrong();
       }
     })
     toGo.addEventListener("click", () => {
@@ -30,21 +28,18 @@ if(!localStorage.getItem(NOQUESTION)){
         location.href = "/content/kiosk/common/html/practice-category.html";
       }
       else{
-        console.log("W");
+        wrong();
       }
-    })
-    back.addEventListener("click", () => {
-      location.href = "/content/kiosk/common/html/main-category.html";
     })
   }
   else{
     for(let i = 0; i < choice.length; i++){
       choice[i].addEventListener("click", () => {
         if(choice[i].childNodes[3].innerText == question){
-          location.href = "/content/kiosk/common/html/example/success.html";
+          alertFunc();
         }
         else{
-          alert("다시 한번 생각해 보세요");
+          wrong();
         }
       })
     }
@@ -61,7 +56,34 @@ else{
       localStorage.removeItem(QUESTION);
       location.href = "/content/kiosk/common/html/practice-category.html";
   })
-  back.addEventListener("click", () => {
-    location.href = "/content/kiosk/common/html/main-category.html";
+}
+
+function alertFunc(){
+  Swal.fire({
+    title: '성공!',
+    text: "다음 문제로 넘어 갈까요?",
+    icon: 'success',
+    showCancelButton: true,
+    confirmButtonColor: 'rgb(245, 134, 31)',
+    cancelButtonColor: 'rgb(245, 134, 31)',
+    confirmButtonText: '아니요',
+    cancelButtonText: '네'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      location.href = "/content/kiosk/common/html/main-category.html";
+    }
+    else if(result.isDismissed){
+      localStorage.setItem(SUBJECTNUM, Number(localStorage.getItem(SUBJECTNUM)) + 1);
+      location.href = "/content/kiosk/common/html/example/example.html";
+    }
+})
+}
+
+function wrong(){
+  Swal.fire({
+    icon: 'error',
+    title: '틀린 답입니다',
+    text: '제시문을 다시 확인해 보세요',
+    confirmButtonColor: 'rgb(245, 134, 31)',
   })
 }

@@ -1,4 +1,4 @@
-import {SETAMOUNT, SINGLEAMOUNT, SETOPTIN, SINGLEOPTION, SUBJECTNUM, SETCART, SINGLECART} from '/content/kiosk/common/js/utils/key.js';
+import {SETAMOUNT, SINGLEAMOUNT, SETOPTION, SINGLEOPTION, SUBJECTNUM, SETCART, SINGLECART} from '/content/kiosk/common/js/utils/key.js';
 const plus = document.querySelector(".plus");
 const minus = document.querySelector(".minus");
 const amount = document.querySelector(".amount-num");
@@ -20,7 +20,7 @@ if(!localStorage.getItem(SINGLEAMOUNT)){
 const setAmount = JSON.parse(localStorage.getItem(SETAMOUNT));
 const singleAmount = JSON.parse(localStorage.getItem(SINGLEAMOUNT));
 
-const setOption = localStorage.getItem(SETOPTIN);
+const setOption = localStorage.getItem(SETOPTION);
 const singleOption = localStorage.getItem(SINGLEOPTION);
 
 let setLength = 0;
@@ -32,8 +32,6 @@ if(localStorage.getItem(SETCART)){
 if(localStorage.getItem(SINGLECART)){
   singleLength = JSON.parse(localStorage.getItem(SINGLECART)).length;
 }
-
-console.log(singleLength);
 
 if(setOption){
   setAmount.push(1);

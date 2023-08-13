@@ -1,4 +1,4 @@
-import {SETCATEGORYNUM, SUBJECTNUM, QUESTIONAMOUNT, SETCART, OPTION, SNACKOPTION, DRINKOPTION, BUGERCHANGE, SNACKCHANGE, DRINKCHANGE, NOQUESTION} from '/content/kiosk/common/js/utils/key.js';
+import {SETCATEGORYNUM, SUBJECTNUM, QUESTIONAMOUNT, SETOPTION, SETCART, OPTION, SNACKOPTION, DRINKOPTION, BUGERCHANGE, SNACKCHANGE, DRINKCHANGE, NOQUESTION} from '/content/kiosk/common/js/utils/key.js';
 const category = document.querySelectorAll("li");
 const amount = document.querySelector(".amount-num");
 
@@ -6,7 +6,7 @@ localStorage.setItem(SETCATEGORYNUM, 3);
 
 let categoryNum = Number(localStorage.getItem(SETCATEGORYNUM)) -1;
 
-category[categoryNum].style.backgroundColor = "rgb(109, 255, 98)";
+category[categoryNum].style.backgroundColor = "rgb(245, 134, 31)";
 category[categoryNum].style.width = "18.3vw";
 category[categoryNum].style.position = "relative";
 category[categoryNum].style.left = "1.05vw";
@@ -55,13 +55,13 @@ bugerChangeBtn.addEventListener("click", () => {
 snackChangeBtn.addEventListener("click", () => {
   localStorage.setItem(SETCATEGORYNUM, 1);
   localStorage.setItem(SNACKCHANGE, "change");
-  location.href = "/content/kiosk/fast-food/html/set-option.html";
+  location.href = "/content/kiosk/common/html/fastFood/set-option.html";
 })
 
 drinkChangeBtn.addEventListener("click", () => {
   localStorage.setItem(SETCATEGORYNUM, 2);
   localStorage.setItem(DRINKCHANGE, "change");
-  location.href = "/content/kiosk/fast-food/html/set-option.html";
+  location.href = "/content/kiosk/common/html/fastFood/set-option.html";
 })
 
 ////----------------------------------------------------------
@@ -97,26 +97,24 @@ if(!localStorage.getItem(NOQUESTION)){
           localStorage.setItem(SETCART, JSON.stringify(cart));
         }
         removeItem();
-        location.href = "/content/kiosk/common/html/example/success.html";
+        alertFunc();
       }
       else{
-        console.log("w");
+        wrong();
       }
     }
     else if(subjectNum == 3){
       if(questionAmount == amount.innerText){
-        // console.log("a")
         removeItem();
-        location.href = "/content/kiosk/common/html/example/success.html";
+        alertFunc();
       }
       else{
-        console.log("w");
+        wrong();
       }
     }
   })
 }
 else{
-  console.log("a");
   addCart.addEventListener("click", () => {
     if(parseCart){
       parseCart.push(Array)
@@ -134,9 +132,39 @@ else{
 }
 
 function removeItem(){
-  localStorage.removeItem("setOption");
+  localStorage.removeItem(SETOPTION);
   localStorage.removeItem(OPTION);
   localStorage.removeItem(SNACKOPTION);
   localStorage.removeItem(DRINKOPTION);
   localStorage.removeItem(SETCATEGORYNUM);
+}
+
+function alertFunc (){
+  Swal.fire({
+    title: '성공!',
+    text: "다음 문제로 넘어 갈까요?",
+    icon: 'success',
+    showCancelButton: true,
+    confirmButtonColor: 'rgb(245, 134, 31)',
+    cancelButtonColor: 'rgb(245, 134, 31)',
+    confirmButtonText: '아니요',
+    cancelButtonText: '네'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      location.href = "/content/kiosk/common/html/main-category.html";
+    }
+    else if(result.isDismissed){
+      localStorage.setItem(SUBJECTNUM, Number(localStorage.getItem(SUBJECTNUM)) + 1);
+      location.href = "/content/kiosk/common/html/example/example.html";
+    }
+})
+}
+
+function wrong(){
+  Swal.fire({
+    icon: 'error',
+    title: '틀린 답입니다',
+    text: '제시문을 다시 확인해 보세요',
+    confirmButtonColor: 'rgb(245, 134, 31)',
+  })
 }
