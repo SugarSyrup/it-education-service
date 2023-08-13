@@ -27,3 +27,11 @@
   text-decoration: none;
   color: inherit;
 }
+
+.category-box .category {
+  justify-content: left;
+}
+
+.category-box .category a {
+  padding-left: 30px;
+}
