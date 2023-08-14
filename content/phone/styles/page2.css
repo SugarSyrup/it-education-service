@@ -9,6 +9,8 @@
 }
 
 .practice-section img {
+  position: relative;
+
   width: 90%;
   height: 90%;
 }

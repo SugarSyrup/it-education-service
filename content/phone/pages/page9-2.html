@@ -19,13 +19,26 @@
   
   <main>
     <div class="practice-section">
-      <img src="../images/test/main.jpg" alt="home" width="200" height="600">
+      <img src="../images/test/main.jpg" alt="home" width="200" height="600" usemap="#image-map">
     </div>
+
+    <map name="image-map">
+      <area shape="rect" coords="30, 400, 80, 440" alt="영역1" onclick="changeImage_1()">
+      <area shape="rect" coords="235, 30, 262, 60" alt="영역2" onclick="changeImage_2()">
+
+      <area shape="rect" coords="0, 150, 300, 180" alt="영역5" onclick="changeImage_3()">
+      <area shape="rect" coords="220, 90, 260, 120" alt="영역4" onclick="changeImage_3()">
+      <area shape="rect" coords="65, 90, 260, 120" alt="영역3" onclick="changeImage_3()">
+
+
+    </map>
+
     <div class="btn-box">
       <div class="back"><a href="/content/phone/pages/page9-1.html">설명 보기</a></div>
       <div class="hint">힌트 보기</div>
     </div>
   </main>
   <script src="https://kit.fontawesome.com/a563f706d0.js" crossorigin="anonymous"></script>
+  <script src="../9.js"></script>
 </body>
 </html>
