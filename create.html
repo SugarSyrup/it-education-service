@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HELPER | Main</title>
+    <link rel="stylesheet" href="./styles/post/create.css">
+</head>
+<body>
+    <header>
+        <span class="logo">Helper</span>
+    </header>
+    <form id="root">
+        <label for="name" class="input_label">제작자 이름</label>
+        <input type="text" id="name" name="name" placeholder="서비스 제작자의 이름을 입력하세요" />
+        <label for="email" class="input_label">이메일</label>
+        <input type="text" id="email" name="email" placeholder="서비스 심사 결과 확인용 이메일을 입력하세요" />
+        <label for="password" class="input_label">비밀번호</label>
+        <input type="password" id="password" name="password" placeholder="서비스 조회용 비밀번호를 입력하세요" />
+        <label for="title" class="input_label">서비스 제목</label>
+        <input type="text" id="title" name="title" placeholder="서비스 제목을 입력하세요" />
+        <label for="introduce" class="input_label">서비스 소개</label>
+        <input type="text" id="introduce" name="introduce" max="50" placeholder="서비스 소개를 50자 내로 작성해주세요" />
+        <label  class="input_label">이용약관 동의</label>
+        <span class="agree"></span>
+        <div class="agree_input">
+            <input type="checkbox" id="check"/>
+            <label for="check">위 약관에 동의합니다</label>
+        </div>
+    </form>
+    <script type="module" src="./js/create.js"></script>
+</body>
+</html>
