@@ -4,18 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=], initial-scale=1.0">
     <title>HELPER | Main</title>
+    <link rel="stylesheet" href="./styles/main.css">
 </head>
 <body>
     <header>
-        <span>helper</span>
-        <span>검색하기</span>
+        <span class="logo">Helper</span>
+        <a href="/search.html">
+            <span class="button">검색하기</span>
+        </a>
     </header>
     <main>
-
+        <div>
+            <span class="label">처음 들어오시면, 추천드려요!</span>
+            <div class="recommend"></div>
+        </div>
     </main>
     <footer>
-        <span>콘텐츠를 직접 제작하고 싶다면?</span>
-        <span>서비스 제작하기</span>
+        <span class="question">콘텐츠를 직접 제작하고 싶다면?</span>
+        <a href="./post.html">
+            <span class="button">서비스 제작하기</span>
+        </a>
     </footer>
+    <script type="module" src="./js/component/lecture.js"></script>
+    <script type="module" src="./js/recommend.js"></script>
 </body>
 </html>
