@@ -28,4 +28,4 @@ orderList.addEventListener("click", () =>{
 
 localStorage.removeItem(SETOPTION);
 localStorage.removeItem(SINGLEOPTION);
-localStorage.removeItem(OPTION);
+// localStorage.removeItem(OPTION);

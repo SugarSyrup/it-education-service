@@ -1,4 +1,4 @@
-import {PAY, SUBJECTNUM, SINGLECART, SINGLEAMOUNT, CLASSNAME, REMOVE, NOQUESTION, OPTION, QUESTION, QUESTION2, QUESTION3, QUESTIONAMOUNT, QUESTIONOPTION } from '/content/kiosk/common/js/utils/key.js';
+import {CATEGORYNUM, PAY, SUBJECTNUM, SINGLECART, SINGLEAMOUNT, CLASSNAME, REMOVE, NOQUESTION, OPTION, QUESTION, QUESTION2, QUESTION3, QUESTIONAMOUNT, QUESTIONOPTION } from '/content/kiosk/common/js/utils/key.js';
 
 const subject = document.querySelector(".subject");
 const questionBtn = document.querySelector(".questionBtn");
@@ -10,7 +10,6 @@ const cafeSubjectArr = ["1. 매장 / 포장", "2. 메뉴 선택", "3. 메뉴 주
 const theaterSubjectArr = ["1. 영화 선택", "2. 시간 선택", "3. 예매 매수 선택", "4. 좌석 선택","5. 예매하기", "6. 결제 수단 선택", "7. 연습하기"];
 
 const fastFoodGif = ["/content/kiosk/img/example/selectPlace.gif", "/content/kiosk/img/example/fastFood/fastFood2.gif", "/content/kiosk/img/example/fastFood/fastFood3.gif", "/content/kiosk/img/example/fastFood/fastFood4.gif", "/content/kiosk/img/example/fastFood/fastFood5.gif", "/content/kiosk/img/example/fastFood/fastFood6.gif", "/content/kiosk/img/example/fastFood/fastFood7.gif", "/content/kiosk/img/example/fastFood/fastFood8.gif", "/content/kiosk/img/example/payment.gif", "/content/kiosk/img/example/fastFood/fastFood9.gif"];
-// "/content/kiosk/img/example/selectPlace.gif"
 const cafeGif = ["/content/kiosk/img/example/selectPlace.gif", "/content/kiosk/img/example/cafe/cafe2.gif", "/content/kiosk/img/example/cafe/cafe3.gif", "/content/kiosk/img/example/cafe/cafe4.gif", "/content/kiosk/img/example/cafe/cafe5.gif", "/content/kiosk/img/example/cafe/cafe6.gif", "/content/kiosk/img/example/cafe/cafe7.gif", "/content/kiosk/img/example/payment.gif", "/content/kiosk/img/example/cafe/cafe9.gif"];
 const movieGif = ["/content/kiosk/img/example/movie/movie1.gif", "/content/kiosk/img/example/movie/movie2.gif", "/content/kiosk/img/example/movie/movie3.gif", "/content/kiosk/img/example/movie/movie4.gif", "/content/kiosk/img/example/movie/movie5.gif", "/content/kiosk/img/example/payment.gif", "/content/kiosk/img/example/movie/movie7.gif"];
 
@@ -46,7 +45,7 @@ if(className == "fast-food"){
   else if(questionBtn){
     questionBtn.style.width = "100%";
   }
-  if(!localStorage.getItem(QUESTION)){
+  if(!localStorage.getItem(QUESTION) && !localStorage.getItem(NOQUESTION)){
     gif.setAttribute("src", fastFoodGif[subjectNum]);
   }
 }
@@ -61,7 +60,7 @@ else if(className == "cafe"){
   else if(questionBtn){
     questionBtn.style.width = "100%";
   }
-  if(!localStorage.getItem(QUESTION)){
+  if(!localStorage.getItem(QUESTION) && !localStorage.getItem(NOQUESTION)){
     gif.setAttribute("src", cafeGif[subjectNum]);
   }
 }
@@ -78,7 +77,7 @@ else{
   else if(questionBtn){
     questionBtn.style.width = "100%";
   }
-  if(!localStorage.getItem(QUESTION)){
+  if(!localStorage.getItem(QUESTION) && !localStorage.getItem(NOQUESTION)){
     gif.setAttribute("src", movieGif[subjectNum]);
   }
 }

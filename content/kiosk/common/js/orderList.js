@@ -1,4 +1,4 @@
-import {SETAMOUNT, CLASSNAME, SINGLEAMOUNT, SETCART, SINGLECART, SUBJECTNUM, ADDITIONALORDER, ORDERING, QUESTION, PAY, NOQUESTION} from '/content/kiosk/common/js/utils/key.js';
+import {SETAMOUNT, CLASSNAME, SINGLEAMOUNT, SETCART, SINGLECART, SUBJECTNUM, CATEGORYNUM, ADDITIONALORDER, ORDERING, QUESTION, PAY, NOQUESTION} from '/content/kiosk/common/js/utils/key.js';
 const imgs = document.querySelectorAll("img");
 const menuName = document.querySelectorAll(".menu-name");
 const setOptionText = document.querySelectorAll(".set-option");
@@ -147,6 +147,7 @@ function alertFunc (){
     }
     else if(result.isDismissed){
       localStorage.setItem(SUBJECTNUM, Number(localStorage.getItem(SUBJECTNUM)) + 1);
+      localStorage.setItem(CATEGORYNUM, 1);
       location.href = "/content/kiosk/common/html/example/example.html";
     }
 })

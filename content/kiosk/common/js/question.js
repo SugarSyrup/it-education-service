@@ -102,6 +102,9 @@ if(className == "fast-food"){
       }
       else{
         localStorage.setItem(QUESTIONOPTION, JSON.stringify(setOption[randomNum4]));
+        if(randomNum4 == 0){
+        localStorage.removeItem(QUESTION);
+        }
       }
     }
     if(localStorage.getItem(QUESTION2)){
