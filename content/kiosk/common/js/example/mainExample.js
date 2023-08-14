@@ -46,7 +46,9 @@ if(className == "fast-food"){
   else if(questionBtn){
     questionBtn.style.width = "100%";
   }
-  gif.setAttribute("src", fastFoodGif[subjectNum]);
+  if(!localStorage.getItem(QUESTION)){
+    gif.setAttribute("src", fastFoodGif[subjectNum]);
+  }
 }
 else if(className == "cafe"){
   if(subjectNum > 7 && noQuestionBtn != null){
@@ -59,7 +61,9 @@ else if(className == "cafe"){
   else if(questionBtn){
     questionBtn.style.width = "100%";
   }
-  gif.setAttribute("src", cafeGif[subjectNum]);
+  if(!localStorage.getItem(QUESTION)){
+    gif.setAttribute("src", cafeGif[subjectNum]);
+  }
 }
 else{
   if(subjectNum  == 6){
@@ -74,7 +78,9 @@ else{
   else if(questionBtn){
     questionBtn.style.width = "100%";
   }
-  gif.setAttribute("src", movieGif[subjectNum]);
+  if(!localStorage.getItem(QUESTION)){
+    gif.setAttribute("src", movieGif[subjectNum]);
+  }
 }
 
 
