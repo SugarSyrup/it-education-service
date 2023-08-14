@@ -24,25 +24,35 @@ div#root a.logo_wrapper span.logo {
     font-style: italic;
 }
 
-div#root a.button_wrapper {
-    width:70%;
-    background-color: var(--accent);
-    padding:10px 20px;
+div#root span.text:nth-child(2) {
+    margin-top:10px;
+}
+
+div#root form {
+    width:90%;
+
     margin-top:30px;
 
     display:flex;
-    justify-content: center;
-    align-items:center;
-
-    font-size:18px;
-    color:white;
-    font-weight:200;
-
-    border-radius: 5px;
-    cursor: pointer;
+    flex-direction: column;
 }
 
-div#root span.button {
-    text-align: center;
+div#root form input {
+    margin-bottom:20px;
+    height:36px;
+    border-radius:5px;
+}
 
+span.button {
+    width:100%;
+
+    padding-top:10px;
+    padding-bottom:10px;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--accent);
+    border-radius: 4px;
 }
