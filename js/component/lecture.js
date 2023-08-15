@@ -1,6 +1,7 @@
-function Lecture(title, explain, tags, practice) {
-    const div = document.createElement('div');
+function Lecture(title, explain, tags, practice, link) {
+    const div = document.createElement('a');
     div.className = "lecture";
+    div.href = link;
     div.innerHTML = `
         <span class="title">${title}</span>
         <span class="explain">${explain}</span>

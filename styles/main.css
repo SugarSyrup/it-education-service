@@ -6,16 +6,26 @@
 main{
     width:90%;
     margin:auto;
-    margin-top:40px;
+    margin-top:20px;
     color:white;
     font-weight: 200;
 }
-
-main div.recommend {
-    margin-top:10px;
+main div.lectures_wrapper {
+    margin-top:20px;
 }
 
-main div.recommend div.lecture {
+main div.lectures_wrapper span.label{
+    margin-bottom:10px;
+}
+
+main div.lectures_wrapper div.lectures {
+    margin-top:10px;
+    display:flex;
+    flex-direction: column;
+    gap:10px;
+}
+
+main div.lectures_wrapper div.lectures a.lecture {
     display:flex;
     flex-direction: column;
     justify-content: center;
@@ -24,19 +34,21 @@ main div.recommend div.lecture {
     background-color: var(--secondary);
     padding:10px 20px;
     border-radius: 16px;
+
+    color:white;
 }
 
-main div.recommend div.lecture span.title {
+main div.lectures_wrapper div.lectures a.lecture span.title {
     font-size:28px;
     margin-bottom:10px;
 }
 
-main div.recommend div.lecture span.explain {
+main div.lectures_wrapper div.lectures a.lecture span.explain {
     font-weight:100;
     margin-bottom:20px;
 }
 
-main div.recommend div.lecture div.icons{
+main div.lectures_wrapper div.lectures a.lecture div.icons{
     display:flex;
     justify-content: space-between;
     width:100%;
