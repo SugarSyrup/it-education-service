@@ -1,4 +1,4 @@
-import {SUBJECTNUM, NOQUESTION, QUESTIONAMOUNT, OPTION } from '/content/kiosk/common/js/utils/key.js';
+import {SUBJECTNUM, CATEGORYNUM, NOQUESTION, QUESTIONAMOUNT, OPTION } from '/content/kiosk/common/js/utils/key.js';
 const seatNum = document.querySelectorAll(".seat");
 const complete = document.querySelector(".complete");
 
@@ -54,7 +54,7 @@ else{
   for(let i = 0; i < seatNum.length; i++){
     seatNum[i].addEventListener("click", () => {
       seat.push(seatNum[i].innerText);
-      if(seat.length == amount){
+      if(seat.length > amount){
         seatFunc();
       }
       else{
@@ -91,6 +91,7 @@ function alertFunc (){
     }
     else if(result.isDismissed){
       localStorage.setItem(SUBJECTNUM, Number(localStorage.getItem(SUBJECTNUM)) + 1);
+      localStorage.setItem(CATEGORYNUM, 1);
       location.href = "/content/kiosk/common/html/example/example.html";
     }
 })

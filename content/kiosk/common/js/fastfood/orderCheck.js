@@ -1,4 +1,4 @@
-import {SETCATEGORYNUM, SUBJECTNUM, QUESTIONAMOUNT, SETOPTION, SETCART, OPTION, SNACKOPTION, DRINKOPTION, BUGERCHANGE, SNACKCHANGE, DRINKCHANGE, NOQUESTION} from '/content/kiosk/common/js/utils/key.js';
+import {SETCATEGORYNUM, SUBJECTNUM, QUESTIONAMOUNT, CATEGORYNUM, SETOPTION, SETCART, OPTION, SNACKOPTION, DRINKOPTION, BUGERCHANGE, SNACKCHANGE, DRINKCHANGE, NOQUESTION} from '/content/kiosk/common/js/utils/key.js';
 const category = document.querySelectorAll("li");
 const amount = document.querySelector(".amount-num");
 
@@ -132,11 +132,11 @@ else{
 }
 
 function removeItem(){
-  localStorage.removeItem(SETOPTION);
-  localStorage.removeItem(OPTION);
-  localStorage.removeItem(SNACKOPTION);
-  localStorage.removeItem(DRINKOPTION);
-  localStorage.removeItem(SETCATEGORYNUM);
+  // localStorage.removeItem(SETOPTION);
+  // localStorage.removeItem(OPTION);
+  // localStorage.removeItem(SNACKOPTION);
+  // localStorage.removeItem(DRINKOPTION);
+  // localStorage.removeItem(SETCATEGORYNUM);
 }
 
 function alertFunc (){
@@ -155,6 +155,7 @@ function alertFunc (){
     }
     else if(result.isDismissed){
       localStorage.setItem(SUBJECTNUM, Number(localStorage.getItem(SUBJECTNUM)) + 1);
+      localStorage.setItem(CATEGORYNUM, 1);
       location.href = "/content/kiosk/common/html/example/example.html";
     }
 })

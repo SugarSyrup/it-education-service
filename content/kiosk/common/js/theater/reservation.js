@@ -1,4 +1,4 @@
-import {SUBJECTNUM, PAY, NOQUESTION, OPTION, QUESTION, QUESTION2, QUESTION3, QUESTIONAMOUNT, QUESTIONOPTION} from '/content/kiosk/common/js/utils/key.js';
+import {SUBJECTNUM, PAY, CATEGORYNUM, NOQUESTION, OPTION, QUESTION, QUESTION2, QUESTION3, QUESTIONAMOUNT, QUESTIONOPTION} from '/content/kiosk/common/js/utils/key.js';
 
 const img = document.querySelector(".movieImg");
 const title = document.querySelector(".title");
@@ -77,6 +77,7 @@ function alertFunc (){
     }
     else if(result.isDismissed){
       localStorage.setItem(SUBJECTNUM, Number(localStorage.getItem(SUBJECTNUM)) + 1);
+      localStorage.setItem(CATEGORYNUM, 1);
       location.href = "/content/kiosk/common/html/example/example.html";
     }
 })

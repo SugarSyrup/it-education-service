@@ -1,4 +1,4 @@
-import {OPTION, SINGLECART, SUBJECTNUM, QUESTION, NOQUESTION} from '/content/kiosk/common/js/utils/key.js';
+import {OPTION, SINGLECART, SUBJECTNUM, QUESTION, NOQUESTION, CATEGORYNUM} from '/content/kiosk/common/js/utils/key.js';
 const menuImg = document.querySelector(".menu-img");
 const menuName = document.querySelector(".menu-name");
 const menuPrice = document.querySelector(".menu-price");
@@ -166,6 +166,7 @@ function alertFunc (){
     }
     else if(result.isDismissed){
       localStorage.setItem(SUBJECTNUM, Number(localStorage.getItem(SUBJECTNUM)) + 1);
+      localStorage.setItem(CATEGORYNUM, 1);
       location.href = "/content/kiosk/common/html/example/example.html";
     }
 })

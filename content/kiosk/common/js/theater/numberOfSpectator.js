@@ -1,4 +1,4 @@
-import {SUBJECTNUM, NOQUESTION, QUESTION3, QUESTIONOPTION, OPTION, AMOUNT, BASIC, TEENAGER, DISABLED, OLDMAN} from '/content/kiosk/common/js/utils/key.js';
+import {SUBJECTNUM, CATEGORYNUM, NOQUESTION, QUESTION3, QUESTIONOPTION, OPTION, AMOUNT, BASIC, TEENAGER, DISABLED, OLDMAN} from '/content/kiosk/common/js/utils/key.js';
 const number = document.querySelectorAll(".num");
 const customerType = document.querySelectorAll(".type");
 const wholeNumber = document.querySelector(".whole-number");
@@ -27,10 +27,6 @@ const type = ["일반", "청소년", "장애인", "경로우대"];
 
 const subjectNum = localStorage.getItem(SUBJECTNUM);
 
-// if(!localStorage.getItem(NOQUESTION)){
-  const qiestionCustomerType = localStorage.getItem(QUESTION3);
-  const questionNumber = localStorage.getItem(QUESTIONOPTION).replace("매", "");
-// }
 
 if(!localStorage.getItem(BASIC)){
   number[0].classList.add("focus");
@@ -46,14 +42,14 @@ if(!localStorage.getItem(OLDMAN)){
 }
 
 for(let i = 0; i < number.length; i++){
-    if(i < 9 && localStorage.getItem(BASIC)){
-      if(number[i].innerText == JSON.parse(localStorage.getItem(BASIC))[0]){
-        number[i].classList.add("focus");
-          customerTypeArr[0] = "일반";
-          amount[0] = JSON.parse(localStorage.getItem(BASIC))[0];
-          localStorage.setItem(AMOUNT, JSON.stringify(amount));
-        // }
-      }
+  if(i < 9 && localStorage.getItem(BASIC)){
+    if(number[i].innerText == JSON.parse(localStorage.getItem(BASIC))[0]){
+      number[i].classList.add("focus");
+      customerTypeArr[0] = "일반";
+      amount[0] = JSON.parse(localStorage.getItem(BASIC))[0];
+      localStorage.setItem(AMOUNT, JSON.stringify(amount));
+      // }
+    }
     }
     if(i > 8 && i < 18 && localStorage.getItem(TEENAGER)){
       if(number[i].innerText == JSON.parse(localStorage.getItem(TEENAGER))[0]){
@@ -66,7 +62,7 @@ for(let i = 0; i < number.length; i++){
     if(i > 17 && i < 26 && localStorage.getItem(DISABLED)){
       if(number[i].innerText == JSON.parse(localStorage.getItem(DISABLED))[0]){
         number[i].classList.add("focus");
-          customerTypeArr[2] = "장애인";
+        customerTypeArr[2] = "장애인";
           amount[2] = JSON.parse(localStorage.getItem(DISABLED))[0];
           localStorage.setItem(AMOUNT, JSON.stringify(amount));
       }
@@ -77,10 +73,10 @@ for(let i = 0; i < number.length; i++){
           customerTypeArr[3] = "경로우대";
           amount[3] = JSON.parse(localStorage.getItem(OLDMAN))[0];
           localStorage.setItem(AMOUNT, JSON.stringify(amount));
+        }
       }
-    }
   }
-
+  
   for(let i = 0; i < number.length; i++){
   number[i].addEventListener("click", () => {
     if(i < 9 && !localStorage.getItem(BASIC)){
@@ -184,6 +180,9 @@ wholeNumber.innerText = sum;
 
 complete.addEventListener("click", () => {
   if(!localStorage.getItem(NOQUESTION)){
+    const qiestionCustomerType = localStorage.getItem(QUESTION3);
+    const questionNumber = localStorage.getItem(QUESTIONOPTION).replace("매", "");
+    
     if(amount[type.indexOf(qiestionCustomerType)] == questionNumber && wholeNumber.innerText == questionNumber){  
       amount = [];
       for(let i = 0; i < JSON.parse(localStorage.getItem(AMOUNT)).length; i++){
@@ -192,8 +191,8 @@ complete.addEventListener("click", () => {
           amount.push(JSON.parse(localStorage.getItem(AMOUNT))[i]);
         }
       }
-    if(!option[1]){
-      option.push(arr);
+      if(!option[1]){
+        option.push(arr);
       option.push(amount);
       localStorage.setItem(OPTION, JSON.stringify(option));
     }
@@ -255,6 +254,7 @@ function alertFunc (){
     }
     else if(result.isDismissed){
       localStorage.setItem(SUBJECTNUM, Number(localStorage.getItem(SUBJECTNUM)) + 1);
+      localStorage.setItem(CATEGORYNUM, 1);
       location.href = "/content/kiosk/common/html/example/example.html";
     }
 })
