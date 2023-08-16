@@ -1,0 +1,112 @@
+@import url('../utils/default.css');
+@import url('../utils/font.css');
+
+@import url('../layout/header.css');
+
+div.root {
+    width:90%;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+}
+
+div#page1 label.input_label{
+    color:white;
+    font-size:24px;
+    margin-top:20px;
+    margin-bottom:4px;
+}
+
+div#page1 input {
+    height:36px;
+    border-radius:5px;
+}
+
+div#page1 span.agree{
+    width:100%;
+    height:100px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+div#page1 div.agree_input {
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+div#page1 div.agree_input label {
+    font-size:16px;
+    color:white;
+}
+
+div#page1 span.submit,
+div#page2 span.submit {
+    width:100%;
+    background-color: var(--accent);
+    padding-top:10px;
+    padding-bottom:10px;
+    border-radius:5px;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    color:white;
+    cursor:pointer;
+}
+
+div#page2 span.submit {
+    width:90%;
+    position:absolute;
+    bottom:20px;
+}
+
+div#page2 {
+    display:none;
+}
+
+div#page2 span.label {
+    margin-top:20px;
+    margin-bottom:5px;
+    font-size:18px;
+    color:white;
+}
+
+
+div#page2 textarea {
+    width:90%;
+    height:60px;
+    margin:auto;
+
+    background-color: inherit;
+    border:2px solid white;
+    border-radius:4px;
+}
+
+
+div#page2 label.image_label {
+    width:90%;
+    height:450px;
+    margin:auto;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    color:white;
+    border:4px dashed white;
+}
+
+div#page2 label.image_label svg {
+    width:48px;
+}
+
+div#page2 label.image_label:hover {
+    color:var(--accent);
+    border:4px dashed var(--accent);
+}
+
+div#page2 input.image{ 
+    display: none;
+}

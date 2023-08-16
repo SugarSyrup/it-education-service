@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HELPER | Create</title>
+    <link rel="stylesheet" href="./styles/post/create.css">
+</head>
+<body>
+    <header>
+        <a href="/main.html">
+            <span class="logo">Helper</span>
+        </a>
+        <a class="back">
+            <span class="button">뒤로가기</span>
+        </a>
+    </header>
+    <div id="page1" class="root">
+        <label for="name" class="input_label">제작자 이름</label>
+        <input type="text" id="name" name="name" placeholder="서비스 제작자의 이름을 입력하세요" />
+        <label for="email" class="input_label">이메일</label>
+        <input type="text" id="email" name="email" placeholder="서비스 심사 결과 확인용 이메일을 입력하세요" />
+        <label for="password" class="input_label">비밀번호</label>
+        <input type="password" id="password" name="password" placeholder="서비스 조회용 비밀번호를 입력하세요" />
+        <label for="title" class="input_label">서비스 제목</label>
+        <input type="text" id="title" name="title" placeholder="서비스 제목을 입력하세요" />
+        <label for="introduce" class="input_label">서비스 소개</label>
+        <input type="text" id="introduce" name="introduce" max="50" placeholder="서비스 소개를 50자 내로 작성해주세요" />
+        <label  class="input_label">이용약관 동의</label>
+        <span class="agree"></span>
+        <div class="agree_input">
+            <input type="checkbox" id="check"/>
+            <label for="check">위 약관에 동의합니다</label>
+        </div>
+        <span class="submit">
+            제작 하기
+        </span>
+    </div>
+    <div id="page2" class="root">
+        <span class="label">설명</span>
+        <textarea>
+
+        </textarea>
+        <span class="label image_label">이미지</span>
+        <label for="image" class="image_label">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"></path>
+            </svg>
+        </label>
+        <input type="file" id="image" accept="image/*" class="image">
+        <span class="final submit">
+            제출 하기
+        </span>
+    </div>
+    <script type="module" src="./js/create.js"></script>
+</body>
+</html>

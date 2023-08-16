@@ -1,0 +1,58 @@
+@import url('../utils/default.css');
+@import url('../utils/font.css');
+
+div#root {
+    width:100%;
+    height:100vh;
+
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    
+    color:white;
+}
+
+div#root a.logo_wrapper {
+    margin-bottom:20px;
+    color:white;
+}
+
+div#root a.logo_wrapper span.logo {
+    font-size:42px;
+    font-weight:900;
+    font-style: italic;
+}
+
+div#root span.text:nth-child(2) {
+    margin-top:10px;
+}
+
+div#root form {
+    width:90%;
+
+    margin-top:30px;
+
+    display:flex;
+    flex-direction: column;
+}
+
+div#root form input {
+    margin-bottom:20px;
+    height:36px;
+    border-radius:5px;
+}
+
+span.button {
+    width:100%;
+
+    padding-top:10px;
+    padding-bottom:10px;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--accent);
+    border-radius: 4px;
+}

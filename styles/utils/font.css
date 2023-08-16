@@ -1,0 +1,9 @@
+
+@font-face {
+    font-family: 'DOHYEON';
+    src: url('./BMDOHYEON_ttf.ttf') format('truetype');
+}
+
+* {
+    font-family: 'DOHYEON';
+}

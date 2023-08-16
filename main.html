@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HELPER | Main</title>
+    <link rel="stylesheet" href="./styles/main.css">
+</head>
+<body>
+    <header>
+        <a href="/main.html">
+            <span class="logo">Helper</span>
+        </a>
+        <a href="/search.html">
+            <span class="button">검색하기</span>
+        </a>
+    </header>
+    <main>
+        <div class="lectures_wrapper">
+            <span class="label">처음 들어오시면, 추천드려요!</span>
+            <div class="recommend lectures"></div>
+        </div>
+        <div class="lectures_wrapper">
+            <span class="label">#모바일</span>
+            <div class="mobile lectures"></div>
+        </div>
+        <div class="lectures_wrapper">
+            <span class="label">#일상</span>
+            <div class="daily lectures"></div>
+        </div>
+        <div class="lectures_wrapper">
+            <span class="label">#인터넷</span>
+            <div class="internet lectures"></div>
+        </div>
+    </main>
+    <footer>
+        <span class="question">콘텐츠를 직접 제작하고 싶다면?</span>
+        <a href="./post.html">
+            <span class="button">서비스 제작하기</span>
+        </a>
+    </footer>
+    <script type="module" src="./js/component/lecture.js"></script>
+    <script type="module" src="./js/recommend.js"></script>
+</body>
+</html>
