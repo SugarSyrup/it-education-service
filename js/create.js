@@ -23,3 +23,22 @@ back_button.addEventListener('click', (event) => {
         flag=true;
     }
 })
+
+//image
+const image_input = document.querySelector('#image');
+
+image_input.addEventListener('change', (e) => {
+    const data = e.target.files[0];
+    fetch('https://likelionhelper.fly.dev/post/image')
+})
+
+
+
+//form
+const inputs = document.querySelectorAll('input');
+const textarea = document.querySelector('textarea');
+const submit_button = document.querySelector('.submit');
+
+submit_button.addEventListener('click', (e) => {
+    console.log(form.formD)
+})
