@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/phone4.css">
+  <title>phone</title>
+</head>
+<body>
+  <!-- header -->
+  <div class="header">
+    <i class="fa-solid fa-left-long" onClick="goBack()"></i>
+      <span class = "title">4.휴대폰 인증</span>
+      <i class="fa-solid fa-house"></i>
+  </div>
+
+  <main>
+    <div class="explain">
+      <form>
+        <div id = "news_agency">
+          <span class = "font_size">통신사 선택</span>
+          <select id = "agency_List">
+            <option value="SKT">SkT</option>
+            <option value="KT">KT</option>
+            <option value="LG">LG</option>
+          </select>
+        </div>
+        <div id = "gender">
+          <span class = "font_size">남성</span>
+          <input type = "checkbox" value = "man">
+          <span class = "font_size">여성</span>
+          <input type = "checkbox" value = "woman">
+        </div>
+        <div id = "number">
+          <div class = "font_size">전화번호 입력</div>
+          <input type = "text" maxlength = "3" id = "first">-<input type = "text" maxlength = "4" id = "second">-<input type = "text" maxlength = "4" id = "third">
+          <div>
+            <button id = "phone_sign">인증요청</button>
+          </div>
+        </div>
+        <div id = "sign_box">
+          <span class = "font_size">인증번호</span>
+          <input type = "text" id = "phone_sign_number">
+          <button id = "phone_check">인증확인</button>
+        </div>
+        <div id = "timer_box">
+          <span class = "font_size">남은시간 :</span>
+          <span class = "font_size">03:00</span>
+        </div>
+      </form>
+    </div>
+    <div class="question" onClick = "location.href ='agree5_page.html'">다음 단계</div>
+  </main>
+  <script src="https://kit.fontawesome.com/a563f706d0.js" crossorigin="anonymous"></script>
+  <script src = "js/phone.js"></script>
+</body>
+</html>

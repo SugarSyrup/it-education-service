@@ -42,3 +42,9 @@ text_Hidden3.addEventListener('click',() => Hidden
 (information[2]));
 text_Hidden4.addEventListener('click',() => Hidden
 (information[3]));
+
+
+function goBack() {
+  console.log("back");
+  window.history.back();
+}

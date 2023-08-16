@@ -1,0 +1,136 @@
+@import url('./login_category/default.css');
+@import url('./login_category/header.css');
+
+main{
+  width: 100%;
+  height: 87%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.email_for{
+  color : white;
+}
+
+#name_check{
+  margin-bottom : 20px;
+}
+
+#name_check,#email_check,#ymd{
+  color : white;
+}
+
+form{
+  display : flex;
+  height : 100%;
+  flex-direction : column;
+  align-items : center;
+}
+
+#name{
+  margin : 20px 0 0 0;
+}
+
+#submit{
+  margin : 20px 0 0 0;
+}
+
+
+.explain{
+  width: 90%;
+  height: 83%;
+  border-radius: 5px;
+  background-color: rgb(103, 93, 80);
+  border : 0;
+}
+
+.box{
+  width : 270px;
+  height : 50px;
+  border-radius : 5px;
+  border : 0;
+}
+
+.box_email{
+  width : 120px;
+  height : 50px;
+  border-radius : 5px;
+  border : 0;
+}
+
+.box_email_list{
+  width : 121px;
+  height : 50px;
+  margin-left : 18px;
+  border-radius : 5px;
+  border : 0;
+}
+
+.box_email_button{
+  width : 123px;
+  height : 50px;
+  margin-bottom : 20px;
+  border-radius : 5px;
+  background-color :rgb(245, 134, 31);
+  color : white;
+  font-weight : bold;
+  border : 0;
+}
+
+.box_y{
+  width : 125px;
+  height : 50px;
+  border-radius : 5px;
+  border : 0;
+}
+
+.box_md{
+  width : 66px;
+  height : 50px;
+  border-radius : 5px;
+  border : 0;
+}
+
+.question{
+  width: 90%;
+  height: 10%;
+  border-radius: 20px;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(245, 134, 31);
+  color : white;
+  font-weight: bold;
+  border : 0;
+}
+
+.submit_box{
+  width : 270px;
+  height : 50px;
+  border-radius : 5px;
+  border : 0;
+  background-color : white;
+  font-size : 20px;
+  font-weight : bold;
+}
+
+.hint_box{
+  width : 270px;
+  height : 100px;
+  background-color : rgb(245, 134, 31);
+  position : absolute;
+  border-radius : 5px;
+  border : 0;
+  color : white;
+}
+
+.remove{
+  display : none;
+}
+
+.box, .box_email, .box_email_list, .box_email_button, .font_box, .box_y, .box_md{
+  font-size : 20px;
+}

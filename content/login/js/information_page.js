@@ -8,6 +8,10 @@ const submit = document.querySelector("#submit");
 const year = document.querySelector("#year");
 const month = document.querySelector('#month');
 const day = document.querySelector('#day');
+const divBox = document.querySelector('.email_box');
+const box_email_Btn = document.querySelector('.box_email_button');
+const hint_box = document.querySelector('.hint_box');
+const nextBtn = document.querySelector('.queston');
 let check = 0;
 
 //이름
@@ -25,7 +29,7 @@ function IsEmpty(input, errorLabel, errorMessage){
   else
   {
     errorLabel.innerText ="";
-    errorLabel.style.color = "black";
+    errorLabel.style.color = "white";
     input.style.border = "1px solid #ccc";
     check = 1;
   }
@@ -41,6 +45,7 @@ email_list.addEventListener('change', (event) => {
     email_txt.disabled = false
   }
 })
+
 
 function submit_btn(event){
   event.preventDefault();
@@ -64,3 +69,18 @@ emailInput.addEventListener('input',() => IsEmpty(emailInput, email_check, "이�
 email_txt.addEventListener('input',() => IsEmpty(email_txt, email_check, "이메일 주소") )
 
 submit.addEventListener('click', submit_btn);
+box_email_Btn.addEventListener('click', (event) => {
+  event.preventDefault();
+  if(hint_box.classList[1] == "remove"){
+    hint_box.classList.remove("remove");
+  }
+  else{
+    hint_box.classList.add("remove");
+  }
+})
+
+function goBack() {
+  window.history.back();
+}
+
+
