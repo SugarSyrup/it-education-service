@@ -37,8 +37,19 @@ image_input.addEventListener('change', (e) => {
 //form
 const inputs = document.querySelectorAll('input');
 const textarea = document.querySelector('textarea');
-const submit_button = document.querySelector('.submit');
+const submit_button = document.querySelector('.final');
 
 submit_button.addEventListener('click', (e) => {
-    console.log(form.formD)
+    const data = {
+        "name": inputs[0].value,
+        "email": inputs[1].value,
+        "password": inputs[2].value,
+        "title": inputs[3].value,
+        "explain": inputs[4].value,
+        "content" : [{
+            "text": inputs[5].value,
+            "image": inputs[6].value,
+        }]
+    }
+    console.log(data);
 })
