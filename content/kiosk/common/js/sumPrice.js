@@ -1,4 +1,4 @@
-import {SETCART, SINGLECART, SETAMOUNT, SINGLEAMOUNT} from '/content/kiosk/common/js/utils/key.js';
+import {SETCART, SINGLECART, SETAMOUNT, SINGLEAMOUNT} from "../js/utils/key.js";
 const wholePrice = document.querySelector(".price");
 
 const parseSet = JSON.parse(localStorage.getItem(SETCART));

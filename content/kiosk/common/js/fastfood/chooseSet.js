@@ -1,12 +1,12 @@
-import {OPTION, SETCATEGORYNUM, SETOPTION, SINGLEOPTION, SINGLECART, SUBJECTNUM ,QUESTIONOPTION, NOQUESTION} from '/content/kiosk/common/js/utils/key.js';
+import {OPTION, SETCATEGORYNUM, SETOPTION, SINGLEOPTION, SINGLECART, SUBJECTNUM ,QUESTIONOPTION, NOQUESTION} from "../../js/utils/key.js";
 const setImg = document.querySelector(".set-img");
 const singleImg = document.querySelector(".single-img");
 const options = document.querySelectorAll(".option");
 const cancel = document.querySelector(".cancel");
 
-const setImgArr = ["/content/kiosk/img/fast-food/set/1955-set.png", "/content/kiosk/img/fast-food/set/bacon-tomato-set.png", "/content/kiosk/img/fast-food/set/bigmac-set.png", "/content/kiosk/img/fast-food/set/cheese-set.png", "/content/kiosk/img/fast-food/set/bulgogi-set.png", "/content/kiosk/img/fast-food/set/crispy-set.png", "/content/kiosk/img/fast-food/set/quaterpound-set.png", "/content/kiosk/img/fast-food/set/shrimp-set.png"];
+const setImgArr = ["../../../img/fast-food/set/1955-set.png", "../../../img/fast-food/set/bacon-tomato-set.png", "../../../img/fast-food/set/bigmac-set.png", "../../../img/fast-food/set/cheese-set.png", "../../../img/fast-food/set/bulgogi-set.png", "../../../img/fast-food/set/crispy-set.png", "../../../img/fast-food/set/quaterpound-set.png", "../../../img/fast-food/set/shrimp-set.png"];
 const bugerNameArr = ["1955 버거", "베이컨 버거", "빅맥", "치즈 버거", "불고기 버거", "크리스피 버거", "쿼터파운드 버거", "새우버거"];
-const singleImgArr = ["/content/kiosk/img/fast-food/buger/1955.png", "/content/kiosk/img/fast-food/buger/bacon-tomato-buger.png", "/content/kiosk/img/fast-food/buger/big-mac.png", "/content/kiosk/img/fast-food/buger/cheese-buger.png", "/content/kiosk/img/fast-food/buger/bulgogi-buger.png", "/content/kiosk/img/fast-food/buger/crispy-buger.png", "/content/kiosk/img/fast-food/buger/quarter-pound.png", "/content/kiosk/img/fast-food/buger/shrimp-buger.png"];
+const singleImgArr = ["../../../img/fast-food/buger/1955.png", "../../../img/fast-food/buger/bacon-tomato-buger.png", "../../../img/fast-food/buger/big-mac.png", "../../../img/fast-food/buger/cheese-buger.png", "../../../img/fast-food/buger/bulgogi-buger.png", "../../../img/fast-food/buger/crispy-buger.png", "../../../img/fast-food/buger/quarter-pound.png", "../../../img/fast-food/buger/shrimp-buger.png"];
 
 let singleCart = [];
 
@@ -105,12 +105,12 @@ function set(i) {
   localStorage.setItem(OPTION, JSON.stringify(buger));
   localStorage.setItem(SETCATEGORYNUM, 1);
   localStorage.setItem(SETOPTION, "set");
-  location.href = "/content/kiosk/common/html/fastFood/set-option.html";
+  location.href = "../../html/fastFood/set-option.html";
 }
 
 function single(i){
   localStorage.setItem(SINGLEOPTION, "single");
-  location.href = "/content/kiosk/common/html/fastFood/individual-option.html";
+  location.href = "../../html/individual-option.html";
 }
 
 cancel.addEventListener("click", () => {

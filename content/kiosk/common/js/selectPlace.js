@@ -1,12 +1,10 @@
-import {PLACE, SUBJECTNUM, QUESTION, NOQUESTION, CLASSNAME} from '/content/kiosk/common/js/utils/key.js';
+import {PLACE, SUBJECTNUM, QUESTION, NOQUESTION, CLASSNAME} from "../js/utils/key.js";
 const here = document.querySelector(".here");
 const toGo = document.querySelector(".to-go");
 const choice = document.querySelectorAll(".choice");
 
 const subjectNum = localStorage.getItem(SUBJECTNUM);
 const className = localStorage.getItem(CLASSNAME);
-// if(localStorage.getItem(QUESTION)){
-// }
 
 if(!localStorage.getItem(NOQUESTION)){
   const question = JSON.parse(localStorage.getItem(QUESTION))[1];
@@ -15,7 +13,7 @@ if(!localStorage.getItem(NOQUESTION)){
       if(question == here.childNodes[3].innerText){
         localStorage.setItem(PLACE, "here");
         localStorage.removeItem(QUESTION);
-        location.href = "/content/kiosk/common/html/practice-category.html";
+        location.href = "../html/practice-category.html";
       }
       else{
         wrong();
@@ -25,7 +23,7 @@ if(!localStorage.getItem(NOQUESTION)){
       if(question == toGo.childNodes[3].innerText){
         localStorage.setItem(PLACE, "to-go");
         localStorage.removeItem(QUESTION);
-        location.href = "/content/kiosk/common/html/practice-category.html";
+        location.href = "../html/practice-category.html";
       }
       else{
         wrong();
@@ -49,12 +47,12 @@ else{
   here.addEventListener("click", () => {
       localStorage.setItem(PLACE, "here");
       localStorage.removeItem(QUESTION);
-      location.href = "/content/kiosk/common/html/practice-category.html";
+      location.href = "../html/practice-category.html";
   })
   toGo.addEventListener("click", () => {
       localStorage.setItem(PLACE, "to-go");
       localStorage.removeItem(QUESTION);
-      location.href = "/content/kiosk/common/html/practice-category.html";
+      location.href = "../html/practice-category.html";
   })
 }
 
@@ -70,11 +68,11 @@ function alertFunc(){
     cancelButtonText: '네'
   }).then((result) => {
     if (result.isConfirmed) {
-      location.href = "/content/kiosk/common/html/main-category.html";
+      location.href = "../html/main-category.html";
     }
     else if(result.isDismissed){
       localStorage.setItem(SUBJECTNUM, Number(localStorage.getItem(SUBJECTNUM)) + 1);
-      location.href = "/content/kiosk/common/html/example/example.html";
+      location.href = "../html/example/example.html";
     }
 })
 }

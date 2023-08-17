@@ -1,4 +1,4 @@
-import {SETCART, SINGLECART, SETAMOUNT, SINGLEAMOUNT, SETOPTION, SINGLEOPTION } from '/content/kiosk/common/js/utils/key.js';
+import {SETCART, SINGLECART, SETAMOUNT, SINGLEAMOUNT, SETOPTION, SINGLEOPTION } from "../js/utils/key.js";
 
 
 const plus = document.querySelectorAll(".plus");

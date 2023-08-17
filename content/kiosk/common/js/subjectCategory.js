@@ -1,4 +1,4 @@
-import {SUBJECTNUM, CATEGORYNUM, CLASSNAME, REMOVE} from '/content/kiosk/common/js/utils/key.js';
+import {SUBJECTNUM, CATEGORYNUM, CLASSNAME, REMOVE} from "../js/utils/key.js";
 
 const category = document.querySelectorAll(".category");
 const learningFirst = document.querySelector(".learning-from-scratch");
@@ -26,12 +26,11 @@ const theaterSubjectArr = ["1. 영화 선택", "2. 시간 선택", "3. 예매 �
       }
       category[i].addEventListener("click", () => {
         localStorage.setItem(SUBJECTNUM, i);
-        location.href = "/content/kiosk/common/html/example/example.html";
-        // location.href = "/content/kiosk/common/html/example/example.html";
+        location.href = "../html/example/example.html";
       })
   }
 
   learningFirst.addEventListener("click", () => {
     localStorage.setItem(SUBJECTNUM, 0);
-    location.href = "/content/kiosk/common/html/example/example.html";
+    location.href = "../html/example/example.html";
   })

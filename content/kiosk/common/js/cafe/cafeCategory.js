@@ -1,4 +1,4 @@
-import {CATEGORYNUM, OPTION, REMOVE, SUBJECTNUM, QUESTION, NOQUESTION} from '/content/kiosk/common/js/utils/key.js';
+import {CATEGORYNUM, OPTION, REMOVE, SUBJECTNUM, QUESTION, NOQUESTION} from "../../js/utils/key.js";
 const imgs = document.querySelectorAll("img");
 const menuName = document.querySelectorAll(".menu-name");
 const className = localStorage.getItem("className");
@@ -10,12 +10,12 @@ let categoryNum = Number(localStorage.getItem(CATEGORYNUM)) - 1;
 const subjectNum = localStorage.getItem(SUBJECTNUM);
 
 const cafeCategoryTitle = ["커피", "차", "음료", "디저트"];
-const coffeeHotArr = ["/content/kiosk/img/cafe/coffee/americano-hot.jpg", "/content/kiosk/img/cafe/coffee/cappuccino-hot.jpg", "/content/kiosk/img/cafe/coffee/caramel-macchiato-hot.jpg", "/content/kiosk/img/cafe/coffee/cafe-mocha-hot.jpg", "/content/kiosk/img/cafe/coffee/latte-hot.jpg", "/content/kiosk/img/cafe/coffee/vanilla-latte-hot.jpg"];
-const coffeeIceArr = ["/content/kiosk/img/cafe/coffee/americano-ice.jpg", "/content/kiosk/img/cafe/coffee/cappuccino-ice.jpg", "/content/kiosk/img/cafe/coffee/caramel-macchiato-ice.jpg", "/content/kiosk/img/cafe/coffee/cafe-mocha-ice.jpg", "/content/kiosk/img/cafe/coffee/latte-ice.jpg", "/content/kiosk/img/cafe/coffee/vanilla-latte-ice.jpg"];
-const beverageArr = ["/content/kiosk/img/cafe/beverage/grapefruit-ade.jpg", "/content/kiosk/img/cafe/beverage/lemon-ade.jpg", "/content/kiosk/img/cafe/beverage/peach-ice-tea.jpg", "/content/kiosk/img/cafe/beverage/strawberry-juice.jpg", "/content/kiosk/img/cafe/beverage/strawberry-yogurt-shake.jpg"];
-const teaHotArr = ["/content/kiosk/img/cafe/tea/chamomile-hot.jpg", "/content/kiosk/img/cafe/tea/citron-tea-hot.jpg", "/content/kiosk/img/cafe/tea/earl-grey-hot.jpg", "/content/kiosk/img/cafe/tea/lemon-tea-hot.jpg", "/content/kiosk/img/cafe/tea/peppermint-hot.jpg", "/content/kiosk/img/cafe/tea/rooibos-hot.jpg"];
-const teaiceArr = ["/content/kiosk/img/cafe/tea/chamomile-ice.jpg", "/content/kiosk/img/cafe/tea/citrone-tea-ice.jpg", "/content/kiosk/img/cafe/tea/earl-grey-ice.jpg", "/content/kiosk/img/cafe/tea/lemon-tea-ice.jpg"];
-const cafeDissertArr = ["/content/kiosk/img/cafe/dessert/carrot-cake.jpg", "/content/kiosk/img/cafe/dessert/chocolate-cake.jpg", "/content/kiosk/img/cafe/dessert/greentea-cake.jpg", "/content/kiosk/img/cafe/dessert/crople.jpg", "/content/kiosk/img/cafe/dessert/madeleine.jpg"];
+const coffeeHotArr = ["../../img/cafe/coffee/americano-hot.jpg", "../../img/cafe/coffee/cappuccino-hot.jpg", "../../img/cafe/coffee/caramel-macchiato-hot.jpg", "../../img/cafe/coffee/cafe-mocha-hot.jpg", "../../img/cafe/coffee/latte-hot.jpg", "../../img/cafe/coffee/vanilla-latte-hot.jpg"];
+const coffeeIceArr = ["../../img/cafe/coffee/americano-ice.jpg", "../../img/cafe/coffee/cappuccino-ice.jpg", "../../img/cafe/coffee/caramel-macchiato-ice.jpg", "../../img/cafe/coffee/cafe-mocha-ice.jpg", "../../img/cafe/coffee/latte-ice.jpg", "../../img/cafe/coffee/vanilla-latte-ice.jpg"];
+const beverageArr = ["../../img/cafe/beverage/grapefruit-ade.jpg", "../../img/cafe/beverage/lemon-ade.jpg", "../../img/cafe/beverage/peach-ice-tea.jpg", "../../img/cafe/beverage/strawberry-juice.jpg", "../../img/cafe/beverage/strawberry-yogurt-shake.jpg"];
+const teaHotArr = ["../../img/cafe/tea/chamomile-hot.jpg", "../../img/cafe/tea/citron-tea-hot.jpg", "../../img/cafe/tea/earl-grey-hot.jpg", "../../img/cafe/tea/lemon-tea-hot.jpg", "../../img/cafe/tea/peppermint-hot.jpg", "../../img/cafe/tea/rooibos-hot.jpg"];
+const teaiceArr = ["../../img/cafe/tea/chamomile-ice.jpg", "../../img/cafe/tea/citrone-tea-ice.jpg", "../../img/cafe/tea/earl-grey-ice.jpg", "../../img/cafe/tea/lemon-tea-ice.jpg"];
+const cafeDissertArr = ["../../img/cafe/dessert/carrot-cake.jpg", "../../img/cafe/dessert/chocolate-cake.jpg", "../../img/cafe/dessert/greentea-cake.jpg", "../../img/cafe/dessert/crople.jpg", "../../img/cafe/dessert/madeleine.jpg"];
 
 const coffeeNameArr = ["아메리카노", "카푸치노", "캬라멜 마키아토", "카페모카", "카페라떼", "바닐라라떼"];
 const beverageNameArr = ["자몽 에이드", "레몬 에이드", "복숭아 아이스티", "딸기 주스", "딸기 스무디"];
@@ -71,14 +71,14 @@ if(className == "cafe"){
             cafeOption.push(cafeMenuNameArr[categoryNum][i]);
             cafeOption.push(cafePriceArr[categoryNum][i]);
             localStorage.setItem(OPTION, JSON.stringify(cafeOption));
-            location.href = "/content/kiosk/common/html/fastFood/individual-option.html";
+            location.href = "../html/fastFood/individual-option.html";
           }
           else{
             cafeOption.push(cafeMenuArr[categoryNum][i]);
             cafeOption.push(cafeMenuNameArr[categoryNum][i]);
             cafeOption.push(cafePriceArr[categoryNum][i]);
             localStorage.setItem(OPTION, JSON.stringify(cafeOption));
-            location.href = "/content/kiosk/common/html/cafe/option.html";
+            location.href = "../html/cafe/option.html";
           }
         }
         else{
@@ -96,14 +96,14 @@ else{
           cafeOption.push(cafeMenuNameArr[categoryNum][i]);
           cafeOption.push(cafePriceArr[categoryNum][i]);
           localStorage.setItem(OPTION, JSON.stringify(cafeOption));
-          location.href = "/content/kiosk/common/html/fastFood/individual-option.html";
+          location.href = "../html/fastFood/individual-option.html";
         }
         else{
           cafeOption.push(cafeMenuArr[categoryNum][i]);
           cafeOption.push(cafeMenuNameArr[categoryNum][i]);
           cafeOption.push(cafePriceArr[categoryNum][i]);
           localStorage.setItem(OPTION, JSON.stringify(cafeOption));
-          location.href = "/content/kiosk/common/html/cafe/option.html";
+          location.href = "../html/cafe/option.html";
         }
       })
     }
@@ -122,11 +122,11 @@ function alertFunc(){
     cancelButtonText: '네'
   }).then((result) => {
     if (result.isConfirmed) {
-      location.href = "/content/kiosk/common/html/main-category.html";
+      location.href = "../html/main-category.html";
     }
     else if(result.isDismissed){
       localStorage.setItem(SUBJECTNUM, Number(localStorage.getItem(SUBJECTNUM)) + 1);
-      location.href = "/content/kiosk/common/html/example/example.html";
+      location.href = "../html/example/example.html";
     }
 })
 }

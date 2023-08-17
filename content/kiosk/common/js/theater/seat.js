@@ -1,4 +1,4 @@
-import {SUBJECTNUM, CATEGORYNUM, NOQUESTION, QUESTIONAMOUNT, OPTION } from '/content/kiosk/common/js/utils/key.js';
+import {SUBJECTNUM, CATEGORYNUM, NOQUESTION, QUESTIONAMOUNT, OPTION } from "../../js/utils/key.js";
 const seatNum = document.querySelectorAll(".seat");
 const complete = document.querySelector(".complete");
 
@@ -38,7 +38,7 @@ if(!localStorage.getItem(NOQUESTION)){
             if(seatNum[i].innerText == questionSeat){
               option.push(seat);
               localStorage.setItem(OPTION, JSON.stringify(option));
-              location.href = "/content/kiosk/common/html/theater/reservation.html";
+              location.href = "../../html/theater/reservation.html";
             }
             else{
               wrong();
@@ -68,7 +68,7 @@ else{
             option.push(seat);
             localStorage.setItem(OPTION, JSON.stringify(option));
           }
-          location.href = "/content/kiosk/common/html/theater/reservation.html";
+          location.href = "../../html/theater/reservation.html";
         })
       }
     })
@@ -87,12 +87,12 @@ function alertFunc (){
     cancelButtonText: '네'
   }).then((result) => {
     if (result.isConfirmed) {
-      location.href = "/content/kiosk/common/html/main-category.html";
+      location.href = "../../html/main-category.html";
     }
     else if(result.isDismissed){
       localStorage.setItem(SUBJECTNUM, Number(localStorage.getItem(SUBJECTNUM)) + 1);
       localStorage.setItem(CATEGORYNUM, 1);
-      location.href = "/content/kiosk/common/html/example/example.html";
+      location.href = "../../html/example/example.html";
     }
 })
 }

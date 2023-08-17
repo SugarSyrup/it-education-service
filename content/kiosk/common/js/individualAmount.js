@@ -1,4 +1,4 @@
-import {SETAMOUNT, SINGLEAMOUNT, SETOPTION, SINGLEOPTION, SUBJECTNUM, SETCART, SINGLECART} from '/content/kiosk/common/js/utils/key.js';
+import {SETAMOUNT, SINGLEAMOUNT, SETOPTION, SINGLEOPTION, SUBJECTNUM, SETCART, SINGLECART} from "../js/utils/key.js";
 const plus = document.querySelector(".plus");
 const minus = document.querySelector(".minus");
 const amount = document.querySelector(".amount-num");

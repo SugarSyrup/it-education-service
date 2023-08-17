@@ -9,10 +9,10 @@ const questionAmount = document.querySelector(".questionAmount");
 
 
 
-const bugerArr = ["/content/kiosk/img/fast-food/buger/1955.png", "/content/kiosk/img/fast-food/buger/bacon-tomato-buger.png", "/content/kiosk/img/fast-food/buger/big-mac.png", "/content/kiosk/img/fast-food/buger/cheese-buger.png", "/content/kiosk/img/fast-food/buger/bulgogi-buger.png", "/content/kiosk/img/fast-food/buger/crispy-buger.png", "/content/kiosk/img/fast-food/buger/quarter-pound.png", "/content/kiosk/img/fast-food/buger/shrimp-buger.png"];
-const fastFoodDessertArr = ["/content/kiosk/img/fast-food/dessert/icecream.png"];
-const drinkArr = ["/content/kiosk/img/fast-food/drink/americano.png", "/content/kiosk/img/fast-food/drink/coke.png", "/content/kiosk/img/fast-food/drink/juice.png", "/content/kiosk/img/fast-food/drink/sprite.png", "/content/kiosk/img/fast-food/drink/vanilla-shake.png"];
-const snackArr = ["/content/kiosk/img/fast-food/snack/cheese-stick.png", "/content/kiosk/img/fast-food/snack/chicken-nugget.png", "/content/kiosk/img/fast-food/snack/chicken-wing.png", "/content/kiosk/img/fast-food/snack/french-fries.png", "/content/kiosk/img/fast-food/snack/kohlslow.png"];
+const bugerArr = ["../../img/fast-food/buger/1955.png", "../../img/fast-food/buger/bacon-tomato-buger.png", "../../img/fast-food/buger/big-mac.png", "../../img/fast-food/buger/cheese-buger.png", "../../img/fast-food/buger/bulgogi-buger.png", "../../img/fast-food/buger/crispy-buger.png", "../../img/fast-food/buger/quarter-pound.png", "../../img/fast-food/buger/shrimp-buger.png"];
+const fastFoodDessertArr = ["../../img/fast-food/dessert/icecream.png"];
+const drinkArr = ["../../img/fast-food/drink/americano.png", "../../img/fast-food/drink/coke.png", "../../img/fast-food/drink/juice.png", "../../img/fast-food/drink/sprite.png", "../../img/fast-food/drink/vanilla-shake.png"];
+const snackArr = ["../../img/fast-food/snack/cheese-stick.png", "../../img/fast-food/snack/chicken-nugget.png", "../../img/fast-food/snack/chicken-wing.png", "../../img/fast-food/snack/french-fries.png", "../../img/fast-food/snack/kohlslow.png"];
 const bugerNameArr = ["1955 버거", "베이컨 버거", "빅맥", "치즈 버거", "불고기 버거", "크리스피 버거", "쿼터파운드 버거", "새우버거"];
 const fastFoodDessertNameArr = ["아이스크림"];
 const drinkNameArr = ["아메리카노", "콜라", "주스", "사이다", "바닐라 쉐이크"];
@@ -22,7 +22,7 @@ const snackPriceArr = ["3,300원", "3,300원", "4,000원", "2,800원", "2,700원
 const drinkPriceArr = ["3,300원", "2,400원", "2,000원", "2,400원", "3,500원"];
 const fastFoodDessertPriceArr = ["1,100원"];
 
-const setImgArr = ["/content/kiosk/img/fast-food/set/1955-set.png", "/content/kiosk/img/fast-food/set/bacon-tomato-set.png", "/content/kiosk/img/fast-food/set/bigmac-set.png", "/content/kiosk/img/fast-food/set/cheese-set.png", "/content/kiosk/img/fast-food/set/bulgogi-set.png", "/content/kiosk/img/fast-food/set/crispy-set.png", "/content/kiosk/img/fast-food/set/quaterpound-set.png", "/content/kiosk/img/fast-food/set/shrimp-set.png"];
+const setImgArr = ["../../img/fast-food/set/1955-set.png", "../../img/fast-food/set/bacon-tomato-set.png", "../../img/fast-food/set/bigmac-set.png", "../../img/fast-food/set/cheese-set.png", "../../img/fast-food/set/bulgogi-set.png", "../../img/fast-food/set/crispy-set.png", "../../img/fast-food/set/quaterpound-set.png", "../../img/fast-food/set/shrimp-set.png"];
 
 const fastFoodMenuArr = [bugerArr, snackArr, drinkArr, fastFoodDessertArr];
 const fastFoodNameArr = [bugerNameArr, snackNameArr, drinkNameArr, fastFoodDessertNameArr];
@@ -66,14 +66,12 @@ if(className == "fast-food"){
     const questionOption = JSON.parse(localStorage.getItem(QUESTIONOPTION))[1];
     questionBuger = localStorage.getItem(QUESTION).replace(",", "");
   
-      // if(subjectNum != 0 && subjectNum !=1){
         for(let i = 0; i < imgs.length; i++){
           imgs[i].addEventListener("click", () => {
             if(subjectNum == 3){
               if(imgs[i].parentNode.childNodes[3].innerText == questionBuger){
                 addFastFood(i);
                 localStorage.setItem(OPTION, JSON.stringify(fastFoodOption));
-                // location.href ="/content/kiosk/common/html/fastFood/chooseSet.html";
               }
               else{
                 wrong();
@@ -87,7 +85,7 @@ if(className == "fast-food"){
                   fastFoodOption.unshift(0, setImgArr[i]);
                   localStorage.setItem(OPTION, JSON.stringify(fastFoodOption));
                   localStorage.removeItem("bugerChange");
-                  location.href = "/content/kiosk/common/html/fastFood/older-check.html";
+                  location.href = "../html/fastFood/order-check.html";
                 }
                 else{
                   localStorage.setItem(OPTION, JSON.stringify(fastFoodOption));
@@ -108,10 +106,10 @@ if(className == "fast-food"){
                 alertFunc();
               }
               else if(questionOption == "set"){
-                location.href = "/content/kiosk/common/html/fastFood/chooseSet.html";
+                location.href = "../html/fastFood/chooseSet.html";
               }
               else if(questionOption == "single"){
-                location.href = "/content/kiosk/common/html/fastFood/individual-option.html";
+                location.href = "../html/fastFood/individual-option.html";
               }
             }
             else{
@@ -133,16 +131,16 @@ if(className == "fast-food"){
             fastFoodOption.unshift(setImgArr[i]);
             localStorage.setItem(OPTION, JSON.stringify(fastFoodOption));
             localStorage.removeItem("bugerChange");
-            location.href = "/content/kiosk/common/html/fastFood/order-check.html";
+            location.href = "../html/fastFood/order-check.html";
           }
           else{
             localStorage.setItem(OPTION, JSON.stringify(fastFoodOption));
-            location.href = "/content/kiosk/common/html/fastFood/chooseSet.html";
+            location.href = "../html/fastFood/chooseSet.html";
           }
         }
         else{
           localStorage.setItem(OPTION, JSON.stringify(fastFoodOption));
-          location.href = "/content/kiosk/common/html/fastFood/individual-option.html";
+          location.href = "../html/fastFood/individual-option.html";
         }
       })
     }
@@ -167,11 +165,11 @@ function alertFunc (){
     cancelButtonText: '네'
   }).then((result) => {
     if (result.isConfirmed) {
-      location.href = "/content/kiosk/common/html/main-category.html";
+      location.href = "../html/main-category.html";
     }
     else if(result.isDismissed){
       localStorage.setItem(SUBJECTNUM, Number(localStorage.getItem(SUBJECTNUM)) + 1);
-      location.href = "/content/kiosk/common/html/example/example.html";
+      location.href = "../html/example/example.html";
     }
   })
 }

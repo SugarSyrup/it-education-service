@@ -1,4 +1,4 @@
-import {SETAMOUNT, CLASSNAME, SINGLEAMOUNT, SETCART, SINGLECART, SUBJECTNUM, CATEGORYNUM, ADDITIONALORDER, ORDERING, QUESTION, PAY, NOQUESTION} from '/content/kiosk/common/js/utils/key.js';
+import {SETAMOUNT, CLASSNAME, SINGLEAMOUNT, SETCART, SINGLECART, SUBJECTNUM, CATEGORYNUM, ADDITIONALORDER, ORDERING, QUESTION, PAY, NOQUESTION} from "../js/utils/key.js";
 const imgs = document.querySelectorAll("img");
 const menuName = document.querySelectorAll(".menu-name");
 const setOptionText = document.querySelectorAll(".set-option");
@@ -7,7 +7,7 @@ const deleteBtn = document.querySelectorAll(".delete");
 const amount = document.querySelectorAll(".amount-num");
 
 //--------------------------------------------------------------------
-const setImgArr = ["/content/kiosk/img/fast-food/set/1955-set.png", "/content/kiosk/img/fast-food/set/bacon-tomato-set.png", "/content/kiosk/img/fast-food/set/bigmac-set.png", "/content/kiosk/img/fast-food/set/cheese-set.png", "/content/kiosk/img/fast-food/set/bulgogi-set.png", "/content/kiosk/img/fast-food/set/crispy-set.png", "/content/kiosk/img/fast-food/set/quaterpound-set.png", "/content/kiosk/img/fast-food/set/shrimp-set.png"];
+const setImgArr = ["../../img/fast-food/set/1955-set.png", "../../img/fast-food/set/bacon-tomato-set.png", "../../img/fast-food/set/bigmac-set.png", "../../img/fast-food/set/cheese-set.png", "../../img/fast-food/set/bulgogi-set.png", "../../img/fast-food/set/crispy-set.png", "../../img/fast-food/set/quaterpound-set.png", "../../img/fast-food/set/shrimp-set.png"];
 const bugerNameArr = ["1955 버거", "베이컨 버거", "빅맥", "치즈 버거", "불고기 버거", "크리스피 버거", "쿼터파운드 버거", "새우버거"];
 
 const parseSet = JSON.parse(localStorage.getItem(SETCART));
@@ -34,7 +34,7 @@ addtionalOrder.addEventListener("click", () => {
       localStorage.setItem(ADDITIONALORDER, "check");
     }
   }
-  location.href = "/content/kiosk/common/html/practice-category.html";
+  location.href = "../html/practice-category.html";
 })
 
 ordering.addEventListener("click", () => {
@@ -54,14 +54,14 @@ ordering.addEventListener("click", () => {
       if(!localStorage.getItem(NOQUESTION)){
       localStorage.removeItem(QUESTION);
       }
-      location.href = "/content/kiosk/common/html/payment-method.html";
+      location.href = "../html/payment-method.html";
     }
     else{
       localStorage.setItem(PAY, "pay");
       if(!localStorage.getItem(NOQUESTION)){
       localStorage.removeItem(QUESTION);
       }
-      location.href = "/content/kiosk/common/html/payment-method.html";
+      location.href = "../html/payment-method.html";
     }
   }
 })
@@ -143,12 +143,12 @@ function alertFunc (){
     cancelButtonText: '네'
   }).then((result) => {
     if (result.isConfirmed) {
-      location.href = "/content/kiosk/common/html/main-category.html";
+      location.href = "../html/main-category.html";
     }
     else if(result.isDismissed){
       localStorage.setItem(SUBJECTNUM, Number(localStorage.getItem(SUBJECTNUM)) + 1);
       localStorage.setItem(CATEGORYNUM, 1);
-      location.href = "/content/kiosk/common/html/example/example.html";
+      location.href = "../html/example/example.html";
     }
 })
 }

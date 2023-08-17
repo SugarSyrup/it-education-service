@@ -1,4 +1,4 @@
-import {SUBJECTNUM, NOQUESTION, QUESTION, QUESTION2, QUESTION3, QUESTIONAMOUNT, QUESTIONOPTION, OPTION} from '/content/kiosk/common/js/utils/key.js';
+import {SUBJECTNUM, NOQUESTION, QUESTION, QUESTION2, QUESTION3, QUESTIONAMOUNT, QUESTIONOPTION, OPTION} from "../../js/utils/key.js";
 const movie = document.querySelectorAll(".movie");
 const timeTable = document.querySelectorAll(".timeTable");
 
@@ -49,7 +49,7 @@ if(!localStorage.getItem(NOQUESTION)){
             alertFunc();
           }
           else if(subjectNum > 1){
-            location.href = "/content/kiosk/common/html/theater/number-of-spectator.html";
+            location.href = "../../html/theater/number-of-spectator.html";
           }
         }
         else{
@@ -70,7 +70,7 @@ else{
       movieInpo.push(theaterNum);
         option.push(movieInpo);
         localStorage.setItem(OPTION, JSON.stringify(option));
-          location.href = "/content/kiosk/common/html/theater/number-of-spectator.html";
+          location.href = "../../html/theater/number-of-spectator.html";
         })
       }
   }
@@ -88,11 +88,11 @@ else{
       cancelButtonText: '네'
     }).then((result) => {
       if (result.isConfirmed) {
-        location.href = "/content/kiosk/common/html/main-category.html";
+        location.href = "../../html/main-category.html";
       }
       else if(result.isDismissed){
         localStorage.setItem(SUBJECTNUM, Number(localStorage.getItem(SUBJECTNUM)) + 1);
-        location.href = "/content/kiosk/common/html/example/example.html";
+        location.href = "../../html/example/example.html";
       }
   })
   }

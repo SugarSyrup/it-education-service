@@ -1,4 +1,4 @@
-import {SUBJECTNUM, ORDERING, QUESTION, NOQUESTION, CLASSNAME, CATEGORYNUM} from '/content/kiosk/common/js/utils/key.js';
+import {SUBJECTNUM, ORDERING, QUESTION, NOQUESTION, CLASSNAME, CATEGORYNUM} from "../js/utils/key.js";
 const method = document.querySelectorAll(".payment-method");
 const back = document.querySelector(".back");
 
@@ -86,12 +86,12 @@ function alertFunc (){
     cancelButtonText: '네'
   }).then((result) => {
     if (result.isConfirmed) {
-      location.href = "/content/kiosk/common/html/main-category.html";
+      location.href = "../html/main-category.html";
     }
     else if(result.isDismissed){
       localStorage.setItem(SUBJECTNUM, Number(localStorage.getItem(SUBJECTNUM)) + 1);
       localStorage.setItem(CATEGORYNUM, 1);
-      location.href = "/content/kiosk/common/html/example/example.html";
+      location.href = "../html/example/example.html";
     }
 })
 }
@@ -113,7 +113,7 @@ function finish(){
     confirmButtonText : "확인"
   }).then((result) => {
     if(result){
-    location.href = "/content/kiosk/index.html";
+    location.href = "../../index.html";
     }
   });
 }

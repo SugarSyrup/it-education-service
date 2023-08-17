@@ -1,4 +1,4 @@
-import {SUBJECTNUM, CATEGORYNUM, NOQUESTION, QUESTION3, QUESTIONOPTION, OPTION, AMOUNT, BASIC, TEENAGER, DISABLED, OLDMAN} from '/content/kiosk/common/js/utils/key.js';
+import {SUBJECTNUM, CATEGORYNUM, NOQUESTION, QUESTION3, QUESTIONOPTION, OPTION, AMOUNT, BASIC, TEENAGER, DISABLED, OLDMAN} from "../../js/utils/key.js";
 const number = document.querySelectorAll(".num");
 const customerType = document.querySelectorAll(".type");
 const wholeNumber = document.querySelector(".whole-number");
@@ -19,14 +19,7 @@ let typeArr = [basic, teenager, disabled, oldMan];
 const key = [BASIC, TEENAGER, DISABLED, OLDMAN]
 const type = ["일반", "청소년", "장애인", "경로우대"];
 
-// for(let i = 0; i < key.length; i++){
-//   if(localStorage.getItem(key[i])){
-//     customerTypeArr.push(type[i]);
-//   }
-// }
-
 const subjectNum = localStorage.getItem(SUBJECTNUM);
-
 
 if(!localStorage.getItem(BASIC)){
   number[0].classList.add("focus");
@@ -48,7 +41,6 @@ for(let i = 0; i < number.length; i++){
       customerTypeArr[0] = "일반";
       amount[0] = JSON.parse(localStorage.getItem(BASIC))[0];
       localStorage.setItem(AMOUNT, JSON.stringify(amount));
-      // }
     }
     }
     if(i > 8 && i < 18 && localStorage.getItem(TEENAGER)){
@@ -126,7 +118,6 @@ for(let i = 0; i < number.length; i++){
   else if(i > 8 && i < 18 && localStorage.getItem(TEENAGER)){
     number[i].addEventListener("click", () => {
       teenager.pop();
-      // amount[1] = "";
       if(number[i].innerText == 0){
         localStorage.removeItem(TEENAGER)
       }
@@ -141,7 +132,6 @@ for(let i = 0; i < number.length; i++){
   else if(i > 17 && i < 26 && localStorage.getItem(DISABLED)){
     number[i].addEventListener("click", () => {
       disabled.pop();
-      // amount[2] = "";
       if(number[i].innerText == 0){
         localStorage.removeItem(DISABLED)
       }
@@ -156,7 +146,6 @@ for(let i = 0; i < number.length; i++){
   else if(i > 26 && localStorage.getItem(OLDMAN)){
     number[i].addEventListener("click", () => {
       oldMan.pop();
-      // amount[3] = "";
       if(number[i].innerText == 0){
         localStorage.removeItem(OLDMAN)
       }
@@ -205,7 +194,7 @@ complete.addEventListener("click", () => {
         alertFunc();
       }
       else{
-        location.href = "/content/kiosk/common/html/theater/seat.html";
+        location.href = "../../html/theater/seat.html";
       }
     }
     else{
@@ -234,7 +223,7 @@ complete.addEventListener("click", () => {
     localStorage.removeItem(TEENAGER);
     localStorage.removeItem(DISABLED);
     localStorage.removeItem(OLDMAN);
-    location.href = "/content/kiosk/common/html/theater/seat.html";
+    location.href = "../../html/theater/seat.html";
   }
 })
 
@@ -250,12 +239,12 @@ function alertFunc (){
     cancelButtonText: '네'
   }).then((result) => {
     if (result.isConfirmed) {
-      location.href = "/content/kiosk/common/html/main-category.html";
+      location.href = "../../html/main-category.html";
     }
     else if(result.isDismissed){
       localStorage.setItem(SUBJECTNUM, Number(localStorage.getItem(SUBJECTNUM)) + 1);
       localStorage.setItem(CATEGORYNUM, 1);
-      location.href = "/content/kiosk/common/html/example/example.html";
+      location.href = "../../html/example/example.html";
     }
 })
 }

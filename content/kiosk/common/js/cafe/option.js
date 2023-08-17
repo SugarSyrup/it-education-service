@@ -1,4 +1,4 @@
-import {OPTION, SINGLECART, SUBJECTNUM, QUESTION, NOQUESTION, CATEGORYNUM} from '/content/kiosk/common/js/utils/key.js';
+import {OPTION, SINGLECART, SUBJECTNUM, QUESTION, NOQUESTION, CATEGORYNUM} from "../../js/utils/key.js";
 const menuImg = document.querySelector(".menu-img");
 const menuName = document.querySelector(".menu-name");
 const menuPrice = document.querySelector(".menu-price");
@@ -6,27 +6,30 @@ const choice = document.querySelectorAll(".choice");
 const questionText = document.querySelectorAll(".question");
 const amount = document.querySelector(".amount-num");
 const addBtn = document.querySelector(".add");
-const back = document.querySelector(".back");
+const backbtn = document.querySelector(".back");
 const questionAmount = document.querySelector(".questionAmount");
 
 const cafeOption = JSON.parse(localStorage.getItem(OPTION));
 const subjectNum = localStorage.getItem(SUBJECTNUM);
 
 let singleCart = JSON.parse(localStorage.getItem(SINGLECART));
-
 const FOCUS = "focus";
 
 let cart = [];
 let amountNum;
 let count = 0;
 
-menuImg.setAttribute("src", cafeOption[0]);
+menuImg.setAttribute("src", "../" + cafeOption[0]);
 menuName.innerText = cafeOption[1];
 menuPrice.innerText = cafeOption[2];
 
-const coffeeIceArr = ["/content/kiosk/img/cafe/coffee/americano-ice.jpg", "/content/kiosk/img/cafe/coffee/cappuccino-ice.jpg", "/content/kiosk/img/cafe/coffee/caramel-macchiato-ice.jpg", "/content/kiosk/img/cafe/coffee/cafe-mocha-ice.jpg", "/content/kiosk/img/cafe/coffee/latte-ice.jpg", "/content/kiosk/img/cafe/coffee/vanilla-latte-ice.jpg"];
+const coffeeIceArr = ["../../img/cafe/coffee/americano-ice.jpg", "../../img/cafe/coffee/cappuccino-ice.jpg", "../../img/cafe/coffee/caramel-macchiato-ice.jpg", "../../img/cafe/coffee/cafe-mocha-ice.jpg", "../../img/cafe/coffee/latte-ice.jpg", "../../img/cafe/coffee/vanilla-latte-ice.jpg"];
 const coffeeNameArr = ["아메리카노", "카푸치노", "캬라멜 마키아토", "카페모카", "카페라떼", "바닐라라떼"];
 
+
+backbtn.addEventListener("click", () => {
+  location.href = "javascript:history.back()";
+})
 
 if(!localStorage.getItem(NOQUESTION)){
   for(let i = 0; i < choice.length; i++){
@@ -59,7 +62,7 @@ if(!localStorage.getItem(NOQUESTION)){
       if(questionText[1].innerText == "아이스"){
         if(coffeeNameArr.indexOf(questionText[0].innerText) != -1){
           cafeOption[0] = coffeeIceArr[coffeeNameArr.indexOf(questionText[0].innerText)];
-          menuImg.setAttribute("src", cafeOption[0]);
+          menuImg.setAttribute("src", "../" + cafeOption[0]);
         }
       }
       count++;
@@ -127,7 +130,7 @@ else{
       if(choice[i].childNodes[3].innerText == "아이스"){
         if(coffeeNameArr.indexOf(cafeOption[1]) != -1){
           cafeOption[0] = coffeeIceArr[coffeeNameArr.indexOf(cafeOption[1])];
-          menuImg.setAttribute("src", cafeOption[0]);
+          menuImg.setAttribute("src", "../" + cafeOption[0]);
         }
       }
       count++;
@@ -146,7 +149,7 @@ else{
   addBtn.addEventListener("click", () => {
     amountNum = amount.innerText;
         localStorage.removeItem(OPTION);
-        location.href = "/content/kiosk/common/html/practice-category.html";
+        location.href = "../../html/practice-category.html";
   })
 }
 
@@ -162,12 +165,12 @@ function alertFunc (){
     cancelButtonText: '네'
   }).then((result) => {
     if (result.isConfirmed) {
-      location.href = "/content/kiosk/common/html/main-category.html";
+      location.href = "../../html/main-category.html";
     }
     else if(result.isDismissed){
       localStorage.setItem(SUBJECTNUM, Number(localStorage.getItem(SUBJECTNUM)) + 1);
       localStorage.setItem(CATEGORYNUM, 1);
-      location.href = "/content/kiosk/common/html/example/example.html";
+      location.href = "../../html/example/example.html";
     }
 })
 }
