@@ -1,5 +1,5 @@
-@import url('./default.css');
-@import url('./header.css');
+@import url('../utils/default.css');
+@import url('./header_category.css');
 
 main{
   width: 100%;
@@ -13,15 +13,20 @@ main{
   width: 90%;
   height: 83%;
   border-radius: 20px;
-  background-color: rgb(208, 208, 208);
+  background-color: var(--secondary);
 }
 .question{
   width: 90%;
-  height: 10%;
-  border-radius: 20px;
-  font-size: 30px;
+  height: 50px;
+  border-radius: 10px;
+  margin-top:30px;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(202, 202, 202);
+
+  background-color: var(--accent);
+  color:white;
+  font-size: 22px;
+  cursor:pointer;
 }

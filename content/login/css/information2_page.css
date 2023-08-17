@@ -1,6 +1,3 @@
-@import url('./login_category/default.css');
-@import url('./login_category/header.css');
-
 main{
   width: 100%;
   height: 87%;
@@ -19,7 +16,8 @@ main{
 }
 
 #name_check,#email_check,#ymd{
-  color : white;
+  color : black;
+  margin-top:6px;
 }
 
 form{
@@ -27,11 +25,30 @@ form{
   height : 100%;
   flex-direction : column;
   align-items : center;
+  padding-bottom:30px;
 }
 
-#name{
-  margin : 20px 0 0 0;
+form div.input_wrapper {
+  width:90%;
+  margin:auto;
+
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
+
+form div.input_wrapper label {
+  color:white;
+}
+
+form div.input_wrapper:first-child{
+  margin-top:10px;
+}
+
+/* #name{
+  margin : 20px 0 0 0;
+} */
 
 #submit{
   margin : 20px 0 0 0;
@@ -54,29 +71,34 @@ form{
 }
 
 .box_email{
-  width : 120px;
+  width : 40%;
   height : 50px;
   border-radius : 5px;
   border : 0;
 }
 
 .box_email_list{
-  width : 121px;
+  border:none;
   height : 50px;
-  margin-left : 18px;
   border-radius : 5px;
-  border : 0;
 }
 
 .box_email_button{
-  width : 123px;
+  width : 120px;
   height : 50px;
-  margin-bottom : 20px;
+
+  margin-top:10px;
+
+  border : none;
   border-radius : 5px;
-  background-color :rgb(245, 134, 31);
+
+  background-color :var(--accent);
   color : white;
-  font-weight : bold;
-  border : 0;
+
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  cursor:pointer;
 }
 
 .box_y{
@@ -90,20 +112,6 @@ form{
   width : 66px;
   height : 50px;
   border-radius : 5px;
-  border : 0;
-}
-
-.question{
-  width: 90%;
-  height: 10%;
-  border-radius: 20px;
-  font-size: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(245, 134, 31);
-  color : white;
-  font-weight: bold;
   border : 0;
 }
 

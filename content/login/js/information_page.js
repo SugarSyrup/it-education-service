@@ -66,7 +66,7 @@ function submit_btn(event){
 
 nameInput.addEventListener('input',() => IsEmpty(nameInput, name_check, "성함"));
 emailInput.addEventListener('input',() => IsEmpty(emailInput, email_check, "이메일"));
-email_txt.addEventListener('input',() => IsEmpty(email_txt, email_check, "이메일 주소") )
+// email_txt.addEventListener('input',() => IsEmpty(email_txt, email_check, "이메일 주소") )
 
 submit.addEventListener('click', submit_btn);
 box_email_Btn.addEventListener('click', (event) => {
