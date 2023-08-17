@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/agree5_page.css">
+  <title>page1</title>
+</head>
+<body>
+  <div class="header">
+    <i class="fa-solid fa-left-long" onClick="goBack()"></i>
+      <span class = "title">5.약관 동의</span>
+      <i class="fa-solid fa-house"></i>
+  </div>
+
+  <main>
+    <div class="explain">
+      <div class="term_box">
+        <input type="checkbox" id="term">
+        <label class = "title_Font" for="term">이용약관 전체동의</label>
+        <hr class = "line">
+      </div>
+      <div class="term_box">
+        <input type="checkbox" id="term1">
+        <label for="term1" class = "title_Font" >서비스 이용약관 동의(필수)</label>
+        <div id = "text_Hidden1">내용보기</div>
+        <div class = "information" style = "display : none">
+          <div>이용 규칙 및 조건에 동의.</div>
+          <div>중요한 행동 규칙 및 서비스 범위 내용.</div>
+        </div>
+      </div>
+      <div class="term_box">
+        <input type="checkbox" id="term2">
+        <label for="term2" class = "title_Font" >개인정보 수집 이용 동의(필수)</label>
+        <div id = "text_Hidden2">내용보기</div>
+        <div class = "information" style = "display : none">
+          <div>개인정보 수집 목적 및 보안 내용.</div>
+          <div>정보 제3자 제공, 보관 및 파기 규정 안내.</div>
+        </div>
+      </div>
+      <div class="term_box">
+        <input type="checkbox" id="term3">
+        <label for="term3" class = "title_Font" >위치정보 및 이용 동의</label>
+        <div id = "text_Hidden3">내용보기</div>
+        <div class = "information" style = "display : none">
+          <div>서비스 이용 시 위치 정보 수집 및 활용 설명.</div>
+        </div>
+      </div>
+        <div class="term_box">
+          <input type="checkbox" id="term4">
+          <label for="term4" class = "title_Font" >마케팅 동의</label>
+          <div id = "text_Hidden4">내용보기</div>
+          <div class = "information" style = "display : none">
+            <div>마케팅 및 광고 정보 수신에 대한 설명.</div>
+            <div>정보 종류 및, 빈도 및 형태 안내.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="question" onClick = "location.href ='login6_page.html'">다음 단계</div>
+  </main>
+  <script src = "js/agree_page.js"></script>
+      <script src="https://kit.fontawesome.com/61143790df.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/a563f706d0.js" crossorigin="anonymous"></script>
+</body>
+</html>
