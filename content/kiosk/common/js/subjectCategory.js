@@ -2,6 +2,7 @@ import {SUBJECTNUM, CATEGORYNUM, CLASSNAME, REMOVE} from "../js/utils/key.js";
 
 const category = document.querySelectorAll(".category");
 const learningFirst = document.querySelector(".learning-from-scratch");
+const title = document.querySelector('.title');
 const className = localStorage.getItem(CLASSNAME);
 
 const subjectArr = ["1. 매장 / 포장", "2. 메뉴 선택", "3. 단품 주문하기", "4. 세트 상품 주문하기", "5. 주문내역 확인", "6. 상품 취소하기", "7. 추가 주문하기", "8. 주문 하기", "9. 결제 방법 선택하기", "10. 연습하기"];
@@ -10,15 +11,18 @@ const theaterSubjectArr = ["1. 영화 선택", "2. 시간 선택", "3. 예매 �
 
   for(let i = 0; i < category.length; i++){
     if(className == "fast-food"){
+        title.innerText = "햄버거 주문하기";
         category[i].innerText = subjectArr[i];
       }
       else if(className == "cafe"){
+        title.innerText = "카페 주문하기";
         category[i].innerText = cafeSubjectArr[i];
         if(cafeSubjectArr[i] == undefined){
           category[i].remove();
         }
       }
       else{
+        title.innerText = "영화 예매하기";
         category[i].innerText = theaterSubjectArr[i];
         if(theaterSubjectArr[i] == undefined){
           category[i].remove();

@@ -1,5 +1,13 @@
-@import url('./default.css');
-@import url('./header.css');
+@import url('../utils/font.css');
+@import url("../utils/variables.css");
+@import url('./header_category.css'); 
+
+body {
+	max-width:360px;
+	margin:auto;
+	line-height: 1;
+	background-color: var(--dark);
+}
 
 main{
   width: 100%;
@@ -24,12 +32,12 @@ main{
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(202, 202, 202);
+  background-color: var(--secondary);
 }
 .practice-section{
   width: 90%;
-  height: 80%;
+  height: 83%;
   border-radius: 20px;
-  background-color: rgb(188, 188, 188);
+  background-color: var(--secondary);
 }
 

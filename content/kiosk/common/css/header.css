@@ -12,18 +12,20 @@ main{
 }
 .text{
   font-size: 23px;
-  font-weight: 900;
+  font-weight: 500;
+  color:white;
+  margin-bottom:5px;
 }
 .question-box{
   width: 100%;
-  height: 60%;
+  height: 60px;
   font-size: 22px;
-  /* color: white; */
+  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  background-color: rgba(255, 226, 198, 0.274);
+  background-color: var(--secondary);
   z-index: 3;
 }
 .question-box div:first-child p{
@@ -61,6 +63,12 @@ main{
 .practice-section{
   display: flex;
   flex-direction: column;
+  margin-top:30px;
+}
+.practice-section p {
+  color:white;
+  padding:30px 10px;
+  font-weight:100;
 }
 .close{
   height: 5%;
