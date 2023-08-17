@@ -1,4 +1,4 @@
-import {NOQUESTION, REMOVE, QUESTION, PLACE, SUBJECTNUM} from '/content/kiosk/common/js/utils/key.js';
+import {NOQUESTION, REMOVE, QUESTION, PLACE, SUBJECTNUM} from "../js/utils/key.js";
 const close = document.querySelector(".fa-chevron-down");
 const open = document.querySelector(".fa-chevron-up");
 const iconBox = document.querySelector(".icon");

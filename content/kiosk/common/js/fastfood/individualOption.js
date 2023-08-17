@@ -1,4 +1,4 @@
-import {NOQUESTION, OPTION, SETCART, SINGLECART, SINGLEAMOUNT, SUBJECTNUM, QUESTION, QUESTIONAMOUNT, CATEGORYNUM} from '/content/kiosk/common/js/utils/key.js';
+import {NOQUESTION, OPTION, SETCART, SINGLECART, SINGLEAMOUNT, SUBJECTNUM, QUESTION, QUESTIONAMOUNT, CATEGORYNUM} from "../../js/utils/key.js";
 const img = document.querySelector(".img");
 const name = document.querySelector(".name");
 const price = document.querySelector(".price");
@@ -8,7 +8,7 @@ const amount = document.querySelector(".amount-num");
 
 const parseOption = JSON.parse(localStorage.getItem(OPTION));
 
-img.setAttribute("src", parseOption[0]);
+img.setAttribute("src",'../' + parseOption[0]);
 name.innerText = parseOption[1];
 price.innerText = parseOption[2];
 //----------------------------------------
@@ -47,7 +47,7 @@ if(!localStorage.getItem(NOQUESTION)){
           parseCart.push(parseOption);
           localStorage.setItem(SINGLECART, JSON.stringify(parseCart));
           localStorage.removeItem(OPTION);
-          location.href = "/content/kiosk/common/html/practice-category.html";
+          location.href = "../../html/practice-category.html";
         }
         else{
           wrong();
@@ -61,7 +61,7 @@ else{
     parseCart.push(parseOption);
     localStorage.setItem(SINGLECART, JSON.stringify(parseCart));
     localStorage.removeItem(OPTION);
-    location.href = "/content/kiosk/common/html/practice-category.html";
+    location.href = "../../html/practice-category.html";
   })
 }
 back.addEventListener("click", () => {
@@ -83,12 +83,12 @@ function alertFunc (){
     cancelButtonText: '네'
   }).then((result) => {
     if (result.isConfirmed) {
-      location.href = "/content/kiosk/common/html/main-category.html";
+      location.href = "../../html/main-category.html";
     }
     else if(result.isDismissed){
       localStorage.setItem(SUBJECTNUM, Number(localStorage.getItem(SUBJECTNUM)) + 1);
       localStorage.setItem(CATEGORYNUM, 1);
-      location.href = "/content/kiosk/common/html/example/example.html";
+      location.href = "../../html/example/example.html";
     }
 })
 }

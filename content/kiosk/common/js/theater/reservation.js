@@ -1,4 +1,4 @@
-import {SUBJECTNUM, PAY, CATEGORYNUM, NOQUESTION, OPTION, QUESTION, QUESTION2, QUESTION3, QUESTIONAMOUNT, QUESTIONOPTION} from '/content/kiosk/common/js/utils/key.js';
+import {SUBJECTNUM, PAY, CATEGORYNUM, NOQUESTION, OPTION, QUESTION, QUESTION2, QUESTION3, QUESTIONAMOUNT, QUESTIONOPTION} from "../../js/utils/key.js";
 
 const img = document.querySelector(".movieImg");
 const title = document.querySelector(".title");
@@ -13,7 +13,7 @@ const cancel = document.querySelector(".cancel");
 const ticketBox = document.querySelector(".tickets");
 const seatBox = document.querySelector(".seats");
 
-const movieImg = ["/content/kiosk/img/theater/barbie.jpg", "/content/kiosk/img/theater/elemental.jpg", "/content/kiosk/img/theater/conan.jpg", "/content/kiosk/img/theater/mission-impossible.jpg", "/content/kiosk/img/theater/smuggling.jpg", "/content/kiosk/img/theater/the-moon.jpg"];
+const movieImg = ["../../../img/theater/barbie.jpg", "../../../img/theater/elemental.jpg", "../../../img/theater/conan.jpg", "../../../img/theater/mission-impossible.jpg", "../../../img/theater/smuggling.jpg", "../../../img/theater/the-moon.jpg"];
 const movieName = ["바비", "엘리멘탈", "코난", "미션 임파서블", "밀수", "더 문"];
 const dayArr = ["일", "월", "화", "수", "목", "금", "토"];
 const type = ["일반", "청소년", "장애인", "경로우대"];
@@ -57,7 +57,7 @@ complete.addEventListener("click", () => {
     localStorage.removeItem(QUESTION3);
     localStorage.removeItem(QUESTIONOPTION);
     localStorage.removeItem(QUESTIONAMOUNT);
-    location.href = "/content/kiosk/common/html/payment-method.html";
+    location.href = "../../html/payment-method.html";
   }
 })
 
@@ -73,12 +73,12 @@ function alertFunc (){
     cancelButtonText: '네'
   }).then((result) => {
     if (result.isConfirmed) {
-      location.href = "/content/kiosk/common/html/main-category.html";
+      location.href = "../../html/main-category.html";
     }
     else if(result.isDismissed){
       localStorage.setItem(SUBJECTNUM, Number(localStorage.getItem(SUBJECTNUM)) + 1);
       localStorage.setItem(CATEGORYNUM, 1);
-      location.href = "/content/kiosk/common/html/example/example.html";
+      location.href = "../../html/example/example.html";
     }
 })
 } 

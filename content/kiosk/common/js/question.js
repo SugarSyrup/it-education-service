@@ -1,4 +1,4 @@
-import {QUESTION, QUESTION2, QUESTION3, QUESTIONAMOUNT, QUESTIONOPTION, SUBJECTNUM, REMOVE, PLACE, PAY, CLASSNAME, NOQUESTION} from '/content/kiosk/common/js/utils/key.js';
+import {QUESTION, QUESTION2, QUESTION3, QUESTIONAMOUNT, QUESTIONOPTION, SUBJECTNUM, REMOVE, PLACE, PAY, CLASSNAME, NOQUESTION} from "../js/utils/key.js";
 const questionText = document.querySelectorAll(".question");
 const questionAmount = document.querySelector(".questionAmount");
 const questionTextBox = document.querySelector(".questionText");

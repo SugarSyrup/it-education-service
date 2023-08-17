@@ -1,4 +1,4 @@
-import {CATEGORYNUM, PAY, SUBJECTNUM, SINGLECART, SINGLEAMOUNT, CLASSNAME, REMOVE, NOQUESTION, OPTION, QUESTION, QUESTION2, QUESTION3, QUESTIONAMOUNT, QUESTIONOPTION } from '/content/kiosk/common/js/utils/key.js';
+import {CATEGORYNUM, PAY, SUBJECTNUM, SINGLECART, SINGLEAMOUNT, CLASSNAME, REMOVE, NOQUESTION, OPTION, QUESTION, QUESTION2, QUESTION3, QUESTIONAMOUNT, QUESTIONOPTION, SNACKOPTION, DRINKOPTION } from "../../js/utils/key.js";
 
 const subject = document.querySelector(".subject");
 const questionBtn = document.querySelector(".questionBtn");
@@ -20,13 +20,13 @@ let parseSingle = [];
 let singleAmount = [1];
 let parseCafe = [];
 let cafeAmount = [1];
-const arr = ["/content/kiosk/img/fast-food/buger/1955.png", "1955 버거", "7,200원"];
+const arr = ["../../img/fast-food/buger/1955.png", "1955 버거", "7,200원"];
 const cafeArr = ["/content/kiosk/img/cafe/coffee/americano-hot.jpg", "아메리카노", "4,000원", "핫", "레귤러", "기본"];
 const movieArr = [["코난", "15:25 ~ 17:44", "3관"], ["일반"], ["1매"], ["G05"]]
 
-const questionArr = ["/content/kiosk/common/html/select-place.html", "/content/kiosk/common/html/practice-category.html", "/content/kiosk/common/html/practice-category.html", "/content/kiosk/common/html/practice-category.html", "/content/kiosk/common/html/practice-category.html", "/content/kiosk/common/html/order-list.html", "/content/kiosk/common/html/order-list.html", "/content/kiosk/common/html/order-list.html", "/content/kiosk/common/html/payment-method.html", "/content/kiosk/common/html/select-place.html"];
-const cafeQuestionArr = ["/content/kiosk/common/html/select-place.html", "/content/kiosk/common/html/practice-category.html", "/content/kiosk/common/html/practice-category.html", "/content/kiosk/common/html/practice-category.html", "/content/kiosk/common/html/order-list.html", "/content/kiosk/common/html/order-list.html", "/content/kiosk/common/html/order-list.html", "/content/kiosk/common/html/payment-method.html", "/content/kiosk/common/html/select-place.html"];
-const theaterQuestionArr = ["/content/kiosk/common/html/theater/movie-time.html", "/content/kiosk/common/html/theater/movie-time.html", "/content/kiosk/common/html/theater/movie-time.html", "/content/kiosk/common/html/theater/movie-time.html", "/content/kiosk/common/html/theater/movie-time.html", "/content/kiosk/common/html/payment-method.html", "/content/kiosk/common/html/theater/movie-time.html"];
+const questionArr = ["../../html/select-place.html", "../../html/practice-category.html", "../../html/practice-category.html", "../../html/practice-category.html", "../../html/practice-category.html", "../../html/order-list.html", "../../html/order-list.html", "../../html/order-list.html", "../../html/payment-method.html", "../../html/select-place.html"];
+const cafeQuestionArr = ["../../html/select-place.html", "../../html/practice-category.html", "../../html/practice-category.html", "../../html/practice-category.html", "../../html/order-list.html", "../../html/order-list.html", "../../html/order-list.html", "../../html/payment-method.html", "../../html/select-place.html"];
+const theaterQuestionArr = ["../../html/theater/movie-time.html", "../../html/theater/movie-time.html", "../../html/theater/movie-time.html", "../../html/theater/movie-time.html", "../../html/theater/movie-time.html", "../../html/payment-method.html", "../../html/theater/movie-time.html"];
 
 if(className == "fast-food"){
   if(subjectNum > 8 && noQuestionBtn != null){
@@ -38,8 +38,10 @@ if(className == "fast-food"){
       localStorage.removeItem(QUESTION3);
       localStorage.removeItem(QUESTIONOPTION);
       localStorage.removeItem(QUESTIONAMOUNT);
+      localStorage.removeItem(SNACKOPTION);
+      localStorage.removeItem(DRINKOPTION)
 
-      location.href = "/content/kiosk/common/html/select-place.html";
+      location.href = "../../html/select-place.html";
     })
   }
   else if(questionBtn){
@@ -54,7 +56,7 @@ else if(className == "cafe"){
     noQuestionBtn.classList.remove(REMOVE);
     noQuestionBtn.addEventListener("click", () => {
       localStorage.setItem(NOQUESTION, "no");
-      location.href = "/content/kiosk/common/html/select-place.html";
+      location.href = "../../html/select-place.html";
     })
   }
   else if(questionBtn){
@@ -70,7 +72,7 @@ else{
       noQuestionBtn.classList.remove(REMOVE);
       noQuestionBtn.addEventListener("click", () => {
         localStorage.setItem(NOQUESTION, "no");
-        location.href = "/content/kiosk/common/html/theater/movie-time.html";
+        location.href = "../../html/theater/movie-time.html";
       })
     }
   }

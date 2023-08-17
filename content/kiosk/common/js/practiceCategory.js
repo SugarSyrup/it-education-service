@@ -1,4 +1,4 @@
-import {SETOPTION, SINGLEOPTION, CATEGORYNUM, SUBJECTNUM, OPTION, QUESTION, QUESTION2, QUESTION3, QUESTIONAMOUNT, REMOVE, QUESTIONOPTION, CLASSNAME} from '/content/kiosk/common/js/utils/key.js';
+import {SETOPTION, SINGLEOPTION, CATEGORYNUM, SUBJECTNUM, OPTION, QUESTION, QUESTION2, QUESTION3, QUESTIONAMOUNT, REMOVE, QUESTIONOPTION, CLASSNAME} from "../js/utils/key.js";
 const imgs = document.querySelectorAll("img");
 const menuName = document.querySelectorAll(".menu-name");
 const category = document.querySelectorAll(".category-li");
@@ -23,9 +23,8 @@ if(className == "fast-food"){
 }
 
 orderList.addEventListener("click", () =>{
-  location.href = "/content/kiosk/common/html/order-list.html";
+  location.href = "../html/order-list.html";
 })
 
 localStorage.removeItem(SETOPTION);
 localStorage.removeItem(SINGLEOPTION);
-// localStorage.removeItem(OPTION);

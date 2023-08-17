@@ -1,4 +1,4 @@
-import {SETCATEGORYNUM, SUBJECTNUM, QUESTIONAMOUNT, CATEGORYNUM, SETOPTION, SETCART, OPTION, SNACKOPTION, DRINKOPTION, BUGERCHANGE, SNACKCHANGE, DRINKCHANGE, NOQUESTION} from '/content/kiosk/common/js/utils/key.js';
+import {SETCATEGORYNUM, SUBJECTNUM, QUESTIONAMOUNT, CATEGORYNUM, SETOPTION, SETCART, OPTION, SNACKOPTION, DRINKOPTION, BUGERCHANGE, SNACKCHANGE, DRINKCHANGE, NOQUESTION} from "../../js/utils/key.js";
 const category = document.querySelectorAll("li");
 const amount = document.querySelector(".amount-num");
 
@@ -16,7 +16,7 @@ const buger = document.querySelector(".selected-buger");
 const selectedBugerName = document.querySelector(".selected-menu-name");
 const selectedBugerprice = document.querySelector(".selected-menu-price");
 
-const bugerArr = ["/content/kiosk/img/fast-food/buger/1955.png", "/content/kiosk/img/fast-food/buger/bacon-tomato-buger.png", "/content/kiosk/img/fast-food/buger/big-mac.png", "/content/kiosk/img/fast-food/buger/cheese-buger.png", "/content/kiosk/img/fast-food/buger/bulgogi-buger.png", "/content/kiosk/img/fast-food/buger/crispy-buger.png", "/content/kiosk/img/fast-food/buger/quarter-pound.png", "/content/kiosk/img/fast-food/buger/shrimp-buger.png"];
+const bugerArr = ["../../img/fast-food/buger/1955.png", "../../img/fast-food/buger/bacon-tomato-buger.png", "../../img/fast-food/buger/big-mac.png", "../../img/fast-food/buger/cheese-buger.png", "../../img/fast-food/buger/bulgogi-buger.png", "../../img/fast-food/buger/crispy-buger.png", "../../img/fast-food/buger/quarter-pound.png", "../../img/fast-food/buger/shrimp-buger.png"];
 const bugerNameArr = ["1955 버거", "베이컨 버거", "빅맥", "치즈 버거", "불고기 버거", "크리스피 버거", "쿼터파운드 버거", "새우버거"];
 
 const bugerOption = JSON.parse(localStorage.getItem(OPTION));
@@ -33,12 +33,17 @@ let menuImgArr = [singleBugerImg, snackOption[0], drinkOption[0]];
 let menuNameArr = [bugerOption[1], snackOption[1], drinkOption[1]];
 let menuPriceArr = [bugerOption[2], snackOption[2], drinkOption[2]];
 
-buger.setAttribute("src", bugerOption[0]);
+buger.setAttribute("src", "../" + bugerOption[0]);
 selectedBugerName.innerText = bugerOption[1] + "세트";
 selectedBugerprice.innerText = bugerOption[2];
 
 for(let i = 0; i < menuImg.length; i++){
-  menuImg[i].setAttribute("src", menuImgArr[i]);
+  if(i == 0){
+  menuImg[i].setAttribute("src", "../" + menuImgArr[i]);
+  }
+  else{
+    menuImg[i].setAttribute("src", menuImgArr[i]);
+  }
   menuName[i].innerText = menuNameArr[i];
   menuPrice[i].innerText = menuPriceArr[i];
 }
@@ -49,19 +54,19 @@ const drinkChangeBtn = document.querySelector(".change-drink");
 
 bugerChangeBtn.addEventListener("click", () => {
   localStorage.setItem(BUGERCHANGE, "change");
-  location.href = "/content/kiosk/common/html/practice-category.html";
+  location.href = "../../html/practice-category.html";
 })
 
 snackChangeBtn.addEventListener("click", () => {
   localStorage.setItem(SETCATEGORYNUM, 1);
   localStorage.setItem(SNACKCHANGE, "change");
-  location.href = "/content/kiosk/common/html/fastFood/set-option.html";
+  location.href = "../../html/fastFood/set-option.html";
 })
 
 drinkChangeBtn.addEventListener("click", () => {
   localStorage.setItem(SETCATEGORYNUM, 2);
   localStorage.setItem(DRINKCHANGE, "change");
-  location.href = "/content/kiosk/common/html/fastFood/set-option.html";
+  location.href = "../../html/fastFood/set-option.html";
 })
 
 ////----------------------------------------------------------
@@ -78,7 +83,7 @@ cancel.addEventListener("click", () => {
   localStorage.removeItem(SNACKOPTION);
   localStorage.removeItem(OPTION);
   localStorage.removeItem("amount");
-  location.href = "/content/kiosk/common/html/practice-category.html";
+  location.href = "../../html/practice-category.html";
 })
 
 if(!localStorage.getItem(NOQUESTION)){
@@ -127,7 +132,7 @@ else{
       localStorage.setItem(SETCART, JSON.stringify(cart));
     }
     removeItem();
-    location.href = "/content/kiosk/common/html/practice-category.html";
+    location.href = "../../html/practice-category.html";
   })
 }
 
@@ -151,12 +156,12 @@ function alertFunc (){
     cancelButtonText: '네'
   }).then((result) => {
     if (result.isConfirmed) {
-      location.href = "/content/kiosk/common/html/main-category.html";
+      location.href = "../../html/main-category.html";
     }
     else if(result.isDismissed){
       localStorage.setItem(SUBJECTNUM, Number(localStorage.getItem(SUBJECTNUM)) + 1);
       localStorage.setItem(CATEGORYNUM, 1);
-      location.href = "/content/kiosk/common/html/example/example.html";
+      location.href = "../../html/example/example.html";
     }
 })
 }

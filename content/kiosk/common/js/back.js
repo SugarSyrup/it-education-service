@@ -1,4 +1,4 @@
-import {SETCATEGORYNUM, REMOVE} from '/content/kiosk/common/js/utils/key.js';
+import {SETCATEGORYNUM, REMOVE} from "../js/utils/key.js";
 const back = document.querySelector(".fa-left-long");
 
 back.addEventListener("click", () => {
