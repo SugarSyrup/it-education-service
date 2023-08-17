@@ -16,6 +16,7 @@ header{
 .fa-left-long,
 .fa-house{
   font-size: 24px;
+  cursor:pointer;
 }
 
 header span.title{

@@ -3,16 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../styles/layout/page1.css">
   <link rel="stylesheet" href="./css/phone4.css">
   <title>phone</title>
 </head>
 <body>
   <!-- header -->
-  <div class="header">
+  <header>
     <i class="fa-solid fa-left-long" onClick="goBack()"></i>
-      <span class = "title">4.휴대폰 인증</span>
-      <i class="fa-solid fa-house"></i>
-  </div>
+    <span class="title">4. 휴대폰 인증</span>
+    <i class="fa-solid fa-house" onClick="location.href = '../../main.html'"></i>
+  </header>
 
   <main>
     <div class="explain">
@@ -33,7 +34,9 @@
         </div>
         <div id = "number">
           <div class = "font_size">전화번호 입력</div>
-          <input type = "text" maxlength = "3" id = "first">-<input type = "text" maxlength = "4" id = "second">-<input type = "text" maxlength = "4" id = "third">
+          <input type = "text" maxlength = "3" id = "first">
+          <input type = "text" maxlength = "4" id = "second">
+          <input type = "text" maxlength = "4" id = "third">
           <div>
             <button id = "phone_sign">인증요청</button>
           </div>
@@ -51,6 +54,7 @@
     </div>
     <div class="question" onClick = "location.href ='agree5_page.html'">다음 단계</div>
   </main>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
   <script src="https://kit.fontawesome.com/a563f706d0.js" crossorigin="anonymous"></script>
   <script src = "./js/phone.js"></script>
 </body>

@@ -11,6 +11,10 @@ main{
 }
 
 form{
+  padding-top:60px;
+  padding-bottom:40px;
+  padding-left:20px;
+  padding-right:20px;
   display : flex;
   flex-direction : column;
   align-items : center;
@@ -23,35 +27,19 @@ form{
   color : white;
   margin-bottom : 20px;
 }
-
-.explain{
-  width: 90%;
-  height: 83%;
-  border-radius: 20px;
-  background-color: rgb(103, 93, 80);
+form span {
+  color:white;
+  margin-bottom:30px;
 }
 
 .login_btn{
-  background-color: rgb(245, 134, 31);
+  background-color: var(--accent);
   color : white;
   font-weight: bold;
   border : 0;
   font-size : 20px;
   border-radius : 5px;
-}
-
-.question{
-  width: 90%;
-  height: 10%;
-  border-radius: 20px;
-  font-size: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(245, 134, 31);
-  color : white;
-  font-weight: bold;
-  border : 0;
+  cursor:pointer;
 }
 
 .id, .pw, .login_btn, .join_btn{

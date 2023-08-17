@@ -52,6 +52,7 @@ form div.input_wrapper:first-child{
 
 #submit{
   margin : 20px 0 0 0;
+  cursor:pointer;
 }
 
 
@@ -128,11 +129,15 @@ form div.input_wrapper:first-child{
 .hint_box{
   width : 270px;
   height : 100px;
-  background-color : rgb(245, 134, 31);
+  background-color : var(--secondary);
   position : absolute;
   border-radius : 5px;
-  border : 0;
+  border : 2px solid black;
   color : white;
+
+  display:flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .remove{

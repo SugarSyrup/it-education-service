@@ -28,6 +28,7 @@ div.main div.learning-from-scratch{
   background-color: var(--accent);
   color:white;
   font-size: 22px;
+  cursor:pointer;
 }
 
 div.main div.category-box{
@@ -60,4 +61,5 @@ div.main div.category-box div.category{
 
   color:white;
   background-color: var(--secondary);
+  cursor:pointer;
 }
