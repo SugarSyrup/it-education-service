@@ -80,3 +80,9 @@ main{
 .backgroundNone{
   background-color: rgba(0, 0, 0, 0);
 }
+
+
+.practice-section p{
+  padding:0;
+  color: black;
+}

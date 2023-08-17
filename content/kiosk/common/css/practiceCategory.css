@@ -110,3 +110,7 @@
   font-size: 18px;
   background-color: rgb(245, 134, 31);
 }
+
+.menu-name, .menu-price {
+  margin-top:5px;
+}
