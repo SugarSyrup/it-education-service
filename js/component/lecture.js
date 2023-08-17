@@ -11,7 +11,7 @@ function Lecture(title, explain, tags, practice, link) {
                 `<span class="tag">${tag}</span>`
             )}
             </div>
-            ${practice && `<span class="practice">실습</span>`}
+            ${practice && `<span class="practice">실습가능!</span>`}
         </div>
     `
 
