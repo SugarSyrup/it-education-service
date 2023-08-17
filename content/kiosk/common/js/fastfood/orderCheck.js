@@ -7,9 +7,9 @@ localStorage.setItem(SETCATEGORYNUM, 3);
 let categoryNum = Number(localStorage.getItem(SETCATEGORYNUM)) -1;
 
 category[categoryNum].style.backgroundColor = "rgb(245, 134, 31)";
-category[categoryNum].style.width = "18.3vw";
+// category[categoryNum].style.width = "18.3vw";
 category[categoryNum].style.position = "relative";
-category[categoryNum].style.left = "1.05vw";
+// category[categoryNum].style.left = "1.05vw";
 
 //---------------------------------------------------
 const buger = document.querySelector(".selected-buger");

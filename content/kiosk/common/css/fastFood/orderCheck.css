@@ -3,9 +3,11 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+
+  height:500px;
 }
 .order-step{
-  width: 18%;
+  width: 20%;
   /* 17vw */
   height: 100%;
   border-top-left-radius: 20px;
@@ -20,6 +22,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin:0;
+  padding:0;
 }
 .order-step li{
   width: 100%;
@@ -50,8 +54,8 @@
   font-size: 20px;
   font-weight: 900;
   position: absolute;
-  top: 1.5vh;
-  left: 1vw;
+  top: 10px;
+  left: 5px;
   z-index: 2;
 }
 .selected-menu img{
@@ -66,9 +70,11 @@
   display: flex;
   flex-wrap: wrap;
   overflow-y: auto;
+  margin-top:10px;
 }
 .menu{
-  margin: 1vh 2vw 1vh 2.5vw;
+  margin-left:10px;
+  margin-bottom:10px;
   width: 43%;
   height: 80%;
   font-size: 13px;
@@ -129,7 +135,6 @@
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   position: relative;
-  top: 1.4vh;
   background-color: rgba(245, 245, 220, 0.147);
 }
 .cancel{
@@ -147,4 +152,10 @@
   border-bottom-right-radius: 20px;
   font-size: 18px;
   background-color: rgb(245, 134, 31);
+}
+
+.practice-section p {
+  padding:0;
+  margin:0;
+  color:black;
 }

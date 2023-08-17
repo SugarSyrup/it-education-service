@@ -23,9 +23,9 @@ let categoryNum = Number(localStorage.getItem(SETCATEGORYNUM)) -1;
 const subjectNum = localStorage.getItem(SUBJECTNUM);
 
 category[categoryNum].style.backgroundColor = "rgb(245, 134, 31)";
-category[categoryNum].style.width = "18.3vw";
+// category[categoryNum].style.width = "18.3vw";
 category[categoryNum].style.position = "relative";
-category[categoryNum].style.left = "1.05vw";
+// category[categoryNum].style.left = "1.05vw";
 category[categoryNum].style.fontSize = "15px";
 
 for(let i = 0; i < imgs.length; i++){

@@ -5,11 +5,11 @@ const questionBtn = document.querySelector(".questionBtn");
 const noQuestionBtn = document.querySelector(".noQuestion");
 const gif = document.querySelector(".gif");
 
-const subjectArr = ["1. 매장 / 포장", "2. 메뉴 선택", "3. 단품 주문하기", "4. 세트 상품 주문하기", "5. 주문내역 확인", "6. 상품 취소하기", "7. 추가 주문하기", "8. 주문 하기", "9. 결제 방법 선택하기", "10. 연습하기"];
-const cafeSubjectArr = ["1. 매장 / 포장", "2. 메뉴 선택", "3. 메뉴 주문하기", "4. 주문내역 확인", "5. 상품 취소하기", "6. 추가 주문하기", "7. 주문 하기", "8. 결제 방법 선택하기", "9. 연습하기"];
-const theaterSubjectArr = ["1. 영화 선택", "2. 시간 선택", "3. 예매 매수 선택", "4. 좌석 선택","5. 예매하기", "6. 결제 수단 선택", "7. 연습하기"];
+const subjectArr = ["매장 / 포장", "메뉴 선택", "단품 주문하기", "세트 상품 주문하기", "주문내역 확인", "상품 취소하기", "추가 주문하기", "주문 하기", "결제 방법 선택하기", "연습하기"];
+const cafeSubjectArr = ["매장 / 포장", "메뉴 선택", "메뉴 주문하기", "주문내역 확인", "상품 취소하기", "추가 주문하기", "주문 하기", "결제 방법 선택하기", "연습하기"];
+const theaterSubjectArr = ["영화 선택", "시간 선택", "예매 매수 선택", "좌석 선택","예매하기", "결제 수단 선택", "연습하기"];
 
-const fastFoodGif = ["../../../img/example/ selectPlace.gif", "../../../img/example/fastFood/fastFood2.gif", "../../../img/example/fastFood/fastFood3.gif", "../../../img/example/fastFood/fastFood4.gif", "../../../img/example/fastFood/fastFood5.gif", "../../../img/example/fastFood/fastFood6.gif", "../../../img/example/fastFood/fastFood7.gif", "../../../img/example/fastFood/fastFood8.gif", "../../../img/example/payment.gif", "../../../img/example/fastFood/fastFood9.gif"];
+const fastFoodGif = ["../../../img/example/selectPlace.gif", "../../../img/example/fastFood/fastFood2.gif", "../../../img/example/fastFood/fastFood3.gif", "../../../img/example/fastFood/fastFood4.gif", "../../../img/example/fastFood/fastFood5.gif", "../../../img/example/fastFood/fastFood6.gif", "../../../img/example/fastFood/fastFood7.gif", "../../../img/example/fastFood/fastFood8.gif", "../../../img/example/payment.gif", "../../../img/example/fastFood/fastFood9.gif"];
 const cafeGif = ["../../../img/example/selectPlace.gif", "../../../img/example/cafe/cafe2.gif", "../../../img/example/cafe/cafe3.gif", "../../../img/example/cafe/cafe4.gif", "../../../img/example/cafe/cafe5.gif", "../../../img/example/cafe/cafe6.gif", "../../../img/example/cafe/cafe7.gif", "../../../img/example/payment.gif", "../../../img/example/cafe/cafe9.gif"];
 const movieGif = ["../../../img/example/movie/movie1.gif", "../../../img/example/movie/movie2.gif", "../../../img/example/movie/movie3.gif", "../../../img/example/movie/movie4.gif", "../../../img/example/movie/movie5.gif", "../../../img/example/payment.gif", "../../../img/example/movie/movie7.gif"];
 

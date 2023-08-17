@@ -5,5 +5,5 @@ back.addEventListener("click", () => {
   if(localStorage.getItem(SETCATEGORYNUM) == 3){
     localStorage.setItem(SETCATEGORYNUM, 1);
   }
-  location.href = "javascript:history.back()";
+  // location.href = "javascript:history.back()";
 })
