@@ -1,0 +1,27 @@
+@import url('./utils/default.css');
+@import url('./utils/font.css');
+
+@import url('./layout/header.css');
+
+main{
+    width:90%;
+    margin:auto;
+    margin-top:20px;
+    color:white;
+    font-weight: 200;
+}
+main div.posts_wrapper {
+    margin-top:50px;
+}
+
+main div.posts_wrapper span.label{
+    font-size:24px;
+    margin-bottom:30px;
+}
+
+main div.lectures_wrapper div.posts {
+    margin-top:10px;
+    display:flex;
+    flex-direction: column;
+    gap:10px;
+}

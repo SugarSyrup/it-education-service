@@ -26,10 +26,27 @@ back_button.addEventListener('click', (event) => {
 
 //image
 const image_input = document.querySelector('#image');
+const image_label = document.querySelector('.image_input');
+let submit_flag = false;
 
 image_input.addEventListener('change', (e) => {
     const data = e.target.files[0];
-    fetch('https://likelionhelper.fly.dev/post/image')
+    const formData = new FormData();
+    formData.append('image', data);
+
+    fetch('https://likelionhelper.fly.dev/post/image', {
+        method:'POST',
+        body: formData
+    }).then(async (response) => {
+        return await response.json()
+    })
+        .then((response) => { 
+            image_label.innerHTML = `<img src=${response.path} alt="image" class="" style="max-width:100%"></img>`
+            submit_flag = true;
+        })
+        .catch((error) => {
+            console.log(error)
+        })
 })
 
 
@@ -40,16 +57,33 @@ const textarea = document.querySelector('textarea');
 const submit_button = document.querySelector('.final');
 
 submit_button.addEventListener('click', (e) => {
-    const data = {
-        "name": inputs[0].value,
-        "email": inputs[1].value,
-        "password": inputs[2].value,
-        "title": inputs[3].value,
-        "explain": inputs[4].value,
-        "content" : [{
-            "text": inputs[5].value,
-            "image": inputs[6].value,
-        }]
+    if(submit_flag) {
+        const data = {
+            "author": inputs[0].value,
+            "email": inputs[1].value,
+            "password": inputs[2].value,
+            "title": inputs[3].value,
+            "explain": inputs[4].value,
+            "content" : [{
+                "text": inputs[5].value,
+                "img": document.querySelector('img').src
+            }]
+        }
+        fetch('https://likelionhelper.fly.dev/post/create',{
+            method:'POST',
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data)
+        })
+            .then((response) => {
+                if(window.confirm('전송 완료되었습니다. 심사 결과는 이메일로 통지될 예정입니다.')) {
+                    location.href = './main.html';
+                } else {
+                    location.href = './main.html';
+                }
+            })
+    } else {
+        window.alert('모든 입력을 진행해 주세요!')
     }
-    console.log(data);
 })
