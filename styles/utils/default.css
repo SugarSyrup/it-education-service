@@ -21,12 +21,15 @@ time, mark, audio, video {
 	font-family: 'DOHYEON';
 	vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
+	max-width:360px;
+	margin:auto;
 	line-height: 1;
 	background-color: var(--dark);
 }
