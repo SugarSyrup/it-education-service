@@ -9,9 +9,9 @@ const subjectArr = ["1. 매장 / 포장", "2. 메뉴 선택", "3. 단품 주문�
 const cafeSubjectArr = ["1. 매장 / 포장", "2. 메뉴 선택", "3. 메뉴 주문하기", "4. 주문내역 확인", "5. 상품 취소하기", "6. 추가 주문하기", "7. 주문 하기", "8. 결제 방법 선택하기", "9. 연습하기"];
 const theaterSubjectArr = ["1. 영화 선택", "2. 시간 선택", "3. 예매 매수 선택", "4. 좌석 선택","5. 예매하기", "6. 결제 수단 선택", "7. 연습하기"];
 
-const fastFoodGif = ["/content/kiosk/img/example/selectPlace.gif", "/content/kiosk/img/example/fastFood/fastFood2.gif", "/content/kiosk/img/example/fastFood/fastFood3.gif", "/content/kiosk/img/example/fastFood/fastFood4.gif", "/content/kiosk/img/example/fastFood/fastFood5.gif", "/content/kiosk/img/example/fastFood/fastFood6.gif", "/content/kiosk/img/example/fastFood/fastFood7.gif", "/content/kiosk/img/example/fastFood/fastFood8.gif", "/content/kiosk/img/example/payment.gif", "/content/kiosk/img/example/fastFood/fastFood9.gif"];
-const cafeGif = ["/content/kiosk/img/example/selectPlace.gif", "/content/kiosk/img/example/cafe/cafe2.gif", "/content/kiosk/img/example/cafe/cafe3.gif", "/content/kiosk/img/example/cafe/cafe4.gif", "/content/kiosk/img/example/cafe/cafe5.gif", "/content/kiosk/img/example/cafe/cafe6.gif", "/content/kiosk/img/example/cafe/cafe7.gif", "/content/kiosk/img/example/payment.gif", "/content/kiosk/img/example/cafe/cafe9.gif"];
-const movieGif = ["/content/kiosk/img/example/movie/movie1.gif", "/content/kiosk/img/example/movie/movie2.gif", "/content/kiosk/img/example/movie/movie3.gif", "/content/kiosk/img/example/movie/movie4.gif", "/content/kiosk/img/example/movie/movie5.gif", "/content/kiosk/img/example/payment.gif", "/content/kiosk/img/example/movie/movie7.gif"];
+const fastFoodGif = ["../../../img/example/ selectPlace.gif", "../../../img/example/fastFood/fastFood2.gif", "../../../img/example/fastFood/fastFood3.gif", "../../../img/example/fastFood/fastFood4.gif", "../../../img/example/fastFood/fastFood5.gif", "../../../img/example/fastFood/fastFood6.gif", "../../../img/example/fastFood/fastFood7.gif", "../../../img/example/fastFood/fastFood8.gif", "../../../img/example/payment.gif", "../../../img/example/fastFood/fastFood9.gif"];
+const cafeGif = ["../../../img/example/selectPlace.gif", "../../../img/example/cafe/cafe2.gif", "../../../img/example/cafe/cafe3.gif", "../../../img/example/cafe/cafe4.gif", "../../../img/example/cafe/cafe5.gif", "../../../img/example/cafe/cafe6.gif", "../../../img/example/cafe/cafe7.gif", "../../../img/example/payment.gif", "../../../img/example/cafe/cafe9.gif"];
+const movieGif = ["../../../img/example/movie/movie1.gif", "../../../img/example/movie/movie2.gif", "../../../img/example/movie/movie3.gif", "../../../img/example/movie/movie4.gif", "../../../img/example/movie/movie5.gif", "../../../img/example/payment.gif", "../../../img/example/movie/movie7.gif"];
 
 const subjectNum = localStorage.getItem(SUBJECTNUM);
 const className = localStorage.getItem(CLASSNAME);
@@ -21,7 +21,7 @@ let singleAmount = [1];
 let parseCafe = [];
 let cafeAmount = [1];
 const arr = ["../../img/fast-food/buger/1955.png", "1955 버거", "7,200원"];
-const cafeArr = ["/content/kiosk/img/cafe/coffee/americano-hot.jpg", "아메리카노", "4,000원", "핫", "레귤러", "기본"];
+const cafeArr = ["../../../img/cafe/coffee/americano-hot.jpg", "아메리카노", "4,000원", "핫", "레귤러", "기본"];
 const movieArr = [["코난", "15:25 ~ 17:44", "3관"], ["일반"], ["1매"], ["G05"]]
 
 const questionArr = ["../../html/select-place.html", "../../html/practice-category.html", "../../html/practice-category.html", "../../html/practice-category.html", "../../html/practice-category.html", "../../html/order-list.html", "../../html/order-list.html", "../../html/order-list.html", "../../html/payment-method.html", "../../html/select-place.html"];
