@@ -15,7 +15,7 @@ next_button.addEventListener('click', (event) => {
 back_button.addEventListener('click', (event) => {
     event.preventDefault();
     if(flag){
-        location.href="/post.html";
+        location.href="./post.html";
     }
     else {
         root1.style.display = 'flex';
