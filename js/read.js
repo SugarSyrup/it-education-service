@@ -27,7 +27,7 @@ submit_button.addEventListener('click', (e) => {
     })
         .then((response) => { 
             localStorage.setItem("post_read",JSON.stringify(response));
-            location.href = "/detail.html";
+            location.href = "./detail.html";
         })
         .catch((error) => {
             values = [];
