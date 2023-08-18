@@ -8,10 +8,17 @@ const pw_check = localStorage.getItem('pwd');
 login_btn.addEventListener("click", function(event){
   event.preventDefault();
   if(id.value === id_check && pw.value === pw_check){
-    alert("로그인 성공!");
+    Swal.fire({
+      title: '로그인 성공!',
+      icon: 'success'
+    })
   }
   else{
-    alert("다시 확인해주세요");
+    Swal.fire({
+      title: '실패!',
+      icon: 'error',
+      text: '아이디와 비밀번호를 다시 확인해 주세요!',
+    })
   }
 })
 

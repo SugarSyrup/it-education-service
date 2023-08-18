@@ -1,0 +1,17 @@
+
+@font-face {
+    font-family: 'DOHYEON';
+    src: url('./BMDOHYEON_ttf.ttf') format('truetype');
+}
+
+* {
+    font-family: 'DOHYEON';
+}
+
+@import url("//fonts.googleapis.com/earlyaccess/nanumgothic.css" );
+input[type=password]{
+	font-family:"Nanum Gothic", sans-serif !important;
+}
+input[type=password]::placeholder {
+	font-family: 'DOHYEON'; 
+}

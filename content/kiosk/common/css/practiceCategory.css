@@ -1,0 +1,116 @@
+.category{
+  width: 15%;
+  /* height: 100%; */
+}
+.category ul{
+  width: 100%;
+  height: 100%;
+  font-size: 15px;
+  /* color: white; */
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding:0;
+  margin:0;
+}
+.menu{
+  width: 100%;
+  height: 460px;
+  display: flex;
+  justify-content: space-between;
+  position:relative;
+}
+.category-li{
+  width: 100%;
+  height: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor:pointer;
+  /* background-color: rgb(217, 217, 217); */
+}
+.focus{
+  background-color: rgb(245, 134, 31);
+  /* z-index: 2; */
+}
+.category li:first-child{
+  border-top-left-radius: 20px;
+}
+.product{
+  width: 87%;
+  height: 100%;
+  border-top-right-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+}
+.menu-top, .menu-mid, .menu-btm{
+  padding: 1vh 0 1vh 0;
+  width: 100%;
+  height: 30%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  /* background-color: rgb(217, 217, 217); */
+}
+.menu-mid, .menu-btm{
+  margin-top: 1vh;
+}
+.menu-top{
+  border-top-right-radius: 20px;
+}
+.product img{
+  width: 85px;
+  height: 100px;
+  border: 1px solid rgb(100, 100, 100);
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+}
+.menu-top div, .menu-mid div, .menu-btm div{
+  width: 33%;
+  height: 100%;
+  font-size: 13px;
+  letter-spacing: -1px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.remove{
+  display: none;
+}
+.cart{
+  width: 100%;
+  height: 10%;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+  background-color: rgb(245, 135, 31);
+}
+.price{
+  width: 50%;
+  height: 100%;
+  border-bottom-left-radius: 20px;
+  font-size: 20px;
+  font-weight: 900;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(245, 134, 31);
+}
+.order-list{
+  width: 50%;
+  height: 100%;
+  border: none;
+  border-left: 2px solid rgb(203, 110, 24);
+  border-bottom-right-radius: 20px;
+  font-size: 18px;
+  background-color: rgb(245, 134, 31);
+}
+
+.menu-name, .menu-price {
+  margin-top:5px;
+}

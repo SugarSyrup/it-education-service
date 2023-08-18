@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>page2</title>
+  <link rel="stylesheet" href="../../../../styles/layout/page2.css">
+  <link rel="stylesheet" href="../css/paymentMethod.css">
+  <link rel="stylesheet" href="../css/header.css">
+</head>
+<body>
+  <header>
+    <i class="fa-solid fa-left-long" onClick="location.href='./main-category.html'"></i>
+    <span class="title subject"></span>
+    <i class="fa-solid fa-house" onClick="location.href = '../../../../main.html'"></i>
+  </header>
+
+  <main>
+    <div class="text-box">
+    <span class="text">제시문</span>
+    <div class="question-box">
+      <div class="questionText">
+        <div class="div">
+          <span class="question"></span>
+        </div>
+      </div>
+      <div class="iconBox">
+        <i class="fa-solid fa-chevron-down"></i>
+      </div>
+    </div>
+  </div>
+    <div class="practice-section">
+      <p>결제 방법을 선택해 주세요</p>
+      <div class="choice">
+        <div class="payment-method">
+          <!-- <img src="https://www.visakorea.com/dam/VCOM/regional/ap/southkorea/global-elements/images/kr-visa-platinum-card-498x280.png" alt=""> -->
+          <i class="fa-regular fa-credit-card"></i>
+          <span class="method">카드</span>
+        </div>
+        <div class="payment-method">
+          <!-- <img src="https://via.placeholder.com/100x100" alt=""> -->
+          <i class="fa-solid fa-money-bill-wave"></i>
+          <span class="method">현금</span>
+        </div>
+        <div class="payment-method">
+          <!-- <img src="https://via.placeholder.com/100x100" alt=""> -->
+          <i class="fa-solid fa-mobile-screen-button"></i>
+          <span class="method">모바일 상품권</span>
+        </div>
+        <div class="payment-method">
+          <!-- <img src="https://via.placeholder.com/100x100" alt=""> -->
+          <!-- <div class="pointIcon">
+            <div class="icon">
+              <span class="iconText">P</span>
+            </div>
+          </div> -->
+          <i class="fa-brands fa-pinterest"></i>
+          <span class="method">포인트 사용</span>
+        </div>
+      </div>
+      <button class="back">뒤로</button>
+    </div>
+  </main>
+  <script type="module" src="../js/question.js"></script>
+  <script type="module" src="../js/back.js"></script>
+
+  <script type="module" src="../js/header.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+  <script type="module" src="../js/example/mainExample.js"></script>
+  <script type="module" src="../js/paymentMethod.js"></script>
+  <script type="module" src="https://kit.fontawesome.com/a563f706d0.js" crossorigin="anonymous"></script>
+</body>
+</html>

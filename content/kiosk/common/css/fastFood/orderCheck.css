@@ -1,0 +1,161 @@
+.practice-section{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  height:500px;
+}
+.order-step{
+  width: 20%;
+  /* 17vw */
+  height: 100%;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  font-size: 13px;
+  background-color: rgb(230, 230, 230);
+}
+.order-step ul{
+  width: 100%;
+  height: 100%;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin:0;
+  padding:0;
+}
+.order-step li{
+  width: 100%;
+  height: 34%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.order-step li:first-child{
+  border-top-left-radius: 20px;
+}
+.order-step li:last-child{
+  border-bottom-left-radius: 20px;
+}
+.check-section{
+  width: 80%;
+  height: 100%;
+}
+.selected-menu{
+  width: 100%;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  position: relative;
+}
+.select-text{
+  font-size: 20px;
+  font-weight: 900;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+  z-index: 2;
+}
+.selected-menu img{
+  width: 90%;
+  height: 90%;
+  position: relative;
+  top: 2.5vh;
+}
+.order-list{
+  width: 100%;
+  height: 40%;
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: auto;
+  margin-top:10px;
+}
+.menu{
+  margin-left:10px;
+  margin-bottom:10px;
+  width: 43%;
+  height: 80%;
+  font-size: 13px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+}
+.menu div{
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.menu img{
+  width: 100px;
+  height: 90px;
+}
+.menu button{
+  width: 90%;
+  height: 15%;
+  font-size: 12px;
+  border: 1px solid rgb(100, 100, 100);
+  background-color: white;
+}
+.amount{
+  width: 100%;
+  height: 8%;
+  display: flex;
+  align-items: center;
+  background-color: whitesmoke;
+}
+.minus, .plus{
+  width: 15%;
+  height: 100%;
+  border: 1px solid rgb(100, 100, 100);
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: aqua; */
+}
+.amount-num{
+  width: 70%;
+  height: 100%;
+  border-bottom: 1px solid rgb(100, 100, 100);
+  border-top: 1px solid rgb(100, 100, 100);
+  font-size: 15px;  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn-box{
+  width: 100%;
+  height: 10%;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  position: relative;
+  background-color: rgba(245, 245, 220, 0.147);
+}
+.cancel{
+  width: 35%;
+  height: 100%;
+  border: none;
+  border-right: 1px solid rgb(203, 110, 24);
+  font-size: 18px;
+  background-color: rgb(245, 134, 31);
+}
+.add-cart{
+  width: 65%;
+  height: 100%;
+  border: none;
+  border-bottom-right-radius: 20px;
+  font-size: 18px;
+  background-color: rgb(245, 134, 31);
+}
+
+.practice-section p {
+  padding:0;
+  margin:0;
+  color:black;
+}

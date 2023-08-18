@@ -27,11 +27,19 @@ let id_check = 0;
   function id_Create(event){
     event.preventDefault();
     if(id_check == 1){
-      alert("사용가능한 아이디 입니다!")
+      Swal.fire({
+        title: '사용 가능한 아이디 입니다!',
+        icon: 'success'
+      })
       localStorage.setItem('ID', id_Make.value);
     }
-    else
-      alert("사용 불가능한 아이디 입니다.");
+    else {  
+      Swal.fire({
+        title: '다시 확인해 주세요',
+        icon: 'error',
+        text: '사용 불가능한 아이디 입니다.',
+      })
+    }
   }
 
 id_Make.addEventListener('input',() => id_Check(id_Make.value))
@@ -65,11 +73,17 @@ function pwd_Text_Check_function(){
 function pwd_Btn_Click(event){
   event.preventDefault();
   if(pwd_check == 1 && pwd_check_ == 1){
-    alert("생성 되었습니다.");
+    Swal.fire({
+      title: '성공!',
+      icon: 'success'
+    })
     localStorage.setItem("pwd", pwd_Text.value);
   }
   else{
-    alert("다시 확인해주세요");
+    Swal.fire({
+      title: ' 다시 확인해 주세요!',
+      icon: 'error'
+    })
   }
 }
 

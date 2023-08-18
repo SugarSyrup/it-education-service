@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>page2</title>
+  <link rel="stylesheet" href="../../../../../styles/layout/page2.css">
+  <link rel="stylesheet" href="../../css/theater/reservation.css">
+  <link rel="stylesheet" href="../../css/header.css">
+</head>
+<body>
+  <header>
+    <i class="fa-solid fa-left-long" onClick="location.href='./../main-category.html'"></i>
+    <span class="title subject" style="width:auto"></span>
+    <i class="fa-solid fa-house" onClick="location.href = '../../../../../main.html'"></i>
+  </header>
+  <main>
+    <div class="text-box">
+    <span class="text">제시문</span>
+    <div class="question-box">
+      <div class="questionText">
+        <div class="div">
+          <span class="question"></span>
+          <span class="question"></span>
+        </div>
+        <div class="div">
+          <span class="question"></span>
+          <span class="question"></span>
+          <span class="questionAmount"></span>
+        </div>
+      </div>
+      <div class="iconBox">
+        <i class="fa-solid fa-chevron-down"></i>
+      </div>
+    </div>
+  </div>
+    <div class="practice-section">
+      <span class="text">예매 내역 확인</span>
+      <div class="reservationCheck">
+          <img class="movieImg" alt="">
+          <div class="inpo">
+            <span class="title"></span>
+            <div class="dateBox">
+              <span class="date"></span>
+              <span class="day"></span>
+            </div>
+            <span class="movieTime"></span>
+            <span class="numOfTheater"></span>
+            <div class="tickets">
+            </div>
+            <div class="seats">
+              <span>예매 좌석</span><br>
+            </div>
+          </div>
+      </div>
+      <div class="btn-box">
+        <button class="cancel">취소</button>
+        <button class="complete">결제하기</button>
+      </div>
+    </div>
+  </main>
+  <script type="module" src="../../js/question.js"></script>
+  <script type="module" src="../../js/back.js"></script>
+  <script type="module" src="../../js/header.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+  <script type="module" src="../../js/example/mainExample.js"></script>
+  <script type="module" src="../../js/theater/reservation.js"></script>
+  <script src="https://kit.fontawesome.com/a563f706d0.js" crossorigin="anonymous"></script>
+</body>
+</html>

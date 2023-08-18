@@ -3,34 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../styles/layout/page1.css">
   <link rel="stylesheet" href="./css/idpw3_page.css">
   <title>page1</title>
 </head>
 <body>
   <!-- header -->
-  <div class="header">
+  <header>
     <i class="fa-solid fa-left-long" onClick="goBack()"></i>
-    <span class = "title">3.아이디/비밀번호</span>
-    <i class="fa-solid fa-house"></i>
-  </div>
+    <span class="title" style="font-size:24px">3. 아이디 비밀번호 설정</span>
+    <i class="fa-solid fa-house" onClick="location.href = '../../main.html'"></i>
+  </header>
   <main>
     <div class="explain">
       <form>
         <div id = id_Box>
-          <input class = "ID" id = "id_Make" required maxlength= "12" type = "text" placeholder = "아이디 생성">
-          <button id = id_Btn>중복확인</button>
+          <label for="id_Make">아이디</label>
+          <div>
+            <input class = "ID" id = "id_Make" required maxlength= "12" type = "text" placeholder = "아이디 생성">
+            <button id = id_Btn>중복확인</button>
+          </div>
         </div>
         <div id = id_Msg>아이디 생성 조건은 영문 대 소문자와 숫자 6~12자로 해야합니다.</div>
-        <div id = id_Msg_Ex>
+        <!-- <div id = id_Msg_Ex>
           <div id = id_Msg_Ex_Font>아이디 예시 목록</div>
           <ul id = id_Ex_List>
             <li>SilverSoul55</li>
             <li>SkyBlue123</li>
             <li>LJH6252</li>
           </ul>
-        </div>
+        </div> -->
         <div id = pwd_Box>
-          <input class = "pwd" id = pwd_Text  required maxlength= "15" type = "password" placeholder = "비밀번호 생성">
+          <div class="input_wrapper">
+            <label for="id_Make">비밀번호</label>
+            <input class = "pwd" id = pwd_Text  required maxlength= "15" type = "password" placeholder = "비밀번호 생성">
+          </div>
           <div id = pwd_Msg>
             비밀번호는 8자 이상,영문 대/소문자, 숫자, 특수문자 중 적어도 하나를 포함해야 하며, 같은 문자가 연속으로 3번 이상 나오면 안 됩니다.</div>
           <input class = "pwd_check" id = "pwd_Text_Check" required maxlength= "15" type = "password" placeholder = "비밀번호 확인">
@@ -41,7 +48,8 @@
     </div>
     <div class="question" onClick = "location.href ='phone4.html'">다음 단계</div>
   </main>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
   <script src="https://kit.fontawesome.com/a563f706d0.js" crossorigin="anonymous"></script>
-  <script src = "js/ID_PWD.js"></script>
+  <script src = "./js/ID_PWD.js"></script>
 </body>
 </html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>스마트폰 기본기능</title>
+  <link rel="stylesheet" href="../../../layout/styles/page2.css">
+  <link rel="stylesheet" href="../styles/page2.css">
+  <link rel="stylesheet" href="../styles/href.css">
+</head>
+<body>
+  <div class="header">
+    <a href="../index.html"><i class="fa-solid fa-left-long"></i></a>
+    <span>10. 좋아하는 사진을 배경으로!</span>
+    <a href="../../../index.html">
+      <i class="fa-solid fa-house"></i>
+    </a>
+  </div>
+  
+  <main>
+    <div class="practice-section">
+      <img src="../images/test/main.jpg" alt="home" width="200" height="600" usemap="#image-map">
+    </div>
+
+    <map name="image-map">
+      <area shape="rect" coords="232, 30, 252, 48" alt="영역2" onclick="changeImage_2()">
+      <area shape="rect" coords="0, 0, 300, 20" alt="영역1" onclick="changeImage_1()">
+      <area shape="rect" coords="0, 130, 300, 175" alt="영역3" onclick="changeImage_3()">
+      <area shape="rect" coords="0, 265, 300, 300" alt="영역4" onclick="changeImage_4()">
+      
+    </map>
+
+    <div class="btn-box">
+      <div class="back"><a href="./page10-1.html">설명 보기</a></div>
+      <div class="hint">힌트 보기</div>
+    </div>
+  </main>
+  <script src="https://kit.fontawesome.com/a563f706d0.js" crossorigin="anonymous"></script>
+  <script src="../10.js"></script>
+</body>
+</html>

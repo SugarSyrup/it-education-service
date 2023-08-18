@@ -50,23 +50,31 @@ email_list.addEventListener('change', (event) => {
 function submit_btn(event){
   event.preventDefault();
   if(check == 0){
-    alert("정보가 잘못 되었습니다. 다시 입력해주세요");
+    Swal.fire({
+      title: '실패!',
+      icon: 'error',
+      text: '이름과 이메일을 다시 확인해 주세요!',
+    })
   }
   else{
-  localStorage.setItem('name', nameInput.value);
-  localStorage.setItem('ymd', year.value + month.value + day.value);
-    if(email_txt.disabled = false){
-    localStorage.setItem('email',emailInput.value+'@'+email_list.value)
+    Swal.fire({
+      title: '성공!',
+      icon: 'success'
+    })
+    localStorage.setItem('name', nameInput.value);
+    localStorage.setItem('ymd', year.value + month.value + day.value);
+      if(email_txt.disabled = false){
+      localStorage.setItem('email',emailInput.value+'@'+email_list.value)
+      }
+      else{
+      localStorage.setItem('email',emailInput.value+'@'+email_txt.value)
+      }
     }
-    else{
-    localStorage.setItem('email',emailInput.value+'@'+email_txt.value)
-    }
-  }
 }
 
 nameInput.addEventListener('input',() => IsEmpty(nameInput, name_check, "성함"));
 emailInput.addEventListener('input',() => IsEmpty(emailInput, email_check, "이메일"));
-email_txt.addEventListener('input',() => IsEmpty(email_txt, email_check, "이메일 주소") )
+// email_txt.addEventListener('input',() => IsEmpty(email_txt, email_check, "이메일 주소") )
 
 submit.addEventListener('click', submit_btn);
 box_email_Btn.addEventListener('click', (event) => {

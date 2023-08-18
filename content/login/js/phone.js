@@ -48,10 +48,17 @@ phone_sign.addEventListener("click",function(event){
 phone_check.addEventListener("click", function(event){
   event.preventDefault();
   if(code == phone_sign_number.value){
-    alert("일치합니다");
+    Swal.fire({
+      title: '일치합니다!',
+      icon: 'success'
+    })
   }
   else{
-    alert("다시 확인해주세요");
+    
+    Swal.fire({
+      title: '다시 확인해 주세요!',
+      icon: 'error',
+    })
   }
 })
 

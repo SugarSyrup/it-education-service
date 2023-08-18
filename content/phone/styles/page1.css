@@ -1,0 +1,10 @@
+.explain {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: inherit;
+}
+
+.explain img {
+  height:75vh;
+}

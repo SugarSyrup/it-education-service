@@ -1,0 +1,16 @@
+.practice-section {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: black;
+  max-width: 320px;
+
+  width: 60%;
+}
+
+.practice-section img {
+  position: relative;
+
+  width: 90%;
+  height: 90%;
+}

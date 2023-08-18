@@ -1,0 +1,113 @@
+.practice-section{
+  height:500px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.choice{
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.order-step{
+  width: 18%;
+  /* 17vw */
+  height: 100%;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  font-size: 13px;
+  background-color: rgb(230, 230, 230);
+}
+.order-step ul{
+  width: 100%;
+  height: 100%;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin:0;
+  padding:0;
+}
+.order-step li{
+  width: 100%;
+  height: 34%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.order-step li:first-child{
+  border-top-left-radius: 20px;
+}
+.order-step li:last-child{
+  border-bottom-left-radius: 20px;
+}
+.choice p:first-child{
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menu{
+  width: 100%;
+  height: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background-color: rgb(217, 217, 217); */
+  overflow-y: auto;
+}
+.menu-top, .menu-mid, .menu-btm{
+  margin-bottom: 2vh;
+  width: 100%;
+  height: 35%;
+  font-size: 13px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.menu-box{
+  width: 32%;
+  margin-top:60px;
+  height:50px;
+  border: 1px solid rgb(100, 100, 100);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  cursor:pointer;
+  /* background-color: rgb(255, 255, 255); */
+}
+.menu img{
+  width: 80px;
+  height: 90px;
+  border-radius: 5px;
+}
+.cancel{
+  width: 100%;
+  height: 8%;
+  border: 1px solid rgb(100, 100, 100);
+  border-radius: 20px;
+  font-size: 18px;
+  /* font-weight: 900; */
+  /* color: white; */
+  background-color: rgb(245, 134, 31);
+  /* 배경색 나중에 바꾸기 */
+}
+.option{
+  margin-left: 1.5vw;
+} 
+.none {
+  border: none;
+  background-color: rgba(240, 248, 255, 0);
+}
+
+.practice-section p {
+  padding:0;
+}
