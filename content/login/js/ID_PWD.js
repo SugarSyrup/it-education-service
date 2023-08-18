@@ -38,8 +38,6 @@ id_Make.addEventListener('input',() => id_Check(id_Make.value))
 
 id_Btn.addEventListener('click', id_Create)
 
-//비밀번호
-
 function pwd_Text_True(input){
   const re_pw = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?~])[A-Za-z\d!@#$%^&*()_+{}\[\]:;<>,.?~]{8,}(?:(?!.*([A-Za-z\d])\1\1).)*$/;
   pwd_check = re_pw.test(input);
