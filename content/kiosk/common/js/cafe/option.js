@@ -95,7 +95,7 @@ addBtn.addEventListener("click", () => {
   else{
     if(localStorage.getItem(SINGLECART) && amountNum == questionAmount.innerText.replace("개", "")){
       localStorage.removeItem(OPTION);
-      location.href = "/content/kiosk/common/html/practice-category.html";
+      location.href = "../../html/practice-category.html";
     }
   }
 })
