@@ -4,7 +4,7 @@
 }
 .main{
   width: 100%;
-  height: 90%;
+  height: 460px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   display: flex;
@@ -27,8 +27,10 @@
 }
 .amount{
   width: 90%;
-  height: 13%;
+  height: 20px;
   display: flex;
+
+  margin-bottom:10px;
 }
 .minus, .plus{
   width: 20%;
@@ -48,13 +50,11 @@
 }
 .right-side{
   width: 55%;
-  height: 100%;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
-  overflow-y: auto;
 }
 .temperature, .size, .coffee-bean{
-  margin-bottom: 2vh;
+  margin-bottom: 20px;
   width: 100%;
   height: 30%;
   display: flex;
@@ -68,9 +68,6 @@
   /* border-bottom: 1px solid rgb(100, 100, 100); */
   display: flex;
   align-items: center;
-}
-.title span{
-  margin-left: 3vw;
 }
 .box{
   width: 100%;
@@ -87,7 +84,7 @@
 }
 .btn-box{
   width: 100%;
-  height: 10%;
+  height: 50px;
 }
 .back, .add{
   width: 50%;
@@ -100,11 +97,8 @@
   width: 50px;
   height: 50px;
 }
-.hot img{
-  margin-left: 2vw;
-}
 .regular img{
-  margin-bottom: 1.5vh;
+  margin-bottom: 20px;
   width: 50px;
   height: 40px;
   position: relative;

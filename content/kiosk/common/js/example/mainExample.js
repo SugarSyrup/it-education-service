@@ -21,7 +21,7 @@ let singleAmount = [1];
 let parseCafe = [];
 let cafeAmount = [1];
 const arr = ["../../img/fast-food/buger/1955.png", "1955 버거", "7,200원"];
-const cafeArr = ["../../../img/cafe/coffee/americano-hot.jpg", "아메리카노", "4,000원", "핫", "레귤러", "기본"];
+const cafeArr = ["../../img/cafe/coffee/americano-hot.jpg", "아메리카노", "4,000원", "핫", "레귤러", "기본"];
 const movieArr = [["코난", "15:25 ~ 17:44", "3관"], ["일반"], ["1매"], ["G05"]]
 
 const questionArr = ["../../html/select-place.html", "../../html/practice-category.html", "../../html/practice-category.html", "../../html/practice-category.html", "../../html/practice-category.html", "../../html/order-list.html", "../../html/order-list.html", "../../html/order-list.html", "../../html/payment-method.html", "../../html/select-place.html"];

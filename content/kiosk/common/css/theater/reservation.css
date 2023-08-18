@@ -4,12 +4,12 @@
   justify-content: space-between;
 }
 .text{
-  margin-left: 4vw;
   width: 100%;
-  height: 10%;
+  height: 40px;
   font-size: 25px;
   font-weight: 900;
   display: flex;
+  justify-content: center;
   align-items: center;
 }
 .reservationCheck{
@@ -19,6 +19,7 @@
   /* flex-direction: column; */
   justify-content: space-between;
   /* background-color: yellowgreen; */
+  margin-bottom:20px;
 }
 .movieImg{
   margin-top: 1.6vh;
@@ -27,26 +28,24 @@
   border: none;
 }
 .inpo{
-  margin-right: 3vw;
   width: 47%;
   height: 70%;
   font-size: 17px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  gap:10px;
 }
 .title, .numOfTicket{
   /* margin: 1vh 0 1vh 0; */
   font-size: 17px;
-  font-weight: 900;
-  word-spacing: -3px;
 }
 .dateBox{
   margin: 0.5vh 0 0.5vh 0;
 }
 .btn-box{
   width: 100%;
-  height: 13%;
+  height: 40px;
   /* display: flex; */
 }
 /* .seats{
